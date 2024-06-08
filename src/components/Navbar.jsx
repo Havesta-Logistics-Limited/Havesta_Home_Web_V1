@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <div>
-            <div  className="tw-flex flex-row tw-items-center tw-justify-evenly  tw-font-bold ">
+    <div className='tw-absolute tw-w-full tw-z-10'>
+            <div  className="tw-flex flex-row tw-items-center tw-justify-evenly tw-font-bold tw-text-white">
                 <div className='tw-flex flex-row tw-items-center'>
                 <img src="/icons/harv.png" alt="harvesta" />
                 <p>Harvesta</p>

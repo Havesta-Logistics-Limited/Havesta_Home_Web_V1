@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        harvestaYellow:'#FFC141'
+        harvestaYellow:'#FFC141',
+        harvestaGreen:'#01BE72'
       }
     },
   },
