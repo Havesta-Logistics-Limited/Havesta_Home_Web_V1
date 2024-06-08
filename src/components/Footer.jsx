@@ -91,7 +91,7 @@ const Footer = () => {
         </div>
       </div>
       <div  className="w-full h-auto bg-harvestaDarkGreen absolute bottom-0 left-0 text-xs text-center align-middle p-2">
-      © Copyright 2024 Designed By Noel Amobeda
+        © Copyright 2024 Designed By Noel Amobeda
       </div>
     </footer>
   );
