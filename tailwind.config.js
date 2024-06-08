@@ -4,12 +4,14 @@ export default {
   theme: {
     extend: {
       colors:{
-        harvestaYellow:'#FFC141'
+        primary: "#005231",
+        harvestaYellow:'#FFC141',
+        harvestaLightGreen: "#01BE72",
+        harvestaDarkGreen: "#00150D"
       }
     },
   },
-  prefix: "tw-",
-  important: true,
+
   plugins: [
 
   ],

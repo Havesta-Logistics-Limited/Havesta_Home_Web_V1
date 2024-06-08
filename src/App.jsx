@@ -5,15 +5,16 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-    <MainLayout/>
       <Routes>
-        {routes.map((route, index) =>
-          route.index ? (
-            <Route index element={route.element} key={index} />
-          ) : (
-            <Route path={route.path} element={route.element} key={index} />
-          )
-        )}
+        <Route path="/" element={<MainLayout />}>
+          {routes.map((route, index) =>
+            route.index ? (
+              <Route index element={route.element} key={index} />
+            ) : (
+              <Route path={route.path} element={route.element} key={index} />
+            )
+          )}
+        </Route>
       </Routes>
     </>
   );
