@@ -1,26 +1,19 @@
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import { Outlet } from 'react-router-dom'
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
+import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
-
 
 const MainLayout = () => {
   return (
     <>
-    <Navbar />
-    <Box 
-    overFlow="hidden"
-    flexGrow={1}
-    >
-    <Outlet/>
+      {/* <Navbar /> */}
+      <Box overFlow="hidden" flexGrow={1}>
+        <Outlet />
+      </Box>
 
-    </Box>
-
-    
-    <Footer/>
-    
+      {/* <Footer/> */}
     </>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
