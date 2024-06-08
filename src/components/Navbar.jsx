@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div>
-            <div  className="tw-flex flex-row tw-items-center tw-justify-evenly  tw-font-bold ">
-                <div className='tw-flex flex-row tw-items-center'>
+            <div  className="flex flex-row items-center justify-evenly  font-bold ">
+                <div className='flex flex-row items-center'>
                 <img src="/icons/harv.png" alt="harvesta" />
                 <p>Harvesta</p>
                 </div>
-                    <div className='tw-flex flex-row tw-gap-8'>
+                    <div className='flex flex-row gap-8'>
                             <Link to={'/home'}>Home</Link>
                             <Link to={'/about'}>About</Link>
                             <Link to={'/news'}>News</Link>
@@ -17,7 +17,7 @@ const Navbar = () => {
                             <Link to={'/patner'}>Patner</Link>
                     </div>
                     <Link>
-                    <button className='tw-bg-harvestaYellow tw-px-4 tw-py-1 tw-rounded-full tw-text-white'>Get Stated</button>
+                    <button className='bg-harvestaYellow px-4 py-1 rounded-full text-white'>Get Stated</button>
                     </Link>
             </div>
     </div>
