@@ -8,7 +8,7 @@ import Marketplace from "../pages/Marketplace";
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     element: <Home />,
   },
   {
