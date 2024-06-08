@@ -1,11 +1,12 @@
 import MainLayout from "./pages/MainLayout";
 import { Routes, Route } from "react-router-dom";
 import routes from "./config/routes.config";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
+    <MainLayout/>
       <Routes>
-        <Route path="/" element={<MainLayout />} />
         {routes.map((route, index) =>
           route.index ? (
             <Route index element={route.element} key={index} />
