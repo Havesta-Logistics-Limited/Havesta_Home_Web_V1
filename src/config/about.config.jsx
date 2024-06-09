@@ -1,3 +1,9 @@
+import LanguageIcon from '@mui/icons-material/Language';
+import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+import Groups2Icon from '@mui/icons-material/Groups2';
+import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+
+
 export const aboutItems = [
   {
     title: "Welcome to Harvesta!",
@@ -58,18 +64,23 @@ export const aboutListItems = [
 export const aboutStats = [
   {
     amount: 1,
-    content: 'Country'
+    content: 'Country',
+    icon: <LanguageIcon color="success"/>
   },
+
   {
     amount: '20k',
-    content: 'Monthly Deliveries'
+    content: 'Monthly Deliveries',
+    icon: <DeliveryDiningIcon color="success"/>
   },
   {
     amount: '2k',
-    content: 'Delivery Maestros'
+    content: 'Delivery Maestros',
+    icon: <MilitaryTechIcon color="success"/>
   },
   {
     amount: "200+",
-    content: 'Employees'
+    content: 'Employees',
+    icon: <Groups2Icon color="success"/>
   },
 ]

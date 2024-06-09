@@ -1,5 +1,6 @@
 import { aboutItems, aboutListItems, aboutStats } from "../config/about.config";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+
 import image1 from "../assets/images/CEO-pic.png";
 
 const About = () => {
@@ -37,7 +38,7 @@ const About = () => {
           {aboutItems.map((items, index) => (
             <div key={index} className="mt-6">
               <h5
-                className={`grid text-harvestaDarkGreen p-4 font-bold text-sm uppercase border-harvestaLightGreen 
+                className={`grid text-harvestaDarkGreen p-4 font-bold text-sm uppercase border-harvestaYellow 
                   lg:text-lg
                   ${
                     items.position === "left"
@@ -63,15 +64,20 @@ const About = () => {
         </div>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2 border-b-2">
+      <div className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2">
         {aboutStats.map((item, index) => {
           return (
-            <div className="grid justify-items-center p-4" key={index}>
+            <div className="grid justify-items-center p-4  m-8 border-harvestaLightGreen" key={index}>
+              <span className="grid justify-items-center">{item.icon}</span>
               <p className="text-lg font-bold text-harvestaLightGreen font-primary lg:text-2xl">{item.amount}</p>
-              <p className="font-primary text-lg font-bold">{item.content}</p>
+             <p className="font-primary text-lg font-bold">{item.content}</p>
             </div>
           );
         })}
+      </div>
+
+      <div>
+        <h3>Our Core Values</h3>
       </div>
     </section>
   );
