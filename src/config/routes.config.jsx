@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Vendor from "../pages/Vendor";
 import Rider from "../pages/Rider";
 import Marketplace from "../pages/Marketplace";
+import News from "../pages/News";
 
 const routes = [
   {
@@ -24,22 +25,25 @@ const routes = [
     element: <Home />,
   },
   {
-    path: '/vendor',
+    path: "/vendor",
     element: <Vendor />,
   },
   {
-    path: '/rider',
+    path: "/rider",
     element: <Rider />,
   },
   {
-    path: '/marketplace',
+    path: "/news",
+    element: <News />,
+  },
+  {
+    path: "/marketplace",
     element: <Marketplace />,
   },
   {
     path: "*",
     element: <NotFound />,
   },
-  
 ];
 
 export default routes;

@@ -3,16 +3,17 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors:{
+      colors: {
         primary: "#005231",
-        harvestaYellow:'#FFC141',
+        harvestaYellow: "#FFC141",
         harvestaLightGreen: "#01BE72",
-        harvestaDarkGreen: "#00150D"
-      }
+        harvestaDarkGreen: "#00150D",
+      },
+      boxShadow: {
+        "3xl": "2px 3px 18px 8px rgba(0,0,0,0.65)",
+      },
     },
   },
 
-  plugins: [
-
-  ],
+  plugins: [],
 };
