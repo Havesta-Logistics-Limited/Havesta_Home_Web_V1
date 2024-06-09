@@ -17,12 +17,18 @@ const Footer = () => {
           <h3 className="text-xl font-bold text-white">Harvesta</h3>
         </div>
         <p className="text-sm leading-6">
-          HARVESTA prioritizes convenience and transparency, enhancing the overall shopping experience. Our product also offers real-time order tracking, secure payment options, and eco-friendly delivery choices, aligning with the values of today's environmentally conscious consumers.
+          HARVESTA prioritizes convenience and transparency, enhancing the
+          overall shopping experience. Our product also offers real-time order
+          tracking, secure payment options, and eco-friendly delivery choices,
+          aligning with the values of today's environmentally conscious
+          consumers.
         </p>
       </div>
 
       <div className=" p-4">
-        <h3 className="text-xl font-semibold text-white mb-4">Featured Links</h3>
+        <h3 className="text-xl font-semibold text-white mb-4">
+          Featured Links
+        </h3>
         <ul className="text-sm leading-6 space-y-2">
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
@@ -48,7 +54,9 @@ const Footer = () => {
       </div>
 
       <div className=" p-4">
-        <h3 className="text-xl font-semibold text-white mb-4">Information HQ</h3>
+        <h3 className="text-xl font-semibold text-white mb-4">
+          Information HQ
+        </h3>
         <div className="text-sm space-y-4">
           <div className="flex items-start gap-2">
             <TelegramIcon fontSize="small" color="success" />
@@ -73,8 +81,11 @@ const Footer = () => {
             placeholder="Enter email address"
             className="text-xs p-2 font-light w-48"
           />
-            <TelegramIcon className="bg-harvestaLightGreen p-2 text-white" fontSize="large"/>
-          </span>
+          <TelegramIcon
+            className="bg-harvestaLightGreen p-2 text-white"
+            fontSize="large"
+          />
+        </span>
         <div className="flex space-x-4 my-6">
           <span className="border-2 border-slate-800 w-8 h-8 flex items-center justify-center">
             <FacebookIcon fontSize="small" />
@@ -90,7 +101,7 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <div  className="w-full h-auto bg-harvestaDarkGreen absolute bottom-0 left-0 text-xs text-center align-middle p-2">
+      <div className="w-full h-auto bg-harvestaDarkGreen absolute bottom-0 left-0 text-xs text-center align-middle p-2">
         © Copyright 2024 Designed By Noel Amobeda
       </div>
     </footer>

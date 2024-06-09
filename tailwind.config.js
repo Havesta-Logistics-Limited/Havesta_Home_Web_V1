@@ -8,6 +8,10 @@ export default {
         harvestaYellow:'#FFC141',
         harvestaLightGreen: "#01BE72",
         harvestaDarkGreen: "#00150D"
+      },
+
+      fontFamily: {
+        primary: ['Plus Jakarta Sans']
       }
     },
   },
