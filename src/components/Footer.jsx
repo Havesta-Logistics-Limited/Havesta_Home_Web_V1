@@ -79,10 +79,10 @@ const Footer = () => {
           <input
             type="text"
             placeholder="Enter email address"
-            className="text-xs p-2 font-light w-48 border-l-2"
+            className="text-xs p-2 font-light w-48 rounded-l"
           />
           <TelegramIcon
-            className="bg-harvestaLightGreen p-2 text-white border-r"
+            className="bg-harvestaLightGreen p-2 text-white rounded-r"
             fontSize="large"
           />
         </span>
