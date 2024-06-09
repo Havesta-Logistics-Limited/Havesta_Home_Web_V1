@@ -38,7 +38,7 @@ const About = () => {
           {aboutItems.map((items, index) => (
             <div key={index} className="mt-6">
               <h5
-                className={`grid text-harvestaDarkGreen p-4 font-bold text-sm uppercase border-harvestaYellow 
+                className={`grid text-harvestaDarkGreen p-4 font-bold text-sm uppercase border-harvestaLightGreen 
                   lg:text-lg
                   ${
                     items.position === "left"
@@ -55,10 +55,10 @@ const About = () => {
           ))}
           <div className="font-bold font-primary mt-4 px-4">
             <p className="ml-[-4px]">
-              Thank you for choosing Harvesta. Together, we can make fresh,
+              " Thank you for choosing Harvesta. Together, we can make fresh,
               local produce a part of everyone’s daily life. Join us in our
               mission to create healthier, happier communities, one delivery at
-              a time.
+              a time "
             </p>
           </div>
         </div>
