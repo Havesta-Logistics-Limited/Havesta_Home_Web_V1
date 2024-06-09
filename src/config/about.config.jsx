@@ -36,7 +36,7 @@ export const aboutItems = [
 
 export const aboutListItems = [
   {
-    title: "Fresh Guaranteed",
+    title: "Freshness Guaranteed",
     content:
       "We deliver produce at the peak of its freshness, straight from the farm to your door.",
   },
