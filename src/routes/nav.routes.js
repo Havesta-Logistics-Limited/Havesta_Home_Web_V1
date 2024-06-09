@@ -10,6 +10,10 @@ const navRoutes = [
   },
 
   {
+    name: "News",
+    path: "/news",
+  },
+  {
     name: "Contact",
     path: "/contact",
   },
