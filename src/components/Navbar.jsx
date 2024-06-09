@@ -1,23 +1,21 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import navRoutes from '../routes/nav.routes'
 
 const Navbar = () => {
   return (
-    <div className='tw-absolute tw-w-full tw-z-10'>
-            <div  className="tw-flex flex-row tw-items-center tw-justify-evenly tw-font-bold tw-text-white">
-                <Link to={'/'} className='tw-flex flex-row tw-items-center'>
+    <div>
+            <div  className="flex flex-row items-center justify-evenly  font-bold ">
+                <div className='flex flex-row items-center'>
                 <img src="/icons/harv.png" alt="harvesta" />
                 <p>Harvesta</p>
-                </Link>
-                    <div className='tw-flex flex-row tw-gap-8'>
-                            <Link to={'/home'}>Home</Link>
-                            <Link to={'/about'}>About</Link>
-                            <Link to={'/news'}>News</Link>
-                            <Link to={'/contact'}>Contact</Link>
-                            <Link to={'/patner'}>Patner</Link>
+                </div>
+                    <div className='flex flex-row gap-8'>
+                            {navRoutes.map((item, index)=>(
+                                <Link to={item.path} key={index}>{item.name}</Link>
+                            ))}
                     </div>
                     <Link>
-                    <button className='tw-bg-harvestaYellow tw-px-4 tw-py-1 tw-rounded-full tw-text-white'>Get Stated</button>
+                    <button className='bg-harvestaYellow px-4 py-1 rounded-full text-white'>Get Stated</button>
                     </Link>
             </div>
     </div>
