@@ -1,6 +1,6 @@
 import { aboutItems, aboutListItems, aboutStats } from "../config/about.config";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import image1 from "../assets/images/CEO-pic.png";
 
 const About = () => {
@@ -54,11 +54,11 @@ const About = () => {
             </div>
           ))}
           <div className="font-bold font-primary mt-4 px-4">
-            <p className="ml-[-4px]">
-              " Thank you for choosing Harvesta. Together, we can make fresh,
+            <p className="ml-[-4px] italic">
+             <FormatQuoteIcon/> Thank you for choosing Harvesta. Together, we can make fresh,
               local produce a part of everyone’s daily life. Join us in our
               mission to create healthier, happier communities, one delivery at
-              a time "
+              a time<FormatQuoteIcon/>
             </p>
           </div>
         </div>
