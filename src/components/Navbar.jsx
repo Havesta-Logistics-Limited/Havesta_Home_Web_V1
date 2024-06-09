@@ -1,5 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import navRoutes from '../routes/nav.routes'
 
 const Navbar = () => {
   return (
@@ -10,11 +10,9 @@ const Navbar = () => {
                 <p>Harvesta</p>
                 </div>
                     <div className='flex flex-row gap-8'>
-                            <Link to={'/home'}>Home</Link>
-                            <Link to={'/about'}>About</Link>
-                            <Link to={'/news'}>News</Link>
-                            <Link to={'/contact'}>Contact</Link>
-                            <Link to={'/patner'}>Patner</Link>
+                            {navRoutes.map((item, index)=>(
+                                <Link to={item.path} key={index}>{item.name}</Link>
+                            ))}
                     </div>
                     <Link>
                     <button className='bg-harvestaYellow px-4 py-1 rounded-full text-white'>Get Stated</button>
