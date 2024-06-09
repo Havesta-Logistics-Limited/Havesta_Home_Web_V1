@@ -11,7 +11,7 @@ const About = () => {
           <img src={image1} alt="ceo-image" className="w-full lg:w-2/3" />
           <p className="pt-2 font-bold font-primary">Noel Amobeda</p>
           <p className="text-xs text-primary font-bold tracking-wide">
-            CEO/Founder at Harvesta
+            CEO / Founder at Harvesta
           </p>
           <div className="w-full mt-8 lg:w-2/3">
             <h5 className="p-4 font-bold text-lg uppercase border-l-4 border-harvestaLightGreen text-left">
