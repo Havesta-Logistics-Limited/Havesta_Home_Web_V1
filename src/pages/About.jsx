@@ -34,7 +34,7 @@ const About = () => {
           </div>
         </div>
 
-        <div>
+        <div className="text-left">
           {aboutItems.map((items, index) => (
             <div key={index} className="mt-6">
               <h5
@@ -48,13 +48,13 @@ const About = () => {
               >
                 {items.title}
               </h5>
-              <p className="p-2 text-left font-primary font-light lg:text-base md:leading-loose">
+              <p className="p-2 text-left font-primary lg:text-base md:leading-loose">
                 {items.content}
               </p>
             </div>
           ))}
           <div className="font-bold font-primary mt-4 px-4">
-            <p>
+            <p className="ml-[-4px]">
               Thank you for choosing Harvesta. Together, we can make fresh,
               local produce a part of everyone’s daily life. Join us in our
               mission to create healthier, happier communities, one delivery at

@@ -10,7 +10,7 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
 const Footer = () => {
   return (
-    <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 bg-black p-8 md:p-16 lg:p-24 text-gray-400 font-body relative">
+    <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
       <div className=" p-4">
         <div className="flex items-center gap-2 mb-4">
           <img src={image1} alt="Logo" className="w-6 h-6" />
@@ -79,10 +79,10 @@ const Footer = () => {
           <input
             type="text"
             placeholder="Enter email address"
-            className="text-xs p-2 font-light w-48"
+            className="text-xs p-2 font-light w-48 border-l-2"
           />
           <TelegramIcon
-            className="bg-harvestaLightGreen p-2 text-white"
+            className="bg-harvestaLightGreen p-2 text-white border-r"
             fontSize="large"
           />
         </span>
