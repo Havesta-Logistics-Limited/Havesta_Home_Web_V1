@@ -65,7 +65,7 @@ export const aboutStats = [
   {
     amount: 1,
     content: 'Country',
-    icon: <LanguageIcon fontSize="large" color="success"/>
+    icon: <LanguageIcon fontSize="large"/>
   },
 
   {
