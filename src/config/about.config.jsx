@@ -36,7 +36,7 @@ export const aboutItems = [
 
 export const aboutListItems = [
   {
-    title: "Fresh Guaranteed",
+    title: "Freshness Guaranteed",
     content:
       "We deliver produce at the peak of its freshness, straight from the farm to your door.",
   },
@@ -65,22 +65,22 @@ export const aboutStats = [
   {
     amount: 1,
     content: 'Country',
-    icon: <LanguageIcon color="success"/>
+    icon: <LanguageIcon fontSize="large"/>
   },
 
   {
     amount: '20k',
     content: 'Monthly Deliveries',
-    icon: <DeliveryDiningIcon color="success"/>
+    icon: <DeliveryDiningIcon fontSize="large"/>
   },
   {
     amount: '2k',
     content: 'Delivery Maestros',
-    icon: <MilitaryTechIcon color="success"/>
+    icon: <MilitaryTechIcon fontSize="large"/>
   },
   {
     amount: "200+",
     content: 'Employees',
-    icon: <Groups2Icon color="success"/>
+    icon: <Groups2Icon fontSize="large"/>
   },
 ]
