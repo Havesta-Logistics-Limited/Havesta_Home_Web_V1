@@ -10,7 +10,7 @@ export default {
         harvestaDarkGreen: "#00150D",
       },
       boxShadow: {
-        "3xl": "2px 3px 18px 8px rgba(0,0,0,0.65)",
+        "3xl": "-1px -6px 5px -1px rgba(0,0,0,0.75);",
       },
     },
   },
