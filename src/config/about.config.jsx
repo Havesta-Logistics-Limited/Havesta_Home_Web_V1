@@ -3,7 +3,9 @@ import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
 import worldIcon from "../assets/animations/worldwide.gif"
-
+import deliveryIcon from '../assets/animations/delivery-scooter.gif'
+import badgeIcon from '../assets/animations/badge.gif'
+import vanIcon from '../assets/animations/van.gif'
 
 export const aboutItems = [
   {
@@ -66,22 +68,22 @@ export const aboutStats = [
   {
     amount: 1,
     content: 'Country',
-    icon:'tf'
+    icon: <img src={worldIcon} alt="" className='w-12 h-12' />
   },
 
   {
     amount: '20k',
     content: 'Monthly Deliveries',
-    icon: <DeliveryDiningIcon fontSize="large"/>
+    icon: <img src={deliveryIcon} alt='delivery' className='w-12 h-12'/>
   },
   {
     amount: '2k',
     content: 'Delivery Maestros',
-    icon: <MilitaryTechIcon fontSize="large"/>
+    icon: <img src={badgeIcon} alt='badge' className='w-12 h-12'/>
   },
   {
     amount: "200+",
     content: 'Employees',
-    icon: <Groups2Icon fontSize="large"/>
+    icon: <img src={vanIcon} alt='van' className='w-12 h-12'/>
   },
 ]

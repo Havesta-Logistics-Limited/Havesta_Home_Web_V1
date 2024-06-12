@@ -78,7 +78,7 @@ const About = () => {
       </div>
 
       <div>
-        <h3>Our Core Values</h3>
+        <h3>Our Core Values must work</h3>
       </div>
     </section>
   );
