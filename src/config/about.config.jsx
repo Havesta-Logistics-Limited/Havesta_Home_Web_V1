@@ -2,6 +2,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
+import worldIcon from "../assets/animations/worldwide.gif"
 
 
 export const aboutItems = [
@@ -65,7 +66,7 @@ export const aboutStats = [
   {
     amount: 1,
     content: 'Country',
-    icon: <LanguageIcon fontSize="large"/>
+    icon:'tf'
   },
 
   {

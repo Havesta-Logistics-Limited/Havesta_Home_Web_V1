@@ -1,5 +1,6 @@
 import { aboutItems, aboutListItems, aboutStats } from "../../config/about.config";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import worldIcon from "../../assets/animations/worldwide.gif"
 
 import image1 from "../../assets/images/CEO-pic.png";
 
@@ -68,7 +69,7 @@ const About = () => {
         {aboutStats.map((item, index) => {
           return (
             <div className="grid justify-items-center p-4  m-8 border-harvestaLightGreen" key={index}>
-              <span className="grid justify-items-center">{item.icon}</span>
+              <span className="grid justify-items-center"><img src={worldIcon} alt="" /> bro</span>
               <p className="text-lg font-bold text-harvestaLightGreen font-primary lg:text-2xl">{item.amount}</p>
              <p className="font-primary text-lg font-bold">{item.content}</p>
             </div>
