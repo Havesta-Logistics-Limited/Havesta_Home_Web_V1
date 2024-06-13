@@ -172,6 +172,7 @@ const About = () => {
           <span className="p-3 mt-4 text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover">See current openings</span>
         </div>
       </div>
+
     </section>
   );
 };
