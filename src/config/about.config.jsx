@@ -89,18 +89,18 @@ export const aboutStats = [
 
 export const coreValues = [
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957995/Rectangle_610_zcmdew.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303027/Rectangle_610_19_ckzmyu.png",
     title: "Customer First",
     paragraph:
       "Our customers are at the heart of everything we do. We are dedicated to providing exceptional service, ensuring that every delivery is timely and every interaction is positive. Your satisfaction is our top priority, and we continuously seek to improve our services to meet your needs.",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957993/Rectangle_610_1_mwcqeb.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303121/Rectangle_610_20_ocsbq4.png",
     title: "Freshness",
     paragraph: "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards of quality and freshness, so you can enjoy nutritious and delicious food every day.",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957991/Rectangle_610_2_dcek2q.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303222/Rectangle_610_21_ldeajv.png",
     title: "Convenience",
     paragraph: "We understand the demands of a busy lifestyle. Our service is designed to provide a hassle-free experience, allowing you to order fresh farm produce with just a few clicks and have it delivered right to your home, saving you time and effort.",
   },

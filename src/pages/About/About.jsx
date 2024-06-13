@@ -9,9 +9,11 @@ import {
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import image1 from "../../assets/images/CEO-pic.png";
-
+import Hero from '../../components/landing/Hero'
 const About = () => {
   return (
+    <>
+       <Hero/>
     <section className="p-8 lg:p-28">
       <div className="grid gap-8 md:grid-cols-2">
         <div className="p-4 flex flex-col items-center text-center">
@@ -20,7 +22,7 @@ const About = () => {
           <p className="text-xs text-primary font-bold tracking-wide">
             CEO / Founder at Harvesta
           </p>
-          <div className="w-full mt-8 lg:w-2/3">
+          <div className="w-full mt-12 lg:w-2/3">
             <h5 className="p-4 font-bold text-lg uppercase border-l-4 border-harvestaLightGreen text-left">
               Why choose Harvesta?
             </h5>
@@ -93,25 +95,25 @@ const About = () => {
       </div>
 
       <div className="my-20">
-        <h3 className="flex justify-center font-bold text-2xl mb-14">
+        <h3 className="flex justify-center font-bold text-4xl mb-14">
           Our Core Values{" "}
         </h3>
         <div className="lg:grid grid-cols-3 gap-4">
           {coreValues.map((item, index) => (
             <div
-              className="bg-harvestaLightGreen rounded overflow-hidden shadow-md hover:shadow-lg text-white my-10"
+              className="bg-harvestaLightGreen rounded border-5 border-primary overflow-hidden shadow-xl hover:shadow-2xl hover:bg-primary hover:border-primary text-white my-10 h-[480px] transition-all"
               key={index}
             >
               <img
                 src={item.img}
                 alt=""
-                className="w-full h-32 sm:h-48 object-cover"
+                className="w-full h-40 sm:h-48 object-cover"
               />
-              <div className="m-4">
-                <span className="font-bold text-lg flex justify-center p-3 font-primary">
+              <div className="m-10">
+                <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
                   {item.title}
                 </span>
-                <span className="block text-sm font-primary">
+                <span className="block text-md font-primary ">
                   {item.paragraph}
                 </span>
               </div>
@@ -122,13 +124,13 @@ const About = () => {
 
       <div className="p-4 font-primary">
         <div className="grid grid-cols-1 justify-items-center">
-          <h3 className=" uppercase text-gray-500 font-bold text-xs">
+          <h3 className=" uppercase text-black font-bold text-xs">
             Who are we?
           </h3>
-          <h2 className="p-4 font-bold text-4xl text-harvestaLightGreen">
+          <h2 className="p-4 font-bold text-4xl text-black">
             Meet our team
           </h2>
-          <p className="text-center text-gray-500 text-md text-wrap">
+          <p className="text-center text-black text-md text-wrap">
             Just take a look - each member of the team is watching your every
             gesture <br /> and will hear your every whisper.
           </p>
@@ -164,16 +166,18 @@ const About = () => {
           className=" w-[80%]"
         />
         <div className="absolute lg:top-[20%] grid grid-cols-1 justify-items-center mx-auto">
-          <h1 className='uppercase font-bold text-3xl p-2'>Join our team</h1>
-          <p className="text-sm text-gray-700 text-center w-[300px] leading-6">
+          <h1 className='uppercase font-bold text-4xl p-2'>Join our team</h1>
+          <p className="text-sm text-black text-center w-[370px] my-3">
             We love what we do and we do it with passion. We value the
             experimentation of the message and smart incentives.
           </p>
-          <span className="p-3 mt-4 text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover">See current openings</span>
+          <span className="py-3 px-5  mt-4 text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover capitalize">See current openings</span>
         </div>
       </div>
 
     </section>
+    </>
+ 
   );
 };
 
