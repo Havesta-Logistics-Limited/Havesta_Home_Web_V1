@@ -8,10 +8,15 @@ export default {
         harvestaYellow: "#FFC141",
         harvestaLightGreen: "#01BE72",
         harvestaDarkGreen: "#00150D",
+        primaryHover: "#004827"
       },
       boxShadow: {
         "3xl": "-1px -6px 5px -1px rgba(0,0,0,0.75);",
       },
+
+      fontFamily:{
+        primary: ['Plus Jakarta Sans']
+      }
     },
   },
 
