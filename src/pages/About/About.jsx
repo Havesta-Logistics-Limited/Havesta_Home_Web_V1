@@ -156,8 +156,8 @@ const About = () => {
           ))}
         </div>
       </div>
-
-      <div className="grid grid-col-1 justify-items-center p-10 mt-40 font-primary relative">
+     
+      <div className="grid grid-col-1 justify-items-center p-10 mt-40 font-primary relative"> 
         <img
           src={aboutMainImage}
           alt="image"
