@@ -3,11 +3,10 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-
+import twitterPng from '../assets/icons/twitter (2).png';
+import gmailPng from '../assets/icons/gmail.png';
+import linkedinPng from '../assets/icons/linkedin (1).png';
+import facebookPng from '../assets/icons/facebook.png'
 const Footer = () => {
   return (
     <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
@@ -86,18 +85,18 @@ const Footer = () => {
             fontSize="large"
           />
         </span>
-        <div className="flex space-x-4 my-6">
-          <span className="border-2 border-slate-800 w-8 h-8 flex items-center justify-center">
-            <FacebookIcon fontSize="small" />
+        <div className="flex space-x-8 my-6 mx-auto h-7">
+          <span className="w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+          <img src={facebookPng} alt ='facebook-icon' className='text-white'/>
           </span>
-          <span className="border-2 border-slate-800 w-8 h-8 flex items-center justify-center">
-            <TwitterIcon fontSize="small" />
+          <span className=" w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all object-contain">
+          <img src={twitterPng} alt ='twitter-icon' className=' bg-white '/>
           </span>
-          <span className="border-2 border-slate-800 w-8 h-8 flex items-center justify-center">
-            <LinkedInIcon fontSize="small" />
+          <span className=" w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+            <img src={linkedinPng} alt="linkedin-icon" />
           </span>
-          <span className="border-2 border-slate-800 w-8 h-8 flex items-center justify-center">
-            <AlternateEmailIcon fontSize="small" />
+          <span className=" w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+            <img src={gmailPng} alt="gmail-icon" />
           </span>
         </div>
       </div>

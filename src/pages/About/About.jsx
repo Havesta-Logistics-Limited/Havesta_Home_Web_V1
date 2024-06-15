@@ -6,18 +6,21 @@ import {
   aboutTeam,
   aboutMainImage,
 } from "../../config/about.config";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import XIcon from "@mui/icons-material/X";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import image1 from "../../assets/images/CEO-pic.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/effect-cards";
 import "swiper/css";
 
-const About = ({hero}) => {
+const About = ({ hero }) => {
   return (
     <>
-    <img src={hero} alt="harvesta" />
+      <img src={hero} alt="harvesta" />
       <section className="p-8 lg:p-28">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">
@@ -67,12 +70,11 @@ const About = ({hero}) => {
               </div>
             ))}
             <div className="font-bold font-primary mt-4 px-4">
-              <p className="ml-[-4px] italic">
-                <FormatQuoteIcon /> Thank you for choosing Harvesta. Together,
-                we can make fresh, local produce a part of everyone’s daily
-                life. Join us in our mission to create healthier, happier
-                communities, one delivery at a time
-                <FormatQuoteIcon />
+              <p className="ml-[-4px]">
+                Thank you for choosing Harvesta. Together, we can make fresh,
+                local produce a part of everyone’s daily life. Join us in our
+                mission to create healthier, happier communities, one delivery
+                at a time
               </p>
             </div>
           </div>
@@ -99,60 +101,60 @@ const About = ({hero}) => {
         </div>
 
         <div className="my-20">
-      <h3 className="flex justify-center font-bold text-4xl mb-14">
-        Our Core Values
-      </h3>
-      <Swiper
-        grabCursor={true}
-        effect={'slide'}
-        centeredSlides={true}
-        autoplay={{
-          disableOnInteraction: false,
-          delay: 0
-        }}
-        speed={5000}
-        spaceBetween={50}
-        pagination={{ clickable: true }}
-        loop={true}
-        modules={[EffectCoverflow, Pagination, Autoplay]}
-        breakpoints={{
-          // Large screens
-          1024: {
-            slidesPerView: 3,
-            effect: 'slide',
-          },
-          // Smaller screens
-          0: {
-            slidesPerView: 1,
-            effect: 'slide',
-          },
-        }}
-      >
-        {coreValues.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="bg-harvestaLightGreen rounded-xl
+          <h3 className="flex justify-center font-bold text-4xl mb-14">
+            Our Core Values
+          </h3>
+          <Swiper
+            grabCursor={true}
+            effect={"slide"}
+            centeredSlides={true}
+            autoplay={{
+              disableOnInteraction: false,
+              delay: 0,
+            }}
+            speed={5000}
+            spaceBetween={50}
+            pagination={{ clickable: true }}
+            loop={true}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+            breakpoints={{
+              // Large screens
+              1024: {
+                slidesPerView: 3,
+                effect: "slide",
+              },
+              // Smaller screens
+              0: {
+                slidesPerView: 1,
+                effect: "slide",
+              },
+            }}
+          >
+            {coreValues.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="bg-harvestaLightGreen rounded-xl
               border-primary overflow-hidden hover:bg-primary hover:border-primary text-white my-10 h-[480px]
               transition-all hover:shadow-lg"
-            >
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-40 sm:h-48 object-cover"
-              />
-              <div className="m-10">
-                <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
-                  {item.title}
-                </span>
-                <span className="block text-md font-primary">
-                  {item.paragraph}
-                </span>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+                >
+                  <img
+                    src={item.img}
+                    alt=""
+                    className="w-full h-40 sm:h-48 object-cover"
+                  />
+                  <div className="m-10">
+                    <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
+                      {item.title}
+                    </span>
+                    <span className="block text-md font-primary">
+                      {item.paragraph}
+                    </span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
         <div className="p-4 font-primary">
           <div className="grid grid-cols-1 justify-items-center">
@@ -180,9 +182,24 @@ const About = ({hero}) => {
                   {item.content}
                 </p>
                 <div className="flex justify-evenly gap-3 p-2">
-                  {item.socials.map((social) => (
-                    <img src={social} alt="" key={index} />
-                  ))}
+                  <span className="flex space-x-2  cursor-pointer text-white">
+                    <XIcon
+                      fontSize="small"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                    />{" "}
+                    <LinkedInIcon
+                      fontSize="small"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                    />
+                    <MailOutlineIcon
+                      fontSize="small"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                    />
+                    <FacebookRoundedIcon
+                      fontSize="small"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                    />
+                  </span>
                 </div>
               </div>
             ))}

@@ -2,7 +2,6 @@
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
-import Vendor from "../pages/Vendor";
 import Rider from "../pages/Rider";
 import Marketplace from "../pages/Marketplace";
 import News from "../pages/News";
@@ -39,7 +38,7 @@ const routes = [
   {
     path: "/news",
     element: <RouteWrapper component={News} hero='/icons/news.svg' />,
-  },
+  }, 
   {
     path: "/marketplace",
     element: <Marketplace />,

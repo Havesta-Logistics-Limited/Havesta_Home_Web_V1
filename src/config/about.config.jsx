@@ -1,10 +1,9 @@
 import worldIcon from "../assets/animations/worldwide.gif";
 import deliveryIcon from "../assets/animations/delivery-scooter.gif";
 import badgeIcon from "../assets/animations/badge.gif";
-import twitter from "../assets/icons/twitter.png"
-import linkedin from "../assets/icons/linkedin.png"
-import tiktok from "../assets/icons/tiktok.png"
-import chat from "../assets/icons/chat.png"
+
+
+
 import discussion from '../assets/animations/discussion.gif'
 
 export const aboutItems = [
@@ -125,56 +124,56 @@ export const aboutTeam = [
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717958001/Group_2_nezxyi.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717958000/Group_4_bgdik6.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957999/Group_5_oiteh8.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957997/Group_9_1_qse6oe.png",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957995/Group_6_rbce5o.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957999/Group_10_1_tvsqdf.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717958002/Group_1_whyaeq.png",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   
   
