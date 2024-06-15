@@ -1,4 +1,4 @@
-import About from "../pages/About/About";
+
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
@@ -8,6 +8,8 @@ import Marketplace from "../pages/Marketplace";
 import News from "../pages/News";
 import RouteWrapper from "../components/RouteWrapper";
 import Partner from "../pages/Partner";
+import About from "../pages/About/About";
+
 
 const routes = [
   {

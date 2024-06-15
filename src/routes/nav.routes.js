@@ -15,11 +15,6 @@ const navRoutes = [
     path: "/news",
     hero:'/icons/news.svg'
   },
-
-  {
-    name: "News",
-    path: "/news",
-  },
   {
     name: "Contact",
     path: "/contact",

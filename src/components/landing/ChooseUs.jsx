@@ -1,40 +1,4 @@
-// import React from 'react'
 
-// const ChooseUs = () => {
-//   return (
-//     <div className='bg-harvestaYellow items-center'>
-//         <h1>Why Choose Us</h1>
-//         <div className='flex flex-row justify-between'>
-//       <div>
-//             <img src="/icons/fruit.svg" alt="harvesta" />
-//             <h2>Top Rated Vendors Around You</h2>
-//             <div>
-//                 <p>You have access to a diverse selection of grocery sellers,
-//                     enabling you to either purchase your preferred Fresh Farm Produce.</p>
-//             </div>
-//       </div>
-//       <div>
-//             <img src="/icons/fruit.svg" alt="harvesta" />
-//             <h2>Top Rated Vendors Around You</h2>
-//             <div>
-//                 <p>You have access to a diverse selection of grocery sellers,
-//                     enabling you to either purchase your preferred Fresh Farm Produce.</p>
-//             </div>
-//       </div>
-//       <div>
-//             <img src="/icons/fruit.svg" alt="harvesta" />
-//             <h2>Top Rated Vendors Around You</h2>
-//             <div>
-//                 <p>You have access to a diverse selection of grocery sellers,
-//                     enabling you to either purchase your preferred Fresh Farm Produce.</p>
-//             </div>
-//       </div>
-//     </div>
-//     </div>
-//   )
-// }
-
-// export default ChooseUs
 import React from 'react';
 
 const ChooseUs = () => {
