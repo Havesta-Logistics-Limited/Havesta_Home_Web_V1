@@ -185,19 +185,19 @@ const About = ({ hero }) => {
                   <span className="flex space-x-2  cursor-pointer text-white">
                     <XIcon
                       fontSize="small"
-                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary"
                     />{" "}
                     <LinkedInIcon
                       fontSize="small"
-                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen  hover:border-primary hover:bg-primary"
                     />
                     <MailOutlineIcon
                       fontSize="small"
-                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen  hover:border-primary hover:bg-primary"
                     />
                     <FacebookRoundedIcon
                       fontSize="small"
-                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen"
+                      className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen  hover:border-primary hover:bg-primary"
                     />
                   </span>
                 </div>
