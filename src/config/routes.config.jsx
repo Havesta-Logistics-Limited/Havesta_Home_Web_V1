@@ -1,4 +1,4 @@
-import About from "../pages/About";
+import About from "../pages/About/About";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
