@@ -104,6 +104,19 @@ export const coreValues = [
     title: "Convenience",
     paragraph: "We understand the demands of a busy lifestyle. Our service is designed to provide a hassle-free experience, allowing you to order fresh farm produce with just a few clicks and have it delivered right to your home, saving you time and effort.",
   },
+  {
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303255/Rectangle_610_23_o945uk.png",
+    title: "Convenience",
+    paragraph: "We understand the demands of a busy lifestyle. Our service is designed to provide a hassle-free experience, allowing you to order fresh farm produce with just a few clicks and have it delivered right to your home, saving you time and effort.",
+  },
+  {
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303221/Rectangle_610_22_ezulvg.png",
+    title: "Convenience",
+    paragraph: "We understand the demands of a busy lifestyle. Our service is designed to provide a hassle-free experience, allowing you to order fresh farm produce with just a few clicks and have it delivered right to your home, saving you time and effort.",
+  },
+ 
+  
+  
 ];
 
 export const aboutTeam = [
