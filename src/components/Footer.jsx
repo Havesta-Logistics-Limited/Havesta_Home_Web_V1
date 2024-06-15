@@ -85,17 +85,17 @@ const Footer = () => {
             fontSize="large"
           />
         </span>
-        <div className="flex space-x-8 my-6 mx-auto h-7">
-          <span className="w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+        <div className="flex space-x-8 my-10  h-7">
+          <span className="w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
           <img src={facebookPng} alt ='facebook-icon' className='text-white'/>
           </span>
-          <span className=" w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all object-contain">
-          <img src={twitterPng} alt ='twitter-icon' className=' bg-white '/>
+          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all bg-white">
+          <img src={twitterPng} alt ='twitter-icon'/>
           </span>
-          <span className=" w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
             <img src={linkedinPng} alt="linkedin-icon" />
           </span>
-          <span className=" w-5 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
             <img src={gmailPng} alt="gmail-icon" />
           </span>
         </div>
