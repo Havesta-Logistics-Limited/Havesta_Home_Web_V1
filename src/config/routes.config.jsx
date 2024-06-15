@@ -6,35 +6,37 @@ import Vendor from "../pages/Vendor";
 import Rider from "../pages/Rider";
 import Marketplace from "../pages/Marketplace";
 import News from "../pages/News";
+import RouteWrapper from "../components/RouteWrapper";
+import Partner from "../pages/Partner";
 
 const routes = [
   {
     path: "/home",
-    element: <Home />,
+    element: <RouteWrapper component={Home} hero='/icons/homeHero.png' />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: <RouteWrapper component={About} hero='/icons/about.png' />,
   },
   {
     path: "/contact",
-    element: <Contact />,
+    element: <RouteWrapper component={Contact} hero='/icons/contact.png' />,
   },
   {
     index: true,
-    element: <Home />,
+    element: <RouteWrapper component={Home} hero='/icons/homeHero.png' />,
   },
   {
     path: "/vendor",
-    element: <Vendor />,
+    element: <RouteWrapper component={Partner} hero='/icons/vendorHero.png' />,
   },
   {
-    path: "/rider",
-    element: <Rider />,
+    path: "/riders",
+    element: <RouteWrapper component={Rider} hero='/icons/rider.svg'/>,
   },
   {
     path: "/news",
-    element: <News />,
+    element: <RouteWrapper component={News} hero='/icons/news.svg' />,
   },
   {
     path: "/marketplace",
@@ -47,3 +49,4 @@ const routes = [
 ];
 
 export default routes;
+

@@ -1,7 +1,8 @@
 
-const Contact = () => {
+const Contact = ({hero}) => {
   return (
     <div>
+      <img src={hero} alt=""/>
       Contact
     </div>
   )

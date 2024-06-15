@@ -6,9 +6,10 @@ import ChooseUs from "../components/landing/ChooseUs";
 import Explore from "../components/landing/Explore";
 import Hero from "../components/landing/Hero";
 
-const Home = () => {
+const Home = ( {hero} ) => {
   return (
     <div>
+      <img src={hero} alt="harvesta" className="w-full"/>
       <Hero />
       <div className="mt-10">
       <Category />

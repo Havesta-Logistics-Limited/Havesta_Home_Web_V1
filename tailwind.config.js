@@ -6,8 +6,8 @@ export default {
       colors: {
         primary: "#005231",
         harvestaYellow: "#FFC141",
-        harvestaLightGreen: "#01BE72",
-        harvestaDarkGreen: "#00150D",
+        harvestaLightGreen: "#AEFFDF",
+        harvestaDarkGreen: "#005231",
       },
       boxShadow: {
         "3xl": "2px 3px 18px 8px rgba(0,0,0,0.65)",
