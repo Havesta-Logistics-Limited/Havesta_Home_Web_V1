@@ -5,6 +5,7 @@ import {
   Typography,
   Container,
   Avatar,
+  Button,
 } from "@mui/material";
 import { IoIosArrowForward } from "react-icons/io";
 import Heading from "./Heading";
@@ -64,7 +65,7 @@ const Latest = () => {
             direction={["column", "row"]}
             padding={1}
             marginBottom={"2rem"}
-            border={`1px solid ${colors.primary}`}
+            border={`5px solid ${colors.primary}`}
             borderRadius={"25px"}
           >
             <Box
@@ -93,7 +94,7 @@ const Latest = () => {
                 <Typography fontSize={"0.8rem"} mb={2}>
                   {" "}
                   Lorem Ipsum is not simply random text. It has roots in a piece
-                  of classica.
+                  of classica classica.
                 </Typography>
                 <Stack
                   direction="row"
@@ -103,14 +104,17 @@ const Latest = () => {
                   <Box>
                     <Typography fontSize="0.8rem">26 December,2067</Typography>
                   </Box>
-                  <Avatar
+                  <Button
+                    variant="contained"
                     sx={{
-                      background: `${colors.harvestaYellow}`,
-                      display: ["none", "flex"],
+                      backgroundColor: colors.harvestaLightGreen,
+                      "&:hover": {
+                        backgroundColor: colors.harvestaLightGreen,
+                      },
                     }}
                   >
-                    <IoIosArrowForward color={colors.primary} />
-                  </Avatar>
+                    Read more
+                  </Button>
                 </Stack>
               </StyledTextBox>
             </Box>
