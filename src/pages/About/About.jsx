@@ -8,7 +8,7 @@ import {
 } from "../../config/about.config";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import image1 from "../../assets/images/CEO-pic.p
+import image1 from "../../assets/images/CEO-pic.png
           </div>
 
           <div className="text-left">
