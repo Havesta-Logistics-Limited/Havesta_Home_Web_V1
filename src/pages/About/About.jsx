@@ -9,7 +9,6 @@ import {
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import image1 from "../../assets/images/CEO-pic.png";
-import Hero from "../../components/landing/Hero";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import "swiper/css/effect-cards";
@@ -18,7 +17,7 @@ import "swiper/css";
 const About = () => {
   return (
     <>
-      <Hero />
+    
       <section className="p-8 lg:p-28">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">
