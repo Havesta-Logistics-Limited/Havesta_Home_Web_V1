@@ -94,7 +94,7 @@ const Latest = () => {
                 <Typography fontSize={"0.8rem"} mb={2}>
                   {" "}
                   Lorem Ipsum is not simply random text. It has roots in a piece
-                  of classica.
+                  of classica classica.
                 </Typography>
                 <Stack
                   direction="row"
