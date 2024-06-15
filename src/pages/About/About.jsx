@@ -9,7 +9,7 @@ import {
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import image1 from "../../assets/images/CEO-pic.png"
-          </div>
+          
 
           <div className="text-left">
             {aboutItems.map((items, index) => (
