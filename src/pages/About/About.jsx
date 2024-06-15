@@ -40,7 +40,7 @@ import image1 from "../../assets/images/CEO-pic.png"
               </p>
             </div>
           </div>
-        </div>
+        
 
         <div className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2">
           {aboutStats.map((item, index) => {
