@@ -1,7 +1,9 @@
 
-const Rider = () => {
+const Rider = ({hero}) => {
   return (
-    <div>Rider</div>
+    <div>
+      <img src={hero} alt="" />
+      Rider</div>
   )
 }
 

@@ -8,45 +8,7 @@ import {
 } from "../../config/about.config";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-import image1 from "../../assets/images/CEO-pic.png";
-import Hero from "../../components/landing/Hero";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
-import "swiper/css/effect-cards";
-
-import "swiper/css";
-
-const About = () => {
-  return (
-    <>
-      <Hero />
-      <section className="p-8 lg:p-28">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="p-4 flex flex-col items-center text-center">
-            <img src={image1} alt="ceo-image" className="w-full lg:w-2/3" />
-            <p className="pt-2 font-bold font-primary">Noel Amobeda</p>
-            <p className="text-xs text-primary font-bold tracking-wide">
-              CEO / Founder at Harvesta
-            </p>
-            <div className="w-full mt-12 lg:w-2/3">
-              <h5 className="p-4 font-bold text-lg uppercase border-l-4 border-harvestaLightGreen text-left">
-                Why choose Harvesta?
-              </h5>
-              <ul className="pl-8 text-left">
-                {aboutListItems.map((item, index) => (
-                  <li
-                    key={index}
-                    className="p-2 font-primary flex items-start md:leading-relaxed"
-                  >
-                    <ChevronRightIcon color="success" />
-                    <div className="ml-2">
-                      <span className="font-bold mr-2">{item.title}:</span>
-                      <span>{item.content}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
+import image1 from "../../assets/images/CEO-pic.p
           </div>
 
           <div className="text-left">
