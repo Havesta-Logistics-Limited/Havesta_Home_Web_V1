@@ -13,5 +13,4 @@ const News = ({hero}) => {
     </>
   );
 };
-
 export default News;

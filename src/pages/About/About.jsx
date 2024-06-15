@@ -14,10 +14,10 @@ import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import "swiper/css/effect-cards";
 import "swiper/css";
 
-const About = () => {
+const About = ({hero}) => {
   return (
     <>
-    
+    <img src={hero} alt="harvesta" />
       <section className="p-8 lg:p-28">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">
