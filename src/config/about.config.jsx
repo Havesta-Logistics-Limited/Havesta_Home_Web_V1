@@ -1,11 +1,11 @@
 import worldIcon from "../assets/animations/worldwide.gif";
 import deliveryIcon from "../assets/animations/delivery-scooter.gif";
 import badgeIcon from "../assets/animations/badge.gif";
-import vanIcon from "../assets/animations/van.gif";
 import twitter from "../assets/icons/twitter.png"
 import linkedin from "../assets/icons/linkedin.png"
 import tiktok from "../assets/icons/tiktok.png"
 import chat from "../assets/icons/chat.png"
+import discussion from '../assets/animations/discussion.gif'
 
 export const aboutItems = [
   {
@@ -83,7 +83,7 @@ export const aboutStats = [
   {
     amount: "200+",
     content: "Employees",
-    icon: <img src={vanIcon} alt="van" className="w-12 h-12" />,
+    icon: <img src={discussion} alt="van" className="w-12 h-12" />,
   },
 ];
 

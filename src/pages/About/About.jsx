@@ -106,25 +106,22 @@ const About = () => {
       </h3>
       <Swiper
         grabCursor={true}
-        effect={'coverflow'}
+        effect={'slide'}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
           disableOnInteraction: false,
+          delay: 0
         }}
+        speed={5000}
+        spaceBetween={50}
         pagination={{ clickable: true }}
+        loop={true}
         modules={[EffectCoverflow, Pagination, Autoplay]}
         breakpoints={{
           // Large screens
           1024: {
             slidesPerView: 3,
-            effect: 'coverflow',
-            coverflowEffect: {
-              rotate: 50,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-            },
+            effect: 'slide',
           },
           // Smaller screens
           0: {
