@@ -17,6 +17,9 @@ export default {
           "url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957971/Greencloud_bbihtg.png')",
         "footer-texture": "url('/img/footer-texture.png')",
       },
+      fontFamily: {
+        primary: ["Plus Jakarta Sans"],
+      },
     },
   },
 
