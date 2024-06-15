@@ -36,7 +36,7 @@ const ArticlesGallery = ({ data }) => {
           <StyledGridElements key={index}>
             <Card
               sx={{
-                backgroundColor: "white",
+                backgroundColor: `${colors.harvestaDarkGreen}`,
                 p: 1,
                 borderRadius: "25px",
                 border: "1px solid rgba(0, 0, 0, 0.1)",
@@ -62,7 +62,7 @@ const ArticlesGallery = ({ data }) => {
                       fontWeight="500"
                       paddingRight={[1, 5]}
                       mb
-                      color={colors.primary}
+                      color={colors.WHITE}
                       textTransform={"capitalize"}
                     >
                       {ele.des}
@@ -75,9 +75,9 @@ const ArticlesGallery = ({ data }) => {
                       <Typography fontSize="0.8rem">
                         26 february,3011
                       </Typography>
-                      <Avatar sx={{ background: `${colors.harvestaYellow}` }}>
+                      {/* <Avatar sx={{ background: `${colors.harvestaYellow}` }}>
                         <IoIosArrowForward color={colors.primary} />
-                      </Avatar>
+                      </Avatar> */}
                     </Stack>
                   </Stack>
                 )}

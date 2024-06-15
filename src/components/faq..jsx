@@ -43,7 +43,7 @@ const Faqs = [
 const FAQ = () => {
   return (
     <div className="full mt-20">
-      <div className="full bg-harvestaLightGreen flex flex-col items-center justify-center py-10 mt-7">
+      <div className="full bg-faq-pattern bg-center bg-cover flex flex-col items-center justify-center py-10 mt-7">
         <div className="bg-white md:w-1/2 w-[98%] mt-[-150px] shadow-3xl">
           <h1 className="uppercase text-center text-4xl font-black mt-10">
             FAQs
@@ -93,8 +93,8 @@ const FAQ = () => {
           </div>
           <div className="flex">
             <img
-              src="https://images.pexels.com/photos/25811110/pexels-photo-25811110/free-photo-of-pato.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              className="w-full h-auto object-cover rounded-lg shadow-md"
+              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957974/Group_1000001777_vroxqi.svg"
+              className="w-full h-auto object-cover rounded-lg "
             />
           </div>
         </div>
