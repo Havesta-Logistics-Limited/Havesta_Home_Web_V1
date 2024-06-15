@@ -1,7 +1,7 @@
-const Partner = () => {
+const Partner = ({hero}) => {
   return (
     <div>
-      
+      <img src={hero} alt="" />
     </div>
   )
 }
