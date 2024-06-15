@@ -1,11 +1,11 @@
 import worldIcon from "../assets/animations/worldwide.gif";
 import deliveryIcon from "../assets/animations/delivery-scooter.gif";
 import badgeIcon from "../assets/animations/badge.gif";
-import vanIcon from "../assets/animations/van.gif";
 import twitter from "../assets/icons/twitter.png"
 import linkedin from "../assets/icons/linkedin.png"
 import tiktok from "../assets/icons/tiktok.png"
 import chat from "../assets/icons/chat.png"
+import discussion from '../assets/animations/discussion.gif'
 
 export const aboutItems = [
   {
@@ -83,7 +83,7 @@ export const aboutStats = [
   {
     amount: "200+",
     content: "Employees",
-    icon: <img src={vanIcon} alt="van" className="w-12 h-12" />,
+    icon: <img src={discussion} alt="van" className="w-12 h-12" />,
   },
 ];
 
@@ -104,6 +104,19 @@ export const coreValues = [
     title: "Convenience",
     paragraph: "We understand the demands of a busy lifestyle. Our service is designed to provide a hassle-free experience, allowing you to order fresh farm produce with just a few clicks and have it delivered right to your home, saving you time and effort.",
   },
+  {
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303255/Rectangle_610_23_o945uk.png",
+    title: "Sustainability",
+    paragraph: "We are committed to promoting sustainable practices in our operations. From sourcing local produce to minimizing waste and reducing our carbon footprint, Harvesta strives to protect the environment and foster a healthier planet for future generations.",
+  },
+  {
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1718303221/Rectangle_610_22_ezulvg.png",
+    title: "Community Support",
+    paragraph: "Harvesta is dedicated to supporting local farmers by providing them with a reliable platform to sell their produce. By connecting farmers directly with consumers, we contribute to the growth and sustainability of our local agricultural community.",
+  },
+ 
+  
+  
 ];
 
 export const aboutTeam = [
