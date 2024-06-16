@@ -1,11 +1,11 @@
 import worldIcon from "../assets/animations/worldwide.gif";
 import deliveryIcon from "../assets/animations/delivery-scooter.gif";
 import badgeIcon from "../assets/animations/badge.gif";
-import twitter from "../assets/icons/twitter.png"
-import linkedin from "../assets/icons/linkedin.png"
-import tiktok from "../assets/icons/tiktok.png"
-import chat from "../assets/icons/chat.png"
+
+
+
 import discussion from '../assets/animations/discussion.gif'
+import { duration } from "@mui/material";
 
 export const aboutItems = [
   {
@@ -51,7 +51,7 @@ export const aboutListItems = [
   },
 
   {
-    title: "Support local",
+    title: "Community Support",
     content:
       "By choosing Harvesta, you are supporting local farmers and contributing to the sustainability of your community.",
   },
@@ -68,22 +68,26 @@ export const aboutStats = [
     amount: 1,
     content: "Country",
     icon: <img src={worldIcon} alt="" className="w-12 h-12" />,
+    duration: 1
   },
 
   {
-    amount: "20k",
+    amount: "21445",
     content: "Monthly Deliveries",
     icon: <img src={deliveryIcon} alt="delivery" className="w-12 h-12" />,
+    duration: 5
   },
   {
-    amount: "2k",
+    amount: "2335",
     content: "Delivery Maestros",
     icon: <img src={badgeIcon} alt="badge" className="w-12 h-12" />,
+    duration: 3
   },
   {
-    amount: "200+",
+    amount: "241",
     content: "Employees",
     icon: <img src={discussion} alt="van" className="w-12 h-12" />,
+    duration: 2
   },
 ];
 
@@ -125,56 +129,56 @@ export const aboutTeam = [
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717958001/Group_2_nezxyi.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717958000/Group_4_bgdik6.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957999/Group_5_oiteh8.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957997/Group_9_1_qse6oe.png",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957995/Group_6_rbce5o.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957999/Group_10_1_tvsqdf.svg",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   {
     img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717958002/Group_1_whyaeq.png",
     name: "Noel Amobeda",
     role: "CEO / Founder",
     content: "There are many variations of passages of Lorem Ipsum available",
-    socials: [twitter, linkedin, chat, tiktok]
+   
   },
   
   

@@ -6,19 +6,35 @@ import {
   aboutTeam,
   aboutMainImage,
 } from "../../config/about.config";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import XIcon from "@mui/icons-material/X";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import image1 from "../../assets/images/CEO-pic.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import {
+  EffectCoverflow,
+  Pagination,
+  Autoplay,
+  Navigation,
+} from "swiper/modules";
+import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRounded";
+import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import "swiper/css/effect-cards";
 import "swiper/css";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
-const About = ({hero}) => {
+const About = ({ hero }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger the animation only once
+    threshold: 0.5, // Trigger when 50% of the element is visible
+  });
   return (
     <>
-    <img src={hero} alt="harvesta" />
-      <section className="p-8 lg:p-28">
+      <img src={hero} alt="harvesta" />
+      <section className="p-4 lg:p-24">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">
             <img src={image1} alt="ceo-image" className="w-full lg:w-2/3" />
@@ -67,18 +83,20 @@ const About = ({hero}) => {
               </div>
             ))}
             <div className="font-bold font-primary mt-4 px-4">
-              <p className="ml-[-4px] italic">
-                <FormatQuoteIcon /> Thank you for choosing Harvesta. Together,
-                we can make fresh, local produce a part of everyone’s daily
-                life. Join us in our mission to create healthier, happier
-                communities, one delivery at a time
-                <FormatQuoteIcon />
+              <p className="ml-[-4px]">
+                Thank you for choosing Harvesta. Together, we can make fresh,
+                local produce a part of everyone’s daily life. Join us in our
+                mission to create healthier, happier communities, one delivery
+                at a time
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2">
+        <div
+          className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2"
+          ref={ref}
+        >
           {aboutStats.map((item, index) => {
             return (
               <div
@@ -88,7 +106,7 @@ const About = ({hero}) => {
                 <span className="grid justify-items-center">{item.icon}</span>{" "}
                 {/* REFACTOR THIS SECTION */}
                 <p className="text-lg font-bold  text-harvestaLightGreen font-primary lg:text-4xl my-2 ">
-                  {item.amount}
+                  {inView && <CountUp end={item.amount} duration={item.duration} />}
                 </p>
                 <p className="font-primary text-lg font-lighter mt-[-8px]">
                   {item.content}
@@ -99,62 +117,62 @@ const About = ({hero}) => {
         </div>
 
         <div className="my-20">
-      <h3 className="flex justify-center font-bold text-4xl mb-14">
-        Our Core Values
-      </h3>
-      <Swiper
-        grabCursor={true}
-        effect={'slide'}
-        centeredSlides={true}
-        autoplay={{
-          disableOnInteraction: false,
-          delay: 0
-        }}
-        speed={5000}
-        spaceBetween={50}
-        pagination={{ clickable: true }}
-        loop={true}
-        modules={[EffectCoverflow, Pagination, Autoplay]}
-        breakpoints={{
-          // Large screens
-          1024: {
-            slidesPerView: 3,
-            effect: 'slide',
-          },
-          // Smaller screens
-          0: {
-            slidesPerView: 1,
-            effect: 'slide',
-          },
-        }}
-      >
-        {coreValues.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="bg-harvestaLightGreen rounded-xl
+          <h3 className="flex justify-center font-bold text-4xl mb-14">
+            Our Core Values
+          </h3>
+          <Swiper
+            grabCursor={true}
+            effect={"slide"}
+            centeredSlides={true}
+            autoplay={{
+              disableOnInteraction: false,
+              delay: 0,
+            }}
+            speed={5000}
+            spaceBetween={50}
+            pagination={{ clickable: true }}
+            loop={true}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+            breakpoints={{
+              // Large screens
+              1024: {
+                slidesPerView: 3,
+                effect: "slide",
+              },
+              // Smaller screens
+              0: {
+                slidesPerView: 1,
+                effect: "slide",
+              },
+            }}
+          >
+            {coreValues.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="bg-harvestaLightGreen rounded-xl
               border-primary overflow-hidden hover:bg-primary hover:border-primary text-white my-10 h-[480px]
               transition-all hover:shadow-lg"
-            >
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-40 sm:h-48 object-cover"
-              />
-              <div className="m-10">
-                <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
-                  {item.title}
-                </span>
-                <span className="block text-md font-primary">
-                  {item.paragraph}
-                </span>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+                >
+                  <img
+                    src={item.img}
+                    alt=""
+                    className="w-full h-40 sm:h-48 object-cover"
+                  />
+                  <div className="m-10">
+                    <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
+                      {item.title}
+                    </span>
+                    <span className="block text-md font-primary">
+                      {item.paragraph}
+                    </span>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-        <div className="p-4 font-primary">
+        <div className="p-8 font-primary">
           <div className="grid grid-cols-1 justify-items-center">
             <h3 className=" uppercase text-black font-bold text-xs">
               Who are we?
@@ -165,27 +183,69 @@ const About = ({hero}) => {
               gesture <br /> and will hear your every whisper.
             </p>
           </div>
-          <div className="lg:grid grid-cols-4 mt-10">
-            {aboutTeam.map((item, index) => (
-              <div
-                key={index}
-                className="p-2 grid grid-cols-1 justify-items-center border-2 rounded-lg m-4 border-primary hover:shadow-lg"
-              >
-                <img src={item.img} alt="" className="w-40 h-40" />
-                <h4 className="text-sm mt-4 font-semibold">{item.name}</h4>
-                <h6 className="text-xs text-gray-500 uppercase my-2">
-                  {item.role}
-                </h6>
-                <p className="text-xs w-[220px] text-center text-gray-500 mb-1">
-                  {item.content}
-                </p>
-                <div className="flex justify-evenly gap-3 p-2">
-                  {item.socials.map((social) => (
-                    <img src={social} alt="" key={index} />
+
+          <div className="my-20 w-full relative">
+            <Swiper
+              grabCursor={true}
+              centeredSlides={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              navigation
+              pagination={{ clickable: true }}
+              modules={[Pagination, Autoplay, Navigation]}
+            >
+              <SwiperSlide>
+                <div className="lg:grid grid-cols-4 mt-10 w-full  ">
+                  {aboutTeam.map((item, index) => (
+                    <div
+                      key={index}
+                      className="grid grid-cols-1 justify-items-center border-2 rounded-lg m-4 border-primary hover:shadow-lg"
+                    >
+                      <img src={item.img} alt="" className="w-40 h-40" />
+                      <h4 className="text-sm mt-4 font-semibold">
+                        {item.name}
+                      </h4>
+                      <h6 className="text-xs text-gray-500 uppercase my-2">
+                        {item.role}
+                      </h6>
+                      <p className="text-xs w-[220px] text-center text-gray-500 mb-1">
+                        {item.content}
+                      </p>
+                      <div className="flex justify-evenly gap-3 p-2">
+                        <span className="flex space-x-2 cursor-pointer text-white">
+                          <FacebookRoundedIcon
+                            fontSize="small"
+                            className="border-2  border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
+                          />
+                          <InstagramIcon
+                            fontSize="small"
+                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
+                          />
+                          <LinkedInIcon
+                            fontSize="small"
+                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
+                          />
+                          <XIcon
+                            fontSize="small"
+                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
+                          />
+                        </span>
+                      </div>
+                    </div>
                   ))}
                 </div>
-              </div>
-            ))}
+              </SwiperSlide>
+            </Swiper>
+            <div className=" hidden lg:flex my-4 ">
+              <button className="swiper-button-prev text-primary hover:text-primary-dark absolute left-[-30px] top-[50%] ">
+                <ArrowCircleLeftRoundedIcon fontSize="large" />
+              </button>
+              <button className="swiper-button-next text-primary hover:text-primary-dark absolute top-[50%] right-[-30px]">
+                <ArrowCircleRightRoundedIcon fontSize="large" />
+              </button>
+            </div>
           </div>
         </div>
 
