@@ -23,11 +23,9 @@ import ArrowCircleLeftRoundedIcon from "@mui/icons-material/ArrowCircleLeftRound
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 import "swiper/css/effect-cards";
 import "swiper/css";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import CountUp from 'react-countup';
-import { useInView } from 'react-intersection-observer';
-
-
+import InstagramIcon from "@mui/icons-material/Instagram";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 const About = ({ hero }) => {
   const { ref, inView } = useInView({
@@ -96,7 +94,10 @@ const About = ({ hero }) => {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2" ref={ref}>
+        <div
+          className="mt-16 grid grid-cols-1 justify-items-center md:grid-cols-4 border-t-2"
+          ref={ref}
+        >
           {aboutStats.map((item, index) => {
             return (
               <div
@@ -106,8 +107,7 @@ const About = ({ hero }) => {
                 <span className="grid justify-items-center">{item.icon}</span>{" "}
                 {/* REFACTOR THIS SECTION */}
                 <p className="text-lg font-bold  text-harvestaLightGreen font-primary lg:text-4xl my-2 ">
-                  {inView &&  <CountUp end={item.amount} duration={5} />}
-                 
+                  {inView && <CountUp end={item.amount} duration={5} />}
                 </p>
                 <p className="font-primary text-lg font-lighter mt-[-8px]">
                   {item.content}
@@ -216,25 +216,22 @@ const About = ({ hero }) => {
                       </p>
                       <div className="flex justify-evenly gap-3 p-2">
                         <span className="flex space-x-2 cursor-pointer text-white">
-                        <FacebookRoundedIcon
+                          <FacebookRoundedIcon
                             fontSize="small"
-                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary"
+                            className="border-2  border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
                           />
-                           <InstagramIcon
+                          <InstagramIcon
                             fontSize="small"
-                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary"
+                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
                           />
-                           <LinkedInIcon
+                          <LinkedInIcon
                             fontSize="small"
-                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary"
+                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
                           />
                           <XIcon
                             fontSize="small"
-                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary"
+                            className="border-2 border-harvestaLightGreen rounded-full bg-harvestaLightGreen hover:border-primary hover:bg-primary p-[2px]"
                           />
-                         
-                         
-                         
                         </span>
                       </div>
                     </div>
