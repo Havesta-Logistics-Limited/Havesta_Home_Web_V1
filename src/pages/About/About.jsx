@@ -7,7 +7,6 @@ import {
   aboutMainImage,
 } from "../../config/about.config";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import XIcon from "@mui/icons-material/X";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -107,7 +106,7 @@ const About = ({ hero }) => {
                 <span className="grid justify-items-center">{item.icon}</span>{" "}
                 {/* REFACTOR THIS SECTION */}
                 <p className="text-lg font-bold  text-harvestaLightGreen font-primary lg:text-4xl my-2 ">
-                  {inView && <CountUp end={item.amount} duration={5} />}
+                  {inView && <CountUp end={item.amount} duration={item.duration} />}
                 </p>
                 <p className="font-primary text-lg font-lighter mt-[-8px]">
                   {item.content}
