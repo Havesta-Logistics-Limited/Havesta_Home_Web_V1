@@ -50,7 +50,7 @@ export const aboutListItems = [
   },
 
   {
-    title: "Support local",
+    title: "Community Support",
     content:
       "By choosing Harvesta, you are supporting local farmers and contributing to the sustainability of your community.",
   },
@@ -70,17 +70,17 @@ export const aboutStats = [
   },
 
   {
-    amount: "20k",
+    amount: "21445",
     content: "Monthly Deliveries",
     icon: <img src={deliveryIcon} alt="delivery" className="w-12 h-12" />,
   },
   {
-    amount: "2k",
+    amount: "2335",
     content: "Delivery Maestros",
     icon: <img src={badgeIcon} alt="badge" className="w-12 h-12" />,
   },
   {
-    amount: "200+",
+    amount: "241",
     content: "Employees",
     icon: <img src={discussion} alt="van" className="w-12 h-12" />,
   },

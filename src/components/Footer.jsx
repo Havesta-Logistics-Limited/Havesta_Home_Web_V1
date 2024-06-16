@@ -4,9 +4,9 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import twitterPng from '../assets/icons/twitter (2).png';
-import gmailPng from '../assets/icons/gmail.png';
 import linkedinPng from '../assets/icons/linkedin (1).png';
 import facebookPng from '../assets/icons/facebook.png'
+import instagramPng from '../assets/icons/instagram.png'
 const Footer = () => {
   return (
     <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
@@ -63,11 +63,11 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <LocalPhoneIcon fontSize="small" color="success" />
-            <span>07011096453</span>
+            <span>080HARVESTA</span>
           </div>
           <div className="flex items-center gap-2">
             <MailOutlineIcon fontSize="small" color="success" />
-            <span>harvestahq.com</span>
+            <span>hello@harvesta.com</span>
           </div>
         </div>
       </div>
@@ -85,23 +85,25 @@ const Footer = () => {
             fontSize="large"
           />
         </span>
-        <div className="flex space-x-8 my-10  h-7">
-          <span className="w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+        <div className="flex space-x-4 my-10  h-7">
+          <span className="w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
           <img src={facebookPng} alt ='facebook-icon' className='text-white'/>
           </span>
-          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all bg-white">
-          <img src={twitterPng} alt ='twitter-icon'/>
+          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
+            <img src={instagramPng} alt="gmail-icon" />
           </span>
-          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
+          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
             <img src={linkedinPng} alt="linkedin-icon" />
           </span>
-          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-2 transition-all">
-            <img src={gmailPng} alt="gmail-icon" />
+          <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all bg-white">
+          <img src={twitterPng} alt ='twitter-icon'/>
           </span>
+         
+          
         </div>
       </div>
       <div className="w-full h-auto bg-harvestaDarkGreen absolute bottom-0 left-0 text-xs text-center align-middle p-2">
-        © Copyright 2024 Designed By Noel Amobeda
+        © Copyright 2024 Dregon J&Z Techbase Limited
       </div>
     </footer>
   );
