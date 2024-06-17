@@ -24,7 +24,11 @@ const navRoutes = [
   {
     name: "Partner",
     path: "/vendor",
-    hero:'/icons/vendorHero.png'
+    hero:'/icons/vendorHero.png',
+    submenu: [
+      { name: 'Vendor', path: '/partner/vendors' },
+      { name: 'Rider', path: '/partner/riders' }
+    ] 
   },
 ];
 

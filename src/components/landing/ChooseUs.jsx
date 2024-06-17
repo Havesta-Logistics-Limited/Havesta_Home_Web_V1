@@ -3,7 +3,7 @@ import React from 'react';
 
 const ChooseUs = () => {
   return (
-    <div className='bg-harvestaYellow flex flex-col items-center py-8'>
+    <div className='bg-harvestaYellow flex flex-col items-center py-8 font-primary'>
       <h1 className='text-3xl font-bold mb-8'>Why Choose Us</h1>
       <div className='flex flex-row justify-center gap-8'>
         <div className='flex flex-col items-center max-w-xs text-center'>

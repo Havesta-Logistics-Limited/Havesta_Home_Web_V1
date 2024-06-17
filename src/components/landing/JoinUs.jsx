@@ -2,7 +2,7 @@ import React from 'react'
 
 const JoinUs = () => {
   return (
-    <div className="mt-12 bg-[url('/icons/design.svg')] bg-cover bg-center h-screen w-full flex items-center justify-center">
+    <div className="mt-12 bg-[url('/icons/design.svg')] bg-cover bg-center h-screen w-full flex items-center justify-center font-primary">
       <div className='flex flex-row gap-4 items-center'>
          <div className='flex flex-col items-center'>
             <img src="/icons/getapp.svg" alt="harvesta" className='relative z-10' width={'328px'} />

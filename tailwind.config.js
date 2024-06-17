@@ -7,7 +7,7 @@ export default {
         primary: "#005231",
         harvestaYellow: "#FFC141",
         harvestaLightGreen: "#01BE72",
-        harvestaDarkGreen: "#00150D",
+        harvestaDarkGreen: "#005231",
         primaryHover: "#004827",
       },
       boxShadow: {

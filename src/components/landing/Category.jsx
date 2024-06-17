@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 
 const Category = () => {
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen'>
-      <div className='bg-harvestaLightGreen w-66   mb-6 rounded-full'>
+    <div className='flex flex-col items-center justify-center min-h-screen font-primary'>
+      <div className='bg-harvestaLightGreen w-66   mb-6  rounded-bl-full rounded-tr-full'>
         <div className='flex flex-row gap-1 justify-center text-black'>
           {categorys.map((list, index) => (
           <Link to={list.path}
-          className='hover:bg-harvestaDarkGreen active:bg-harvestaDarkGreen text-white px-4 p-3 w-40 text-center rounded-full'>{list.name}
+          className='hover:bg-harvestaDarkGreen active:bg-harvestaDarkGreen text-white px-4 p-3 w-40 text-center rounded-tr-full rounded-bl-full'>{list.name}
         </Link>
           ))}
         </div>
