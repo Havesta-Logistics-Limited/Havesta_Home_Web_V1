@@ -7,9 +7,7 @@ import {
   Stack,
   styled,
   Typography,
-  Avatar,
 } from "@mui/material";
-import { IoIosArrowForward } from "react-icons/io";
 import { colors } from "../../utils/globals";
 
 const GridContainer = styled(Box)({
@@ -36,14 +34,14 @@ const ArticlesGallery = ({ data }) => {
           <StyledGridElements key={index}>
             <Card
               sx={{
-                backgroundColor: `${colors.harvestaDarkGreen}`,
+                backgroundColor: `${colors.harvestaLightGreen}`,
                 p: 1,
                 borderRadius: "25px",
                 border: "1px solid rgba(0, 0, 0, 0.1)",
                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
                 borderColor: `grey`,
                 ":hover": {
-                  backgroundColor: `${colors.harvestaLightGreen}`,
+                  backgroundColor: `${colors.primary}`,
                 },
               }}
               elevation={0}
@@ -64,6 +62,7 @@ const ArticlesGallery = ({ data }) => {
                       mb
                       color={colors.WHITE}
                       textTransform={"capitalize"}
+                      fontFamily={"Plus Jakarta Sans"}
                     >
                       {ele.des}
                     </Typography>
@@ -72,8 +71,16 @@ const ArticlesGallery = ({ data }) => {
                       justifyContent="space-between"
                       alignItems="center"
                     >
-                      <Typography fontSize="0.8rem">
-                        26 february,3011
+                      <Typography
+                        fontSize="0.8rem"
+                        color={colors.WHITE}
+                        fontFamily={"Plus Jakarta Sans"}
+                      >
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Minus accusantium molestias rem illo
+                        exercitationem quaerat consectetur. Iure aliquid facere
+                        fugit debitis odio commodi totam repellat ducimus,
+                        beatae itaque non culpa!
                       </Typography>
                       {/* <Avatar sx={{ background: `${colors.harvestaYellow}` }}>
                         <IoIosArrowForward color={colors.primary} />
