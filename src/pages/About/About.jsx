@@ -25,15 +25,21 @@ import "swiper/css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import Intercom from '@intercom/messenger-js-sdk';
 
 const About = ({ hero }) => {
+  
+  Intercom({
+    app_id: 'd7aozhso',
+  });
+
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
     threshold: 0.5, // Trigger when 50% of the element is visible
   });
   return (
     <>
-      <img src={hero} alt="harvesta" />
+      <img src={hero} alt="harvesta_hero_image" />
       <section className="p-4 lg:p-24">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">
@@ -239,11 +245,11 @@ const About = ({ hero }) => {
               </SwiperSlide>
             </Swiper>
             <div className=" hidden lg:flex my-4 ">
-              <button className="swiper-button-prev text-primary hover:text-primary-dark absolute left-[-30px] top-[50%] ">
-                <ArrowCircleLeftRoundedIcon fontSize="large" />
+              <button className="swiper-button-prev text-primary hover:text-primary-dark absolute left-[-30px] top-[48%] ">
+                <ArrowCircleLeftRoundedIcon fontSize="xl" className="text-[46px]"/>
               </button>
-              <button className="swiper-button-next text-primary hover:text-primary-dark absolute top-[50%] right-[-30px]">
-                <ArrowCircleRightRoundedIcon fontSize="large" />
+              <button className="swiper-button-next text-primary hover:text-primary-dark absolute top-[48%] right-[-30px]">
+                <ArrowCircleRightRoundedIcon fontSize="xl" className="text-[46px]"/>
               </button>
             </div>
           </div>

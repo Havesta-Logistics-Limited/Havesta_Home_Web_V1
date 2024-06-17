@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './pages/MainLayout';
 import routes from './config/routes.config';
