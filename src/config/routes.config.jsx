@@ -17,7 +17,7 @@ const routes = [
   },
   {
     path: "/about",
-    element: <RouteWrapper component={About} hero='/icons/about.png' />,
+    element: <RouteWrapper component={About} hero={'https://res.cloudinary.com/dtc89xi2r/image/upload/v1718624097/EatFood.com_7_yexfzh.png'} />,
   },
   {
     path: "/contact",

@@ -39,7 +39,7 @@ const About = ({ hero }) => {
   });
   return (
     <>
-      <img src={hero} alt="harvesta" />
+      <img src={hero} alt="harvesta_hero_image" />
       <section className="p-4 lg:p-24">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">
