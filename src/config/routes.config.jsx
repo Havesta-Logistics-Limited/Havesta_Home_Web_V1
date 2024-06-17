@@ -28,11 +28,11 @@ const routes = [
     element: <RouteWrapper component={Home} hero='/icons/homeHero.png' />,
   },
   {
-    path: "/vendor",
+    path: "/partner/vendors",
     element: <RouteWrapper component={Partner} hero='/icons/vendorHero.png' />,
   },
   {
-    path: "/riders",
+    path: "/partner/riders",
     element: <RouteWrapper component={Rider} hero='/icons/rider.svg'/>,
   },
   {
