@@ -42,8 +42,8 @@ const Faqs = [
 
 const FAQ = () => {
   return (
-    <div className="full mt-20">
-      <div className="full bg-faq-pattern bg-center bg-cover flex flex-col items-center justify-center py-10 mt-7">
+    <div className="full mt-20 font-primary">
+      <div className="full bg-faq-pattern bg-center bg-contain sm:bg-cover flex flex-col items-center justify-center py-10 mt-7">
         <div className="bg-white md:w-1/2 w-[98%] mt-[-150px] shadow-3xl">
           <h1 className="uppercase text-center text-4xl font-black mt-10">
             FAQs
@@ -66,11 +66,11 @@ const FAQ = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row bg-transparent mt-[10rem]">
-          <div className="flex flex-col text-white text-center w-[500px] justify-center px-10 mb-[10rem]">
+          <div className="flex flex-col text-white text-center w-[500px] justify-center px-10 sm:mb-[10rem] mb-[3rem]">
             <h1 className="text-4xl font-bold mt-10 capitalize">
               Get The app now
             </h1>
-            <p className="my-2 px-12 text-sm">
+            <p className="my-5 px-12 text-sm ">
               Get fresh farm produce delivered in minutes from a variety of
               trusted vendors
             </p>
@@ -78,23 +78,23 @@ const FAQ = () => {
               <div className="w-[150px]">
                 {" "}
                 <img
-                  src="https://images.pexels.com/photos/25811110/pexels-photo-25811110/free-photo-of-pato.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  className="w-full object-cover rounded-lg shadow-md  h-[80px]"
+                  src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/App_Store_brjnhq.svg"
+                  className="w-full object-fit  h-auto"
                 />
               </div>
               <div className="w-[150px]">
                 {" "}
                 <img
-                  src="https://images.pexels.com/photos/25811110/pexels-photo-25811110/free-photo-of-pato.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  className="w-full object-cover rounded-lg shadow-md  h-[80px]"
+                  src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/Play_Store_wq2cvo.svg"
+                  className="w-full object-fit  h-auto"
                 />
               </div>
             </div>
           </div>
-          <div className="flex">
+          <div className="flex justify-center ">
             <img
               src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957974/Group_1000001777_vroxqi.svg"
-              className="w-full h-auto object-cover rounded-lg "
+              className=" w-[400px] sm:w-full h-auto object-cover rounded-lg "
             />
           </div>
         </div>

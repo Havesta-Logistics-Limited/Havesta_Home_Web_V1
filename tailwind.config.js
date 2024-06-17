@@ -8,10 +8,10 @@ export default {
         harvestaYellow: "#FFC141",
         harvestaLightGreen: "#01BE72",
         harvestaDarkGreen: "#00150D",
-        primaryHover: "#004827"
+        primaryHover: "#004827",
       },
       boxShadow: {
-        "3xl": "-1px -6px 5px -1px rgba(0,0,0,0.75);",
+        "3xl": "1px -2px 5px 0px rgba(0,0,0,0.75);",
       },
 
       backgroundImage: {
@@ -20,11 +20,10 @@ export default {
         "footer-texture": "url('/img/footer-texture.png')",
       },
 
-      fontFamily:{
-        primary: ['Plus Jakarta Sans']
-      }
+      fontFamily: {
+        primary: ["Plus Jakarta Sans"],
+      },
     },
-   
   },
 
   plugins: [],

@@ -4,10 +4,8 @@ import {
   styled,
   Typography,
   Container,
-  Avatar,
   Button,
 } from "@mui/material";
-import { IoIosArrowForward } from "react-icons/io";
 import Heading from "./Heading";
 import ArticlesGallery from "./ArticlesGallery";
 import { colors } from "../../utils/globals";
@@ -82,31 +80,34 @@ const Latest = () => {
                   fontWeight={700}
                   fontSize={"1.2rem"}
                   color={colors.primary}
+                  fontFamily={"Plus Jakarta Sans"}
                 >
                   A Bumper Harvest
                 </Typography>
-                <Typography fontSize={"0.8rem"} mb={3}>
+                <Typography
+                  fontSize={"0.8rem"}
+                  mb={3}
+                  fontFamily={"Plus Jakarta Sans"}
+                >
                   {" "}
                   Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
                   turpis dignissim maximus.posuere in.Contrary to popular
                   belief.
                 </Typography>
-                <Typography fontSize={"0.8rem"} mb={2}>
+                <Typography
+                  fontSize={"0.8rem"}
+                  mb={2}
+                  fontFamily={"Plus Jakarta Sans"}
+                >
                   {" "}
                   Lorem Ipsum is not simply random text. It has roots in a piece
                   of classica classica.
                 </Typography>
-                <Stack
-                  direction="row"
-                  justifyContent="space-Between"
-                  alignItems="center"
-                >
-                  <Box>
-                    <Typography fontSize="0.8rem">26 December,2067</Typography>
-                  </Box>
+                <Stack direction="row" alignItems="center">
                   <Button
                     variant="contained"
                     sx={{
+                      fontFamily: "Plus Jakarta Sans",
                       backgroundColor: colors.harvestaLightGreen,
                       "&:hover": {
                         backgroundColor: colors.harvestaLightGreen,
