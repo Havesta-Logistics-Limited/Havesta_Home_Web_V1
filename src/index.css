@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.backgroundImage {
+    background-image: url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1718747610/Group_1000001819_rxpqve.png');
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+}
