@@ -22,6 +22,7 @@ export default {
 
       fontFamily: {
         primary: ["Plus Jakarta Sans"],
+        secondary: ['Rubik Wet Paint']
       },
     },
   },
