@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import navRoutes from "../routes/nav.routes";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import React, { useState } from "react";
 
 const Navbar = () => {
-  
+  const [showMovingCart, setShowMovingCart] = useState(false);
+
+  function showAnimation() {
+    setShowMovingCart(true);
+  }
+
+  function stopAnimation() {
+    setShowMovingCart(false);
+  }
 
   return (
     <div className="absolute z-10 w-full">
@@ -31,15 +40,21 @@ const Navbar = () => {
           ))}
         </div>
         <div className="relative">
-      <Link to={"/marketplace"} className="relative">
-        <span className="bg-harvestaYellow p-2 w-12 h-12 rounded-full text-white flex items-center justify-center transition-all">
-          <AddShoppingCartIcon/>
-        </span>
-        <span className="bg-harvestaYellow p-2 w-12 h-12 rounded-full text-white flex items-center justify-center hover:w-20 absolute top-0 left-0 transition-all">
-        <AddShoppingCartIcon/>
-        </span>
-      </Link>
-    </div>
+          <Link to={"/marketplace"} className="relative">
+            <span className="bg-harvestaYellow p-2 w-12 h-12 rounded-full text-white flex items-center justify-center transition-all">
+              <AddShoppingCartIcon />
+            </span>
+            <span
+              onMouseEnter={showAnimation}
+              onMouseLeave={stopAnimation}
+              className="bg-harvestaYellow p-2 w-12 h-12 rounded-full text-white flex items-center justify-center hover:w-20 absolute top-0 left-0 transition-all "
+            >
+              <AddShoppingCartIcon
+                className={`${showMovingCart ? "animate-iconBounce" : ""}`}
+              />
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

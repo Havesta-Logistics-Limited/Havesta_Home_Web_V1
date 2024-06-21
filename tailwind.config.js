@@ -24,6 +24,16 @@ export default {
         primary: ["Plus Jakarta Sans"],
         secondary: ['Rubik Wet Paint']
       },
+
+      animation: {
+        iconBounce: 'iconBounce 1s ease-in-out infinite',
+      },
+      keyframes: {
+        iconBounce: {
+         '0%, 40%, 100%': { transform: 'translateY(0)' },
+          '20%': { transform: 'translateY(-10%)' },
+        },
+      },
     },
   },
 

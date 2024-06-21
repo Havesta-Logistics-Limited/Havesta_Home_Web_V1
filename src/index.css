@@ -12,3 +12,16 @@
     background-repeat: none;
     background-size: cover;
 }
+
+@keyframes iconBounce {
+    0%, 40% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
