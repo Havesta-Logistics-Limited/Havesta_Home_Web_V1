@@ -13,7 +13,7 @@ import About from "../pages/About/About";
 const routes = [
   {
     path: "/home",
-    element: <RouteWrapper component={Home} hero='/icons/homeHero.png' />,
+    element: <RouteWrapper component={Home} hero='' />,
   },
   {
     path: "/about",
@@ -25,7 +25,7 @@ const routes = [
   },
   {
     index: true,
-    element: <RouteWrapper component={Home} hero='/icons/homeHero.png' />,
+    element: <RouteWrapper component={Home} hero='https://res.cloudinary.com/dtc89xi2r/image/upload/v1718725096/Group_3733_vyipoo.png' />,
   },
   {
     path: "/partner/vendors",

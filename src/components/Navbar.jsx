@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import navRoutes from "../routes/nav.routes";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import arrow icons
 
 const Navbar = () => {
   const [showMovingCart, setShowMovingCart] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   function showAnimation() {
     setShowMovingCart(true);
@@ -13,6 +15,12 @@ const Navbar = () => {
   function stopAnimation() {
     setShowMovingCart(false);
   }
+
+  function toggleDropdown() {
+    setDropdownOpen(!dropdownOpen);
+  }
+
+  
 
   return (
     <div className="absolute z-10 w-full">
@@ -29,13 +37,33 @@ const Navbar = () => {
         </Link>
         <div className="flex flex-row gap-5 relative">
           {navRoutes.map((item, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative flex items-center">
               <Link
                 to={item.path}
                 className="text-sm px-2 rounded-md hover:bg-harvestaLightGreen hover:p-2 transition-all"
+                onMouseEnter={()=>setDropdownOpen(false)}
               >
                 {item.name}
               </Link>
+              {item.submenu && (
+                <button onClick={toggleDropdown} className="ml-1 focus:outline-none">
+                  {dropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+                </button>
+              )}
+              {item.submenu && dropdownOpen && (
+                <div className="absolute top-0 mt-10 w-40 bg-white shadow-lg rounded-md transition-all grid grid-cols-1 justify-items-center">
+                  {item.submenu.map((subItem, subIndex) => (
+                    <Link
+                      key={subIndex}
+                      to={subItem.path}
+                      className="block w-full p-2 mx-auto flex justify-center text-sm text-gray-700 hover:bg-harvestaLightGreen hover:text-white transition-all hover:rounded-md"
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

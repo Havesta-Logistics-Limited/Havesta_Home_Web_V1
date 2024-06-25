@@ -17,8 +17,8 @@ const Explore = () => {
             </div>
         </div>
         <div className='w-80  mt-44'>
-            <h1 className='text-4xl font-extrabold w-[350px]'>See the world & spend less always.</h1>
-            <p className='text-xs p-2 leading-5 mt-2'>Create custom landing pages with Omega that converts more visitors than any website. With lots of unique blocks, you can easily build a page without coding.</p>
+            <h1 className='text-4xl font-extrabold w-[350px]'> Explore Our Store Today To Save Time & Energy.</h1>
+            <p className='text-xs p-2 leading-5 mt-2'>With just a few clicks or taps, you can browse a wide range of products, compare prices, and read reviews, all from the comfort of your home.</p>
         </div>
     </div>
        <div className='flex justify-center mt-8 p-6'>
