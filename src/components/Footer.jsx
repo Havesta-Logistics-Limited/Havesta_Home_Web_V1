@@ -39,19 +39,11 @@ const Footer = () => {
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
+            <span className="ml-2">About</span>
+          </li>
+          <li className="flex items-center">
+            <ChevronRightIcon color="success" />
             <span className="ml-2">News</span>
-          </li>
-          <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Vendors</span>
-          </li>
-          <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Riders</span>
-          </li>
-          <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Careers</span>
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
@@ -59,11 +51,23 @@ const Footer = () => {
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
-            <span className="ml-2">Terms of use</span>
+            <span className="ml-2">Riders</span>
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
-            <span className="ml-2">Privary Policy</span>
+            <span className="ml-2">Vendors</span>
+          </li>
+          <li className="flex items-center">
+            <ChevronRightIcon color="success" />
+            <span className="ml-2">Marketplace</span>
+          </li>
+          <li className="flex items-center">
+            <ChevronRightIcon color="success" />
+            <span className="ml-2">Privacy Policy</span>
+          </li>
+          <li className="flex items-center">
+            <ChevronRightIcon color="success" />
+            <span className="ml-2">Terms of use</span>
           </li>
         </ul>
       </div>
@@ -118,8 +122,8 @@ const Footer = () => {
           
         </div>
       </div>
-      <div className="w-full h-auto bg-harvestaDarkGreen absolute bottom-0 left-0 text-xs text-center align-middle p-2">
-       <span >© Copyright 2024 Designed By <span className="underline cursor-pointer hover:text-gray-700">Dregon J&Z Techbase Limited</span></span>  
+      <div className="w-full h-auto bg-dim absolute bottom-0 left-0 text-xs text-center align-middle p-2  border-t-[0.5px] border-gray-600">
+       <span >© Copyright 2024 <span className="text-white cursor-pointer hover:text-gray-700"> Designed By Dregon J&Z Techbase Limited</span></span>  
       </div>
     </footer>
   );

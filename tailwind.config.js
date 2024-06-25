@@ -9,6 +9,7 @@ export default {
         harvestaLightGreen: "#01BE72",
         harvestaDarkGreen: "#005231",
         primaryHover: "#004827",
+        dim: "#00150D"
       },
       boxShadow: {
         "3xl": "1px -2px 5px 0px rgba(0,0,0,0.75);",

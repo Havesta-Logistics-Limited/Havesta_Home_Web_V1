@@ -49,7 +49,7 @@ const Reviews = () => {
                       className="p-2 mt-10"
                     />
                     <p
-                      className="text-center text-sm font-bold leading-8 p-5"
+                      className="text-center text-sm  leading-5 p-5"
                       style={{
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
@@ -60,8 +60,8 @@ const Reviews = () => {
                       {review.text}
                     </p>
                     <br />
-                    <h2 className="text-center font-bold">{review.name}</h2>
-                    <h3 className="text-center text-primary text-sm font-bold">
+                    <h2 className="text-center font-extrabold">{review.name}</h2>
+                    <h3 className="text-center text-primary text-xs font-bold">
                       {review.title}
                     </h3>
                   </div>
@@ -88,15 +88,15 @@ const Reviews = () => {
       <div className="flex flex-row justify-evenly gap-[40px]">
         <div className="items-center flex flex-col">
           <h1 className="text-6xl text-harvestaDarkGreen font-bold">1M+</h1>
-          <h3 className="font-semibold">Monthly Customer Visit</h3>
+          <h3 className="">Monthly Customer Visit</h3>
         </div>
         <div className="flex flex-col items-center">
           <h1 className="text-6xl text-harvestaDarkGreen font-bold">92%</h1>
-          <h3 className="font-semibold">Customer Satisfaction Rate</h3>
+          <h3 className="">Customer Satisfaction Rate</h3>
         </div>
         <div className="items-center flex flex-col">
           <h1 className="text-6xl text-harvestaDarkGreen font-bold">4.9</h1>
-          <h3 className="font-semibold">Average Customer Ratings</h3>
+          <h3 className="">Average Customer Ratings</h3>
         </div>
       </div>
       <br />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-primary mt-20">
+    <div className="flex flex-col items-center justify-center min-h-screen font-primary mt-20 mr-50">
       <div className="bg-harvestaLightGreen w-66   mb-6  rounded-bl-full rounded-tr-full">
         <div className="flex flex-row gap-1 justify-center text-black">
           {categorys.map((list, index) => (
@@ -18,25 +18,42 @@ const Category = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center min-h-screen ml-44 gap-10 ">
-        <div className="flex flex-col items-center justify-center text-center">
-          <div className="w-80 grid grid-cols-1 justify-center items-center">
-            <img src="/icons/arrow.svg" alt="harvesta" width={"500px"} />
-            <h1 className="text-4xl font-bold mb-4">Download Our App</h1>
-            <p className="mb-6  w-[350px] text-start">
-              Get fresh farm produce delivered in minutes from a variety of
-              trusted vendors offering fruits, veggies, tubers, grains, and nuts.
+      <div className="flex flex-col md:flex-row bg-transparent mt-[10rem]">
+          <div className="flex flex-col text-white text-center w-[500px] justify-center px-10 sm:mb-[10rem] mb-[3rem] mr-[-140px]">
+          <img src="/icons/arrow.svg" alt="harvesta" width={"150px"} className="ml-[120px] mb-[-39px]"/>
+
+            <h1 className="text-4xl font-bold mt-10 capitalize text-black">
+              Download Our App
+            </h1>
+            <p className="my-5 px-12 text-sm text-black  text-center">
+            Get fresh farm produce delivered in minutes from a variety of
+            trusted vendors offering fruits, veggies, tubers, grains, and nuts.
             </p>
+            <div className="flex gap-2 justify-center">
+              <div className="w-[150px]">
+                {" "}
+                <img
+                  src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/App_Store_brjnhq.svg"
+                  className="w-full object-fit  h-auto"
+                />
+              </div>
+              <div className="w-[150px]">
+                {" "}
+                <img
+                  src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/Play_Store_wq2cvo.svg"
+                  className="w-full object-fit  h-auto"
+                />
+              </div>
+            </div>
           </div>
-          <div className="flex flex-row justify-center  gap-5 mb-6">
-            <img src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957986/Buttons_ivroew.png" alt="harvesta" width="350px" />
-           
+
+          <div className="flex justify-center ">
+            <img
+              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719269738/Group_1000001792_puvkro.png"
+              className=" w-[800px] object-cover rounded-lg "
+            />
           </div>
         </div>
-        <div className="place-item-center mx-auto">
-          <img src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957974/Group_1000001777_vroxqi.svg" alt="mobile app" width={"600px"} />
-        </div>
-      </div>
     </div>
   );
 };
