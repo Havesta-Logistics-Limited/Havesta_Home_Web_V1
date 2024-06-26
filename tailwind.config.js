@@ -11,7 +11,7 @@ export default {
         primaryHover: "#004827",
       },
       boxShadow: {
-        "3xl": "1px -2px 5px 0px rgba(0,0,0,0.75);",
+        "3xl": " 0 -10px 25px -10px rgba(0, 0, 0, 0.75)",
       },
 
       backgroundImage: {
@@ -22,16 +22,16 @@ export default {
 
       fontFamily: {
         primary: ["Plus Jakarta Sans"],
-        secondary: ['Rubik Wet Paint']
+        secondary: ["Rubik Wet Paint"],
       },
 
       animation: {
-        iconBounce: 'iconBounce 1s ease-in-out infinite',
+        iconBounce: "iconBounce 1s ease-in-out infinite",
       },
       keyframes: {
         iconBounce: {
-         '0%, 40%, 100%': { transform: 'translateY(0)' },
-          '20%': { transform: 'translateY(-10%)' },
+          "0%, 40%, 100%": { transform: "translateY(0)" },
+          "20%": { transform: "translateY(-10%)" },
         },
       },
     },

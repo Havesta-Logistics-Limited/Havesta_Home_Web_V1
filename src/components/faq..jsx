@@ -1,5 +1,6 @@
 import React from "react";
 import { IoArrowForwardCircle } from "react-icons/io5";
+import { colors } from "../utils/globals";
 
 const Faqs = [
   {
@@ -46,7 +47,7 @@ const FAQ = () => {
       <div className="full bg-faq-pattern bg-center bg-contain sm:bg-cover flex flex-col items-center justify-center py-10 mt-7">
         <div className="bg-white md:w-1/2 w-[98%] mt-[-150px] shadow-3xl">
           <h1 className="uppercase text-center text-4xl font-black mt-10">
-            FAQs
+            FAQ&apos;s
           </h1>
           <div className="flex flex-wrap p-4 my-10">
             {Faqs.map((faq, index) => (
@@ -55,7 +56,10 @@ const FAQ = () => {
                 className="flex flex-row w-[100%] md:w-[50%] p-4"
               >
                 <div className="mr-4 mt-1">
-                  <IoArrowForwardCircle size={"25px"} color="green" />
+                  <IoArrowForwardCircle
+                    size={"25px"}
+                    color={colors.primary}
+                  />
                 </div>
                 <div className="flex flex-col">
                   <h3 className="text-md font-medium">{faq.title}</h3>
