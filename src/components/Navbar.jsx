@@ -51,12 +51,12 @@ const Navbar = () => {
                 </button>
               )}
               {item.submenu && dropdownOpen && (
-                <div className="absolute top-0 mt-10 w-40 bg-white shadow-lg rounded-md transition-all grid grid-cols-1 justify-items-center">
+                <div className="absolute top-0 mt-10 w-40 bg-white shadow-lg transition-all grid grid-cols-1 justify-items-center">
                   {item.submenu.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
                       to={subItem.path}
-                      className="block w-full p-2 mx-auto flex justify-center text-sm text-gray-700 hover:bg-harvestaLightGreen hover:text-white transition-all hover:rounded-md"
+                      className=" w-full p-2 mx-auto flex justify-center text-sm text-gray-700 hover:bg-harvestaLightGreen hover:text-white transition-all "
                       onClick={() => setDropdownOpen(false)}
                     >
                       {subItem.name}

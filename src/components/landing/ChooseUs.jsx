@@ -5,7 +5,7 @@ const ChooseUs = () => {
       
       <img
         src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718747611/Group_1000001818_w6k5n3.svg"
-        className="w-[900px] h-[84vh]"
+        className="w-[950px] h-[84vh]"
         alt=""
       />
     </div>

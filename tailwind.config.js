@@ -23,7 +23,8 @@ export default {
 
       fontFamily: {
         primary: ["Plus Jakarta Sans"],
-        secondary: ['Rubik Wet Paint']
+        secondary: ['Rubik Wet Paint'],
+        rider: ['Helvetica']
       },
 
       animation: {

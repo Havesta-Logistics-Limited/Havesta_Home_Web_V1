@@ -11,7 +11,7 @@ const JoinUs = () => {
           />
           <div className="bg-white p-4 border-4 border-harvestaDarkGreen absolute  mt-48 rounded-lg h-48 ">
             <h1 className="p-1 font-secondary text-harvestaLightGreen text-2xl">1</h1>
-            <p className="w-72 jakarta">
+            <p className="w-72 jakarta text-sm">
               Feeling exhausted from market trips? Harvesta is here to ease your
               stress! Download our app, place your order instantly, and let us
               bring Satisfaction right to your doorstep.
@@ -30,7 +30,7 @@ const JoinUs = () => {
           />
           <div className="bg-white p-4 border-4 border-harvestaDarkGreen absolute  mt-48 rounded-lg h-48 ">
             <h1 className="p-1 font-secondary text-harvestaLightGreen text-2xl">2</h1>
-            <p className="w-72 jakarta">
+            <p className="w-72 jakarta text-sm">
               Join our First-Class team of dispatch riders and start earning by
               delivering satisfaction to our customers. Be your Boss, and Rule
               your world!
@@ -49,7 +49,7 @@ const JoinUs = () => {
           />
           <div className="bg-white p-4 border-4 border-harvestaDarkGreen absolute  mt-48 rounded-lg h-48 ">
             <h1 className="p-1 font-secondary text-harvestaLightGreen text-2xl">3</h1>
-            <p className="w-72 jakarta">
+            <p className="w-72 jakarta text-sm">
               Are you a vendor aiming to expand your business and attract more
               customers? Sign up with us today to start your journey towards
               financial freedom.

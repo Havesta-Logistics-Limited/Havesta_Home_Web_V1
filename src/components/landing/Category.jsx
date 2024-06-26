@@ -18,7 +18,7 @@ const Category = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col md:flex-row bg-transparent mt-[10rem]">
+      <div className="flex flex-col md:flex-row bg-transparent mt-[10rem] lg:ml-[100px]">
           <div className="flex flex-col text-white text-center w-[500px] justify-center px-10 sm:mb-[10rem] mb-[3rem] mr-[-140px]">
           <img src="/icons/arrow.svg" alt="harvesta" width={"150px"} className="ml-[120px] mb-[-39px]"/>
 

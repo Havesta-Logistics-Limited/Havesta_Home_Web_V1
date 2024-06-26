@@ -37,10 +37,7 @@ const Footer = () => {
             <ChevronRightIcon color="success" />
             <span className="ml-2">About</span>
           </li>
-          <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">About</span>
-          </li>
+          
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
             <span className="ml-2">News</span>
@@ -59,15 +56,20 @@ const Footer = () => {
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
+            <span className="ml-2">Careers</span>
+          </li>
+          <li className="flex items-center">
+            <ChevronRightIcon color="success" />
             <span className="ml-2">Marketplace</span>
+          </li>
+         
+          <li className="flex items-center">
+            <ChevronRightIcon color="success" />
+            <span className="ml-2">Terms of use</span>
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
             <span className="ml-2">Privacy Policy</span>
-          </li>
-          <li className="flex items-center">
-            <ChevronRightIcon color="success" />
-            <span className="ml-2">Terms of use</span>
           </li>
         </ul>
       </div>
