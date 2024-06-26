@@ -9,7 +9,7 @@ const Home = ( {hero} ) => {
   return (
     <div>
       <img src={hero} alt="harvesta" className="w-full"/>
-      <div className='absolute top-44 text-white ml-60 '>
+      <div className='absolute top-44 text-white ml-60 mt-5'>
             <h2 className='text-6xl font-bold'>Find Your Healthy</h2>
             <h2 className='text-6xl text-harvestaYellow font-bold'>Groceries</h2>
             <br />

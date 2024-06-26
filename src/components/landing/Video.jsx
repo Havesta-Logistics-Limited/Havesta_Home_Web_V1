@@ -45,6 +45,7 @@ const VideoPlayer = () => {
         maxWidth: '800px', // Adjust as needed
         margin: 'auto',
         cursor: 'pointer',
+        borderRadius: '10px'
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -59,6 +60,7 @@ const VideoPlayer = () => {
           width: '100%',
           height: 'auto',
           display: 'block',
+          borderRadius: '10px'
         }}
       />
       {/* Black overlay */}
@@ -71,13 +73,14 @@ const VideoPlayer = () => {
             width: '100%',
             height: '100%',
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            display: hovered ? 'flex' : 'none',
+            display: 'flex' ,
             justifyContent: 'center',
             alignItems: 'center',
+            borderRadius: '10px'
           }}
         >
           <IconButton onClick={togglePlay}>
-            <PlayArrowIcon style={{ fontSize: 64, color: '#fff' }} />
+            <PlayArrowIcon style={{ fontSize: 64, color: '#FFC141' }} />
           </IconButton>
         </div>
       )}
@@ -93,7 +96,7 @@ const VideoPlayer = () => {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
           }}
         >
-          <PauseIcon style={{ fontSize: 64, color: '#fff' }} />
+          <PauseIcon style={{ fontSize: 64, color: '#FFC141' }} />
         </IconButton>
       )}
     </div>
