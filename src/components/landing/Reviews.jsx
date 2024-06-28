@@ -26,6 +26,7 @@ const Reviews = () => {
         excellence and satisfaction.
       </p>
       <br />
+      
       <div className="relative w-full flex justify-center items-center">
         <div className="w-[700px] overflow-hidden shadow-lg">
           <div

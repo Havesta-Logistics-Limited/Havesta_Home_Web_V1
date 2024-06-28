@@ -36,4 +36,33 @@
   .input-field::placeholder {
     font-style: italic;
   }
+
+  .rider-field::placeholder{
+    font-size: 12px;
+    color: gray
+  }
+
+  select {
+    appearance: none;
+  }
   
+  
+    .select-field option {
+      font-size: 14px;
+      padding: 10px ;
+      background-color: white; 
+     font-weight: bold;
+     margin: auto;
+     appearance: none;
+
+      
+    } 
+  
+    .MuiSelect-select-select { /* Target the actual select element */
+      &::placeholder {
+        color: lightgray; /* Adjust color as needed */
+        font-size: 14px; /* Adjust font size as needed */
+        font-style: italic; /* Adjust font style as needed */
+        /* Add other placeholder-specific styles here */
+      }
+    }

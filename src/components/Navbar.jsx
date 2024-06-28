@@ -38,10 +38,12 @@ const Navbar = () => {
         <div className="flex flex-row gap-5 relative">
           {navRoutes.map((item, index) => (
             <div key={index} className="relative flex items-center">
+              
               <Link
                 to={item.path}
                 className="text-sm px-2 rounded-md hover:bg-harvestaLightGreen hover:p-2 transition-all"
                 onMouseEnter={()=>setDropdownOpen(false)}
+                onClick={(item.openNav ? toggleDropdown : null)}
               >
                 {item.name}
               </Link>

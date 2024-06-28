@@ -45,7 +45,7 @@ const routes = [
   },
   {
     path: "/partner/riders",
-    element: <RouteWrapper component={Rider} hero="/icons/rider.svg" />,
+    element: <RouteWrapper component={Rider} hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527266/EatFood.com_8_exoobu.svg" />,
   },
   {
     path: "/news",
