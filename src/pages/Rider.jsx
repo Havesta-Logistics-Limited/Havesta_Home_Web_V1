@@ -7,7 +7,7 @@ import { riderForm, riderStats } from "../config/rider.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link } from "react-router-dom";
 import countryApi from "../api/endpoints/rider.endpoints.js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 
