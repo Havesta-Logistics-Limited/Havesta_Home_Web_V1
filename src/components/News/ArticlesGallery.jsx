@@ -38,14 +38,10 @@ const ArticlesGallery = ({ data, gridWidth = "300px" }) => {
               <Card
                 sx={{
                   backgroundColor: `${colors.harvestaLightGreen}`,
-                  p: 1,
                   borderRadius: "25px",
-                  border: "1px solid rgba(0, 0, 0, 0.1)",
+                  // border: "1px solid rgba(0, 0, 0, 0.1)",
                   boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
                   borderColor: `grey`,
-                  ":hover": {
-                    backgroundColor: `${colors.primary}`,
-                  },
                 }}
                 elevation={0}
               >
@@ -54,14 +50,17 @@ const ArticlesGallery = ({ data, gridWidth = "300px" }) => {
                   alt=""
                   height="200"
                   image={ele.img}
-                  sx={{ objectFit: "cover", borderRadius: "25px 25px 0 0" }}
+                  sx={{ objectFit: "cover" }}
                 />
                 <CardContent sx={{ paddingX: 3 }}>
                   {ele.des && (
-                    <Stack direction="column" textAlign={"center"}>
+                    <Stack
+                      direction="column"
+                      textAlign={"center"}
+                      alignItems={"center"}
+                    >
                       <Typography
                         fontWeight="500"
-                        paddingRight={[1, 5]}
                         color={colors.WHITE}
                         textTransform={"capitalize"}
                         fontFamily={"Plus Jakarta Sans"}
@@ -85,18 +84,20 @@ const ArticlesGallery = ({ data, gridWidth = "300px" }) => {
                         <IoIosArrowForward color={colors.primary} />
                       </Avatar> */}
                       </Stack>
-                      <Button
-                        variant="contained"
-                        sx={{
-                          fontFamily: "Plus Jakarta Sans",
-                          backgroundColor: colors.primary,
-                          "&:hover": {
-                            backgroundColor: colors.harvestaLightGreen,
-                          },
-                        }}
-                      >
-                        Read more
-                      </Button>
+                      <Stack direction="row" alignItems="center">
+                        <Button
+                          variant="contained"
+                          sx={{
+                            fontFamily: "Plus Jakarta Sans",
+                            backgroundColor: colors.primary,
+                            "&:hover": {
+                              backgroundColor: colors.harvestaLightGreen,
+                            },
+                          }}
+                        >
+                          Read more
+                        </Button>
+                      </Stack>
                     </Stack>
                   )}
                 </CardContent>

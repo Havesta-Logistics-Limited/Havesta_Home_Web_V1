@@ -14,7 +14,7 @@ const PagesHero = ({ image, title, des }) => {
       <StyledBox
         height={["40vh", "50vh"]}
         sx={{
-          background: colors.primary,
+          background: image ? `url(${image})` : colors.primary,
           backgroundSize: ["cover", "100% 100%"],
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -26,16 +26,24 @@ const PagesHero = ({ image, title, des }) => {
           textTransform="capitalize"
           p={2}
           width={["90%", "70%"]}
-          borderRadius="15px 15px 0 0"
+          textAlign={"center"}
         >
           <Typography
             fontSize={["1rem", "2rem"]}
             color={colors.WHITE}
             fontWeight={700}
             letterSpacing={".3rem"}
-            textAlign={"center"}
           >
             {title}
+          </Typography>
+          <Typography
+            fontSize={["0.7rem", "1rem"]}
+            color={colors.WHITE}
+            fontWeight={700}
+            letterSpacing={".3rem"}
+            mt={2}
+          >
+            {des}
           </Typography>
         </Stack>
       </StyledBox>
