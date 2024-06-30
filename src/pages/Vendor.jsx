@@ -70,10 +70,10 @@ const Vendor = ({hero}) => {
             Complete The Form
           </h2>
           <form className="my-12 w-1/2">
-            <div className="lg:grid grid-cols-2 gap-6">
+            <div className="lg:grid grid-cols-2 gap-9">
               {vendorForm.map((item, index) =>
                 item.option ? (
-                  <FormControl key={index} className="ml-10 w-full">
+                  <FormControl key={index} className="ml-16 w-full">
                     <FormLabel style={formTitleStyle} className="font-primary">
                       {item.title}
                     </FormLabel>
@@ -115,7 +115,7 @@ const Vendor = ({hero}) => {
                     </Select>
                   </FormControl>
                 ) : (
-                  <FormControl key={index} className="ml-10 w-full">
+                  <FormControl key={index} className="ml-16 w-full">
                     <FormLabel style={formTitleStyle}>{item.title}</FormLabel>
                     <input
                       type={item.type}

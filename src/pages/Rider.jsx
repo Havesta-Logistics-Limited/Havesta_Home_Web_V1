@@ -39,7 +39,7 @@ const Rider = ({ hero }) => {
         <div className="relative pb-5">
           <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527266/EatFood.com_8_exoobu.svg')]">
             {/* HERO SECTION */}
-            <div className="mt-44 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative">
+            <div className="mt-44 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative ml-20">
               <div className=" p-2">
                 <h2 className="text-2xl p-3 font-primary font-bold lg:leading-10 lg:text-[40px]  text-[#242424]">
                   Become a Delivery <br />
@@ -69,7 +69,7 @@ const Rider = ({ hero }) => {
             Complete The Form
           </h2>
           <form className="my-12">
-            <div className="lg:grid grid-cols-2 gap-6">
+            <div className="lg:grid grid-cols-2 gap-">
               {riderForm.map((item, index) =>
                 item.options ? (
                   <FormControl key={index} className="ml-10">
