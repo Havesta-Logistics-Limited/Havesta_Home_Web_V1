@@ -66,7 +66,7 @@ const Rider = ({ hero }) => {
               </div>
               <div className="lg:absolute right-52">
                 <img
-                  src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957967/Ellipse_69_1_e42hqd.svg"
+                  src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527267/Ellipse_69_3_iyvouo.png"
                   alt=""
                   className="w-[400px] "
                 />
