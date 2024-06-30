@@ -16,8 +16,8 @@ const Home = ( {hero} ) => {
             <p className='text-xm'>Fresh fruits & veggies, grains, Tubers and More!</p>
             <br />
             <div className='flex flex-row items-center'>
-                <img src="/icons/Vector.svg" alt=""  className='bg-harvestaLightGreen py-2 px-1.5 rounded-s' width={'28px'}/>
-                <input type="text" placeholder='search for your groceries...'  className='py-2 outline-0 w-80 px-2.5 rounded-e text-gray-500 italic text-xs'/>
+                <img src="/icons/Vector.svg" alt=""  className='bg-harvestaLightGreen py-2 px-1.5 rounded-s' width={'40px'}/>
+                <input type="text" placeholder='search for your groceries...'  className='input-field py-3 outline-0 w-80 px-2.5 rounded-e text-gray-500 text-sm font-semibold'/>
             </div>
         </div>
       <div className="mt-10">

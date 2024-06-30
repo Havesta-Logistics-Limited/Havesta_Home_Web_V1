@@ -23,12 +23,13 @@ const navRoutes = [
 
   {
     name: "Partner",
-    path: "/vendor",
+    
     hero:'/icons/vendorHero.png',
     submenu: [
-      { name: 'Vendor', path: '/partner/vendors' },
-      { name: 'Rider', path: '/partner/riders' }
-    ] 
+      { name: 'Vendor', path: '/vendors' },
+      { name: 'Rider', path: '/riders' }
+    ] ,
+    openNav: true
   },
 ];
 

@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import navRoutes from "../routes/nav.routes";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useState, useEffect } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import arrow icons
+import { setIcon } from "../redux/features/iconSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { icon } = useSelector((state) => state.iconReducer);
+
   const [showMovingCart, setShowMovingCart] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -19,8 +23,6 @@ const Navbar = () => {
   function toggleDropdown() {
     setDropdownOpen(!dropdownOpen);
   }
-
-  
 
   return (
     <div className="absolute z-10 w-full">
@@ -41,22 +43,26 @@ const Navbar = () => {
               <Link
                 to={item.path}
                 className="text-sm px-2 rounded-md hover:bg-harvestaLightGreen hover:p-2 transition-all"
-                onMouseEnter={()=>setDropdownOpen(false)}
+                onMouseEnter={() => setDropdownOpen(false)}
+                onClick={item.openNav ? toggleDropdown : null}
               >
                 {item.name}
               </Link>
               {item.submenu && (
-                <button onClick={toggleDropdown} className="ml-1 focus:outline-none">
+                <button
+                  onClick={toggleDropdown}
+                  className="ml-1 focus:outline-none"
+                >
                   {dropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
                 </button>
               )}
               {item.submenu && dropdownOpen && (
-                <div className="absolute top-0 mt-10 w-40 bg-white shadow-lg rounded-md transition-all grid grid-cols-1 justify-items-center">
+                <div className="absolute top-0 mt-10 w-40 bg-white shadow-lg transition-all grid grid-cols-1 justify-items-center">
                   {item.submenu.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
                       to={subItem.path}
-                      className="block w-full p-2 mx-auto flex justify-center text-sm text-gray-700 hover:bg-harvestaLightGreen hover:text-white transition-all hover:rounded-md"
+                      className=" w-full p-2 mx-auto flex justify-center text-sm text-gray-700 hover:bg-harvestaLightGreen hover:text-white transition-all "
                       onClick={() => setDropdownOpen(false)}
                     >
                       {subItem.name}
@@ -75,7 +81,7 @@ const Navbar = () => {
             <span
               onMouseEnter={showAnimation}
               onMouseLeave={stopAnimation}
-              className="bg-harvestaYellow p-2 w-12 h-12 rounded-full text-white flex items-center justify-center hover:w-20 absolute top-0 left-0 transition-all "
+              className={`${icon == 'rider'? 'bg-harvestaDarkGreen' : 'bg-harvestaYellow'} p-2 w-12 h-12 rounded-full text-white flex items-center justify-center hover:w-20 absolute top-0 left-0 transition-all`}
             >
               <AddShoppingCartIcon
                 className={`${showMovingCart ? "animate-iconBounce" : ""}`}

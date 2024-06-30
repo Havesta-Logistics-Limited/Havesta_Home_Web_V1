@@ -23,12 +23,15 @@ export default {
 
       fontFamily: {
         primary: ["Plus Jakarta Sans"],
-        secondary: ["Rubik Wet Paint"],
+
+        secondary: ['Rubik Wet Paint'],
+        rider: ['Helvetica'],
       },
 
       animation: {
         iconBounce: "iconBounce 1s ease-in-out infinite",
       },
+      
       keyframes: {
         iconBounce: {
           "0%, 40%, 100%": { transform: "translateY(0)" },
@@ -39,4 +42,4 @@ export default {
   },
 
   plugins: [],
-};
+}   

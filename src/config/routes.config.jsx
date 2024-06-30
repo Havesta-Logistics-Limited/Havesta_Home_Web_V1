@@ -5,7 +5,7 @@ import Rider from "../pages/Rider";
 import Marketplace from "../pages/Marketplace";
 import News from "../pages/News";
 import RouteWrapper from "../components/RouteWrapper";
-import Partner from "../pages/Partner";
+import Partner from "../pages/Vendor";
 import About from "../pages/About/About";
 import SingleNews from "../pages/SingleNews";
 
@@ -40,12 +40,12 @@ const routes = [
 
   },
   {
-    path: "/partner/vendors",
+    path: "/vendors",
     element: <RouteWrapper component={Partner} hero="/icons/vendorHero.png" />,
   },
   {
-    path: "/partner/riders",
-    element: <RouteWrapper component={Rider} hero="/icons/rider.svg" />,
+    path: "/riders",
+    element: <RouteWrapper component={Rider} hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527266/EatFood.com_8_exoobu.svg" />,
   },
   {
     path: "/news",
