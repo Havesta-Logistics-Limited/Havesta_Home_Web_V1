@@ -9,8 +9,8 @@ import PagesHero from "../components/News/pagesHero";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
-  marginTop: "3rem",
-  marginBottom: "3rem",
+  marginTop: "2rem",
+  marginBottom: "2rem",
 });
 const StyledTitle = styled(Typography)({
   fontWeight: 700,
@@ -22,54 +22,52 @@ const StyledBox = styled(Box)({
   alignItems: "center",
   justifyContent: "center",
   borderRadius: "15px",
-  marginTop: "5rem",
+  marginTop: "3rem",
 });
 const data = [
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957962/Rectangle_610_8_dubyjc.svg",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_24_hcoxfn.png",
     des: "Poultry Market",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957611/Rectangle_610_12_zzpr3a.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526338/Rectangle_610_25_p2mduc.png",
     des: "Freshness ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957894/Rectangle_610_7_ffqvi2.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_27_i6pya0.png",
     des: "How I eat healthy meals ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957961/Rectangle_610_9_qe2pb3.svg",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526333/Rectangle_610_30_zk5jbh.png",
     des: "How To Grow Potatoes ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957854/Rectangle_610_8_ote47x.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526332/Rectangle_610_28_byrgbn.png",
     des: "Harvesta: Expansion Plans",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957962/Rectangle_610_8_dubyjc.svg",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526336/Rectangle_610_26_tulrf7.png",
     des: "How To Grow Potatoes ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 ];
+
 const SingleNews = () => {
   return (
     <>
       <PagesHero
-        image={
-          "https://res.cloudinary.com/dfljnnxln/image/upload/v1674009084/Photo_7_ict8n7.png"
-        }
         title={
           "A Bumper Harvest: How Harvesta Empowered a Female Maize Farmer to Achieve Record Profits"
         }
@@ -225,63 +223,65 @@ const SingleNews = () => {
             sustainability, and growth.
           </StyledText>
         </Box>
+      </Container>
 
-        <Box marginTop={8} mb={"250px"}>
-          <h3 className="flex justify-start font-bold text-lg mb-5">
+      <Box marginTop={8} mb={"250px"}>
+        <Container>
+          <h3 className="flex justify-start font-bold text-3xl mb-5">
             More News
           </h3>
-          <Swiper
-            grabCursor={true}
-            effect={"slide"}
-            centeredSlides={true}
-            autoplay={{
-              disableOnInteraction: false,
-              delay: 0,
-            }}
-            speed={5000}
-            spaceBetween={50}
-            pagination={{ clickable: true }}
-            loop={true}
-            modules={[EffectCoverflow, Pagination, Autoplay]}
-            breakpoints={{
-              // Large screens
-              1024: {
-                slidesPerView: 3,
-                effect: "slide",
-              },
-              // Smaller screens
-              0: {
-                slidesPerView: 1,
-                effect: "slide",
-              },
-            }}
-          >
-            {data.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="bg-harvestaLightGreen rounded-xl
+        </Container>
+        <Swiper
+          grabCursor={true}
+          effect={"slide"}
+          centeredSlides={true}
+          autoplay={{
+            disableOnInteraction: false,
+            delay: 0,
+          }}
+          speed={5000}
+          spaceBetween={50}
+          pagination={{ clickable: true }}
+          loop={true}
+          modules={[EffectCoverflow, Pagination, Autoplay]}
+          breakpoints={{
+            // Large screens
+            1024: {
+              slidesPerView: 3,
+              effect: "slide",
+            },
+            // Smaller screens
+            0: {
+              slidesPerView: 1,
+              effect: "slide",
+            },
+          }}
+        >
+          {data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="bg-harvestaLightGreen rounded-xl
               border-primary overflow-hidden hover:bg-primary hover:border-primary text-white my-10 h-[480px]
               transition-all hover:shadow-lg"
-                >
-                  <img
-                    src={item.img}
-                    alt=""
-                    className="w-full h-40 sm:h-48 object-cover"
-                  />
-                  <div className="m-10">
-                    <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
-                      {item.des}
-                    </span>
-                    <span className="block text-md font-primary text-center">
-                      {item.paragraph}
-                    </span>
-                  </div>
+              >
+                <img
+                  src={item.img}
+                  alt=""
+                  className="w-full h-40 sm:h-48 object-cover"
+                />
+                <div className="m-10">
+                  <span className="font-bold text-[18px] flex justify-center align-center p-3 font-primary">
+                    {item.des}
+                  </span>
+                  <span className="block text-md font-primary text-center">
+                    {item.paragraph}
+                  </span>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </Box>
-      </Container>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
       <FAQ />
     </>
   );

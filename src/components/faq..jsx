@@ -41,7 +41,7 @@ const Faqs = [
   },
 ];
 
-const FAQ = () => {
+const FAQ = ({ title = "Get The app now" }) => {
   return (
     <div className="full mt-20 font-primary">
       <div className="full bg-faq-pattern bg-center bg-contain sm:bg-cover flex flex-col items-center justify-center py-10 mt-7">
@@ -56,10 +56,7 @@ const FAQ = () => {
                 className="flex flex-row w-[100%] md:w-[50%] p-4"
               >
                 <div className="mr-4 mt-1">
-                  <IoArrowForwardCircle
-                    size={"25px"}
-                    color={colors.primary}
-                  />
+                  <IoArrowForwardCircle size={"25px"} color={colors.primary} />
                 </div>
                 <div className="flex flex-col">
                   <h3 className="text-md font-medium">{faq.title}</h3>
@@ -71,9 +68,7 @@ const FAQ = () => {
         </div>
         <div className="flex flex-col md:flex-row bg-transparent mt-[10rem]">
           <div className="flex flex-col text-white text-center w-[500px] justify-center px-10 sm:mb-[10rem] mb-[3rem]">
-            <h1 className="text-4xl font-bold mt-10 capitalize">
-              Get The app now
-            </h1>
+            <h1 className="text-4xl font-bold mt-10 capitalize">{title}</h1>
             <p className="my-5 px-12 text-sm ">
               Get fresh farm produce delivered in minutes from a variety of
               trusted vendors

@@ -29,38 +29,38 @@ const StyledTextBox = styled(Box)({
 
 const data = [
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957962/Rectangle_610_8_dubyjc.svg",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_24_hcoxfn.png",
     des: "Poultry Market",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957611/Rectangle_610_12_zzpr3a.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526338/Rectangle_610_25_p2mduc.png",
     des: "Freshness ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957894/Rectangle_610_7_ffqvi2.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_27_i6pya0.png",
     des: "How I eat healthy meals ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957961/Rectangle_610_9_qe2pb3.svg",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526333/Rectangle_610_30_zk5jbh.png",
     des: "How To Grow Potatoes ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957854/Rectangle_610_8_ote47x.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526332/Rectangle_610_28_byrgbn.png",
     des: "Harvesta: Expansion Plans",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957962/Rectangle_610_8_dubyjc.svg",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526336/Rectangle_610_26_tulrf7.png",
     des: "How To Grow Potatoes ",
     paragraph:
       "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
@@ -119,7 +119,7 @@ const Latest = () => {
                     variant="contained"
                     sx={{
                       fontFamily: "Plus Jakarta Sans",
-                      backgroundColor: colors.harvestaLightGreen,
+                      backgroundColor: colors.primary,
                       "&:hover": {
                         backgroundColor: colors.harvestaLightGreen,
                       },
