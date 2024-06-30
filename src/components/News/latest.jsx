@@ -29,34 +29,47 @@ const StyledTextBox = styled(Box)({
 
 const data = [
   {
-    img: "https://res.cloudinary.com/dfljnnxln/image/upload/v1674009084/Photo_7_ict8n7.png",
-    des: "How I eat healthy meals ",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_24_hcoxfn.png",
+    des: "Poultry Market",
+    paragraph:
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dfljnnxln/image/upload/v1674010427/Photo_2_svfsql.png",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526338/Rectangle_610_25_p2mduc.png",
+    des: "Freshness ",
+    paragraph:
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
+  },
+
+  {
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526343/Rectangle_610_27_i6pya0.png",
     des: "How I eat healthy meals ",
+    paragraph:
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dfljnnxln/image/upload/v1674010427/Photo_1_1_wrsupq.png",
-    des: "How I eat healthy meals ",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526333/Rectangle_610_30_zk5jbh.png",
+    des: "How To Grow Potatoes ",
+    paragraph:
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dfljnnxln/image/upload/v1674009084/Photo_7_ict8n7.png",
-    des: "How I eat healthy meals ",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526332/Rectangle_610_28_byrgbn.png",
+    des: "Harvesta: Expansion Plans",
+    paragraph:
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
   {
-    img: "https://res.cloudinary.com/dfljnnxln/image/upload/v1674010427/Photo_2_svfsql.png",
-    des: "How I eat healthy meals ",
-  },
-  {
-    img: "https://res.cloudinary.com/dfljnnxln/image/upload/v1674010427/Photo_1_1_wrsupq.png",
-    des: "How I eat healthy meals ",
+    img: "https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526336/Rectangle_610_26_tulrf7.png",
+    des: "How To Grow Potatoes ",
+    paragraph:
+      "At Harvesta, we prioritize delivering the freshest produce directly from local farms to your doorstep. We ensure that every item meets our high standards ",
   },
 ];
 const Latest = () => {
   return (
     <>
-      <Container maxWidth={"md"}>
+      <Container maxWidth={"lg"}>
         <Box marginY={8}>
           <Heading title="Latest News" Talign="left" x="0" PX="0" />
           <Stack
@@ -89,26 +102,24 @@ const Latest = () => {
                   mb={3}
                   fontFamily={"Plus Jakarta Sans"}
                 >
-                  {" "}
-                  Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
-                  turpis dignissim maximus.posuere in.Contrary to popular
-                  belief.
+                  Our customers are at the heart of everything we do. We are
+                  dedicated to providing exceptional service, ensuring that
+                  every delivery is timely and every interaction is positive.
                 </Typography>
                 <Typography
                   fontSize={"0.8rem"}
                   mb={2}
                   fontFamily={"Plus Jakarta Sans"}
                 >
-                  {" "}
-                  Lorem Ipsum is not simply random text. It has roots in a piece
-                  of classica classica.
+                  Your satisfaction is our top priority, and we continuously
+                  seek to improve our services to meet your needs.
                 </Typography>
                 <Stack direction="row" alignItems="center">
                   <Button
                     variant="contained"
                     sx={{
                       fontFamily: "Plus Jakarta Sans",
-                      backgroundColor: colors.harvestaLightGreen,
+                      backgroundColor: colors.primary,
                       "&:hover": {
                         backgroundColor: colors.harvestaLightGreen,
                       },
@@ -122,7 +133,7 @@ const Latest = () => {
             <StyledAboutBox
               sx={{
                 order: ["2", "1"],
-                background: `url(https://res.cloudinary.com/dfljnnxln/image/upload/v1674075411/Photo_3_1_jnx2vc.png)`,
+                background: `url(https://res.cloudinary.com/dtc89xi2r/image/upload/v1719331576/Rectangle_3854_qrepi6.png)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
                 backgroundRepeat: "no-repeat",
