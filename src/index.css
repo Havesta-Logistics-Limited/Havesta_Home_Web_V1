@@ -1,68 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 .backgroundImage {
-    background-image: url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1718747610/Group_1000001819_rxpqve.png');
-    background-position: center;
-    background-repeat: none;
-    background-size: cover;
+  background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1718747610/Group_1000001819_rxpqve.png");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
 }
 
 @keyframes iconBounce {
-    0%, 40% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  0%,
+  40% {
+    transform: translateY(0);
   }
-
-  .rider_bg_img{
-    background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957966/EatFood.com_4_ip6pcn.svg");
-    background-repeat: none;
-    height: 50vh;
-    background-position: cover;
-   
+  20% {
+    transform: translateY(-10%);
   }
-
-  .input-field::placeholder {
-    font-style: italic;
+  100% {
+    transform: translateY(0);
   }
+}
 
-  .rider-field::placeholder{
-    font-size: 12px;
-    color: gray
+.rider_bg_img {
+  background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957966/EatFood.com_4_ip6pcn.svg");
+  background-repeat: none;
+  height: 50vh;
+  background-position: cover;
+}
+
+.input-field::placeholder {
+  font-style: italic;
+}
+
+.rider-field::placeholder {
+  font-size: 12px;
+  color: gray;
+}
+
+select {
+  appearance: none;
+}
+
+.select-field option {
+  font-size: 14px;
+  padding: 10px;
+  background-color: white;
+  font-weight: bold;
+  margin: auto;
+  appearance: none;
+}
+
+.MuiSelect-select-select {
+  /* Target the actual select element */
+  &::placeholder {
+    color: lightgray; /* Adjust color as needed */
+    font-size: 14px; /* Adjust font size as needed */
+    font-style: italic; /* Adjust font style as needed */
+    /* Add other placeholder-specific styles here */
   }
-
-  select {
-    appearance: none;
-  }
-  
-  
-    .select-field option {
-      font-size: 14px;
-      padding: 10px ;
-      background-color: white; 
-     font-weight: bold;
-     margin: auto;
-     appearance: none;
-
-      
-    } 
-  
-    .MuiSelect-select-select { /* Target the actual select element */
-      &::placeholder {
-        color: lightgray; /* Adjust color as needed */
-        font-size: 14px; /* Adjust font size as needed */
-        font-style: italic; /* Adjust font style as needed */
-        /* Add other placeholder-specific styles here */
-      }
-    }
+}
