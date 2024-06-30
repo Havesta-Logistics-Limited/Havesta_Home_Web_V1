@@ -4,7 +4,7 @@ const ChooseUs = () => {
       <h1 className="text-4xl font-bold">Why Choose Us</h1>
       
       <img
-        src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718747611/Group_1000001818_w6k5n3.svg"
+        src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719397318/Group_1000001822_dcwbuj.svg"
         className="w-[950px] h-[84vh]"
         alt=""
       />
