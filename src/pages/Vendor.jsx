@@ -38,23 +38,23 @@ const Vendor = ({hero}) => {
    <>
    <section>
         <div className="relative pb-5">
-          <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526993/Group_1000001828_t69b4k.png')]">
+          <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719779125/Vendors_wsktmk.svg')]">
             {/* HERO SECTION */}
-            <div className="mt-44 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative ml-20 ">
+            <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative ml-44">
               <div className=" p-2">
-                <h2 className="text-2xl p-3 font-primary font-bold lg:leading-10 lg:text-[40px]  text-white">
+                <h2 className="p-3 font-primary font-bold lg:leading-tight lg:text-[55px] text-white text-6xl ">
                  Make More Sales <br />
                   <span className="text-primary font-[700]">Online </span>with
                   Harvesta
                 </h2>
-                <p className=" p-3 font-primary font-semibold text-sm text-white">
+                <p className=" p-3  text-md text-white">
                 Let us help you take your business to the next level
                 </p>
-                <button className="mt-10 font-primary rounded-full bg-white p-3 text-black text-xs font-bold shadow-md w-[100px] ml-2 hover:bg-primary hover:text-white transition-all">
+               {/*  <button className="mb-10 font-primary rounded-full bg-white p-3 text-black text-xs font-bold shadow-md w-[100px] ml-2 hover:bg-primary hover:text-white transition-all">
                   Get Started
-                </button>
+                </button> */}
               </div>
-              <div className="lg:absolute right-48">
+              <div className="lg:absolute right-52">
                 <img
                   src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527040/Ellipse_69_2_n4dk4u.svg"
                   alt=""
@@ -132,6 +132,8 @@ const Vendor = ({hero}) => {
               sx={{
                 fontFamily: "Plus Jakarta Sans",
                 fontSize: "12px",
+                marginLeft: '-5px'
+
               }}
               color="success"
               size="sm"
@@ -162,7 +164,7 @@ const Vendor = ({hero}) => {
           </div>
         </div>
 
-        <div className="w-full h-auto bg-harvestaLightGreen px-1 flex justify-center mt-10">
+        <div className="w-full h-auto bg-harvestaLightGreen px-1 flex justify-center mt-20">
           {" "}
           {/* container */}
           <div className="w-3/4 bg-white lg:grid grid-flow-col gap-3 border-2 border-white rounded-[20px]">
@@ -203,7 +205,7 @@ const Vendor = ({hero}) => {
                   </div>
                   <div className="grid grid-col-1  justify-items-center py-4">
                     <img
-                      src="/icons/Shape.svg"
+                      src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719784049/Shape_lcuvsj.svg"
                       alt="harvesta"
                       className="p-2 mt-10 text-white"
                     />
@@ -219,8 +221,8 @@ const Vendor = ({hero}) => {
                       {review.text}
                     </p>
                     <br />
-                    <h2 className="text-center font-extrabold">{review.name}</h2>
-                    <h3 className="text-center text-primary text-xs font-bold">
+                    <h2 className="text-center font-extrabold text-white">{review.name}</h2>
+                    <h3 className="text-center text-harvestaYellow text-xs font-bold">
                       {review.title}
                     </h3>
                   </div>
@@ -231,13 +233,13 @@ const Vendor = ({hero}) => {
         </div>
         <button
           onClick={handlePrevClick}
-          className="absolute left-0 ml-[-30px] py-4 px-3 bg-harvestaDarkGreen rounded-full hover:bg-harvestaDarkGreen"
+          className="absolute left-0 ml-[-30px] py-4 px-3 bg-harvestaLightGreen rounded-full hover:bg-harvestaDarkGreen"
         >
           <img src="/icons/tail-left.png" alt="harvesta" />
         </button>
         <button
           onClick={handleNextClick}
-          className="absolute right-0 mr-[-30px]  py-4 px-3 bg-harvestaDarkGreen rounded-full hover:bg-harvestaDarkGreen"
+          className="absolute right-0 mr-[-30px]  py-4 px-3 bg-harvestaLightGreen rounded-full hover:bg-harvestaDarkGreen"
         >
           <img src="/icons/tail-right.png" alt="harvesta" />
         </button>
