@@ -25,8 +25,8 @@ export default {
         primary: ["Plus Jakarta Sans"],
 
         secondary: ['Rubik Wet Paint'],
-        rider: ['Helvetica']
-
+        rider: ['Helvetica'],
+      },
 
       animation: {
         iconBounce: "iconBounce 1s ease-in-out infinite",
@@ -42,4 +42,4 @@ export default {
   },
 
   plugins: [],
-};
+}
