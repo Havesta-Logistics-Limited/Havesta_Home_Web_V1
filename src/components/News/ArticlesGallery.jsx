@@ -7,6 +7,7 @@ import {
   Stack,
   styled,
   Typography,
+  Button,
 } from "@mui/material";
 import { colors } from "../../utils/globals";
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ const StyledGridElements = styled(Box)({
   width: "100%",
 });
 
-const ArticlesGallery = ({ data, gridWidth = "200px" }) => {
+const ArticlesGallery = ({ data, gridWidth = "300px" }) => {
   const GridContainer = styled(Box)({
     display: "grid",
     gridTemplateColumns: `repeat(auto-fill, minmax(${gridWidth}, 1fr))`,
@@ -37,14 +38,10 @@ const ArticlesGallery = ({ data, gridWidth = "200px" }) => {
               <Card
                 sx={{
                   backgroundColor: `${colors.harvestaLightGreen}`,
-                  p: 1,
                   borderRadius: "25px",
-                  border: "1px solid rgba(0, 0, 0, 0.1)",
+                  // border: "1px solid rgba(0, 0, 0, 0.1)",
                   boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.05)",
                   borderColor: `grey`,
-                  ":hover": {
-                    backgroundColor: `${colors.primary}`,
-                  },
                 }}
                 elevation={0}
               >
@@ -53,15 +50,17 @@ const ArticlesGallery = ({ data, gridWidth = "200px" }) => {
                   alt=""
                   height="200"
                   image={ele.img}
-                  sx={{ objectFit: "cover", borderRadius: "25px 25px 0 0" }}
+                  sx={{ objectFit: "cover" }}
                 />
-                <CardContent sx={{ paddingX: 0 }}>
+                <CardContent sx={{ paddingX: 3 }}>
                   {ele.des && (
-                    <Stack direction="column">
+                    <Stack
+                      direction="column"
+                      textAlign={"center"}
+                      alignItems={"center"}
+                    >
                       <Typography
                         fontWeight="500"
-                        paddingRight={[1, 5]}
-                        mb
                         color={colors.WHITE}
                         textTransform={"capitalize"}
                         fontFamily={"Plus Jakarta Sans"}
@@ -72,21 +71,32 @@ const ArticlesGallery = ({ data, gridWidth = "200px" }) => {
                         direction="row"
                         justifyContent="space-between"
                         alignItems="center"
+                        my={2}
                       >
                         <Typography
                           fontSize="0.8rem"
                           color={colors.WHITE}
                           fontFamily={"Plus Jakarta Sans"}
                         >
-                          Lorem ipsum dolor sit amet consectetur, adipisicing
-                          elit. Minus accusantium molestias rem illo
-                          exercitationem quaerat consectetur. Iure aliquid
-                          facere fugit debitis odio commodi totam repellat
-                          ducimus, beatae itaque non culpa!
+                          {ele.paragraph}
                         </Typography>
                         {/* <Avatar sx={{ background: `${colors.harvestaYellow}` }}>
                         <IoIosArrowForward color={colors.primary} />
                       </Avatar> */}
+                      </Stack>
+                      <Stack direction="row" alignItems="center">
+                        <Button
+                          variant="contained"
+                          sx={{
+                            fontFamily: "Plus Jakarta Sans",
+                            backgroundColor: colors.primary,
+                            "&:hover": {
+                              backgroundColor: colors.harvestaLightGreen,
+                            },
+                          }}
+                        >
+                          Read more
+                        </Button>
                       </Stack>
                     </Stack>
                   )}
