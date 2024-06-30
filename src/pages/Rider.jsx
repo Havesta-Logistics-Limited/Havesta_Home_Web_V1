@@ -6,12 +6,11 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { riderForm, riderStats } from "../config/rider.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link } from "react-router-dom";
-import countryApi from "../api/endpoints/rider.endpoints.js";
 import { useState, useEffect } from "react";
 import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import { setIcon } from "../redux/features/iconSlice.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 
 
 const Rider = ({ hero }) => {
