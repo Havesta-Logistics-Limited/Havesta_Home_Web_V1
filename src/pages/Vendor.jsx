@@ -6,7 +6,6 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { vendorForm, vendorStats } from "../config/vendors.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link } from "react-router-dom";
-import countryApi from "../api/endpoints/rider.endpoints.js";
 import { useState } from "react";
 import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
@@ -41,7 +40,7 @@ const Vendor = ({hero}) => {
         <div className="relative pb-5">
           <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719526993/Group_1000001828_t69b4k.png')]">
             {/* HERO SECTION */}
-            <div className="mt-44 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative">
+            <div className="mt-44 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative ml-20 ">
               <div className=" p-2">
                 <h2 className="text-2xl p-3 font-primary font-bold lg:leading-10 lg:text-[40px]  text-white">
                  Make More Sales <br />
