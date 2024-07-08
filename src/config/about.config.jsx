@@ -1,11 +1,7 @@
 import worldIcon from "../assets/animations/worldwide.gif";
 import deliveryIcon from "../assets/animations/delivery-scooter.gif";
 import badgeIcon from "../assets/animations/badge.gif";
-
-
-
 import discussion from '../assets/animations/discussion.gif'
-import { duration } from "@mui/material";
 
 export const aboutItems = [
   {

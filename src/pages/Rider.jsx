@@ -5,22 +5,45 @@ import Option from "@mui/joy/Option";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { riderForm, riderStats } from "../config/rider.config";
 import Checkbox from "@mui/joy/Checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import { setIcon } from "../redux/features/iconSlice.js";
-import { useDispatch} from "react-redux";
-
+import { useDispatch } from "react-redux";
+import axios from "axios";
 
 const Rider = ({ hero }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate()
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    dateOfBirth: "",
+    gender: "",
+    country: "",
+    state: "",
+    methodOfDelivery: "",
+    location: "",
+    currentlyEmployed: "",
+    NIN: "",
+    bankName: "",
+    accountNumber: "",
+    guarantorOne: "",
+    guarantorOnePhoneNumber: "",
+    guarantorTwo: "",
+    guarantorTwoPhoneNumber: "",
+  });
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setIcon('rider'))
 
-    return ()=>{
-      dispatch(setIcon('home'))
-    }
+  useEffect(() => {
+    dispatch(setIcon("rider"));
+
+    return () => {
+      dispatch(setIcon("home"));
+    };
   }, []);
 
   const formTitleStyle = {
@@ -30,8 +53,6 @@ const Rider = ({ hero }) => {
     lineHeight: "1.5",
     fontFamily: "Plus Jakarta Sans",
   };
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const handlePrevClick = () => {
     const prevSlide =
@@ -44,6 +65,42 @@ const Rider = ({ hero }) => {
       currentSlide === ReviewsRoutes.length - 1 ? 0 : currentSlide + 1;
     setCurrentSlide(nextSlide);
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  /*   await axios.post("backendUrl", formData);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      dateOfBirth: "",
+      gender: "",
+      country: "",
+      state: "",
+      methodOfDelivery: "",
+      location: "",
+      currentlyEmployed: "",
+      NIN: "",
+      bankName: "",
+      accountNumber: "",
+      guarantorOne: "",
+      guarantorOnePhoneNumber: "",
+      guarantorTwo: "",
+      guarantorTwoPhoneNumber: "",
+    }); */
+    const value = 4935340340229425
+
+    navigate(`/riders/congratulations/${value}`)
+  };
+
+  const handleChange = (event) => {
+    setFormData((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
   return (
     <>
       <section>
@@ -121,6 +178,9 @@ const Rider = ({ hero }) => {
                       type={item.type}
                       placeholder={item.placeholder}
                       className="border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary"
+                      value={formData[item.name]}
+                      name={item.name}
+                      onChange={handleChange}
                     />
                   </FormControl>
                 )
@@ -132,7 +192,7 @@ const Rider = ({ hero }) => {
               sx={{
                 fontFamily: "Plus Jakarta Sans",
                 fontSize: "12px",
-                marginLeft: '-5px'
+                marginLeft: "-5px",
               }}
               color="success"
               size="sm"
@@ -148,7 +208,7 @@ const Rider = ({ hero }) => {
               label="By clicking this, you accept the  privacy policy "
             />
 
-            <button className="mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover">
+            <button className="mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover" onClick={handleSubmit}>
               Submit
             </button>
             <p className="text-xs">

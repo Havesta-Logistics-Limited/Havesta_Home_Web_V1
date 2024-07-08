@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './pages/MainLayout';
 import routes from './config/routes.config';
-
+import CongratulationsRider from './pages/Congratulations/CongratulationsRider';
+import UploadRider from './pages/Upload/UploadRider';
+import FinalMessageRider from './pages/FinalMessage/FinalMessageRider';
 function App() {
   return (
     <Routes>
@@ -14,6 +16,9 @@ function App() {
           )
         )}
       </Route>
+      <Route path='/riders/congratulations/:id' element={<CongratulationsRider/>}/>
+      <Route path='/rider/upload' element={<UploadRider/>}/>
+      <Route path='/finalmessage' element={<FinalMessageRider/>}/>
     </Routes>
   );
 }
