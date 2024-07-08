@@ -8,14 +8,12 @@ import RouteWrapper from "../components/RouteWrapper";
 import Partner from "../pages/Vendor";
 import About from "../pages/About/About";
 import SingleNews from "../pages/SingleNews";
-
+import FinalMessageRider from "../pages/FinalMessage/FinalMessageRider";
 const routes = [
   {
     path: "/home",
 
-    element: <RouteWrapper component={Home} hero='' />,
-
-
+    element: <RouteWrapper component={Home} hero="" />,
   },
   {
     path: "/about",
@@ -35,9 +33,12 @@ const routes = [
   {
     index: true,
 
-    element: <RouteWrapper component={Home} hero='https://res.cloudinary.com/dtc89xi2r/image/upload/v1718725096/Group_3733_vyipoo.png' />,
-
-
+    element: (
+      <RouteWrapper
+        component={Home}
+        hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718725096/Group_3733_vyipoo.png"
+      />
+    ),
   },
   {
     path: "/vendors",
@@ -45,7 +46,12 @@ const routes = [
   },
   {
     path: "/riders",
-    element: <RouteWrapper component={Rider} hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527266/EatFood.com_8_exoobu.svg" />,
+    element: (
+      <RouteWrapper
+        component={Rider}
+        hero="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719527266/EatFood.com_8_exoobu.svg"
+      />
+    ),
   },
   {
     path: "/news",
@@ -61,8 +67,15 @@ const routes = [
   },
   {
     path: "*",
-    element: <NotFound />,
+    element: <RouteWrapper component={NotFound} hero="/icons/news.svg" />,
   },
+  
+ /*  {
+    path: "/riders/congratulations/:id",
+    element: (
+      <RouteWrapper component={CongratulationsRider} hero="/icons/news.svg" />
+    ),
+  }, */
 ];
 
 export default routes;
