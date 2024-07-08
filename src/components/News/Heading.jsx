@@ -8,7 +8,7 @@ const Heading = ({
   PX = "5rem",
   Tcolor = "black",
   Dcolor = "black",
-  fontS = "1.8rem",
+  fontS = "1.5rem",
   Talign = "center",
 }) => {
   return (
@@ -16,10 +16,11 @@ const Heading = ({
       <Box mb textAlign={Talign} paddingX={["0rem", x]}>
         <Typography
           mb
-          variant="h5"
+          variant="h1"
           fontSize={fontS}
           color={Tcolor}
           paddingX={["0rem", PX]}
+          fontWeight={700}
         >
           {title}
         </Typography>
