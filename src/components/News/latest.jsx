@@ -9,6 +9,7 @@ import {
 import Heading from "./Heading";
 import ArticlesGallery from "./ArticlesGallery";
 import { colors } from "../../utils/globals";
+import { Link } from "react-router-dom";
 
 const StyledAboutBox = styled(Box)({
   borderRadius: "25px",
@@ -115,18 +116,20 @@ const Latest = () => {
                   seek to improve our services to meet your needs.
                 </Typography>
                 <Stack direction="row" alignItems="center">
-                  <Button
-                    variant="contained"
-                    sx={{
-                      fontFamily: "Plus Jakarta Sans",
-                      backgroundColor: colors.primary,
-                      "&:hover": {
-                        backgroundColor: colors.harvestaLightGreen,
-                      },
-                    }}
-                  >
-                    Read more
-                  </Button>
+                  <Link to={`/news/topnews`}>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        fontFamily: "Plus Jakarta Sans",
+                        backgroundColor: colors.primary,
+                        "&:hover": {
+                          backgroundColor: colors.BLACK,
+                        },
+                      }}
+                    >
+                      Read more
+                    </Button>
+                  </Link>
                 </Stack>
               </StyledTextBox>
             </Box>
