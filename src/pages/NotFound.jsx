@@ -19,7 +19,7 @@ const NotFound = () => {
               renamed, or temporarily <br /> unavailable
             </p>
             <button
-              className="mt-4 text-xs font-primary rounded-full bg-harvestaYellow p-2.5 font-bold text-white hover:bg-harvestaLightGreen transition-all w-2/5"
+              className="mt-4 text-xs font-primary rounded-full border-2 border-harvestaYellow bg-harvestaYellow p-2.5 font-bold text-white hover:bg-transparent transition-all w-2/5"
               onClick={() => navigate("/")}
             >
               Go Back Home
