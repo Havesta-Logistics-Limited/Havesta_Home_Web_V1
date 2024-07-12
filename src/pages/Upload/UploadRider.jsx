@@ -6,10 +6,12 @@ import checkIcon from "../../assets/icons/icon.png";
 import uploadIcon from "../../assets/icons/upload.png";
 import cancelSend from "../../assets/icons/cancel.png";
 import LogoNav from "../../common/LogoNav.jsx";
+import { useNavigate } from "react-router-dom";
 
 const UploadRider = () => {
   const [progress, setProgress] = useState({});
   const [files, setFiles] = useState([]);
+  const navigate = useNavigate();
   
   const dispatch = useDispatch();
   const fileInputRef = useRef(null);
@@ -53,6 +55,10 @@ const UploadRider = () => {
       return updatedProgress;
     });
   };
+
+  const nextPage = ()=>{
+    navigate('/finalmessage')
+  }
 
   useEffect(() => {
     dispatch(setIcon("rider"));
@@ -162,7 +168,10 @@ const UploadRider = () => {
                 </div>
               ))}
             </div>
-            <button className="p-2.5 rounded-full font-primary text-sm font-semibold bg-harvestaBlack text-white w-1/4 hover:bg-black">
+            <button 
+            className="p-2.5 rounded-full font-primary text-sm font-semibold bg-harvestaBlack text-white w-1/4 hover:bg-black"
+            onClick={nextPage}
+            >
               Submit
             </button>
           </div>

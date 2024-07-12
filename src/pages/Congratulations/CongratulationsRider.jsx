@@ -1,13 +1,13 @@
-import { useParams } from "react-router-dom";
-import Navbar from "../../components/Navbar.jsx";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setIcon } from "../../redux/features/iconSlice.js";
 import { motion } from "framer-motion";
 import LogoNav from "../../common/LogoNav.jsx";
+import LazyLoad from "react-lazy-load";
 
 const CongratulationsRider = () => {
-  //In the future, the uuid will be queried against the database to confirm its validity
+  const navigate = useNavigate();
   const animationConfig = {
     initialLeft: {
       opacity: 0,
@@ -23,6 +23,7 @@ const CongratulationsRider = () => {
     },
   };
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(setIcon("rider"));
 
@@ -39,6 +40,10 @@ const CongratulationsRider = () => {
   if (!actualValue) {
     return <div className="text-[200px]">403 forbidden </div>;
   }
+
+  const nextPage = () => {
+    navigate("/rider/upload");
+  };
   return (
     <>
       <LogoNav />
@@ -50,7 +55,7 @@ const CongratulationsRider = () => {
               initial={animationConfig.initialLeft}
               whileInView={animationConfig.whileInView}
               transition={{
-                duration: 1.2,
+                duration: 0.5,
               }}
             >
               Congratulations! <br /> Application Received
@@ -60,7 +65,7 @@ const CongratulationsRider = () => {
               className="p-2 font-primary text-sm font-semibold"
               initial={animationConfig.initialLeft}
               whileInView={animationConfig.whileInView}
-              transition={{ duration: 1.6 }}
+              transition={{ duration: 0.5 }}
             >
               Complete your registration process
             </motion.p>
@@ -68,18 +73,22 @@ const CongratulationsRider = () => {
               className="p-3 bg-harvestaBlack text-white rounded-full text-sm font-primary w-1/4 mt-4 font-semibold hover:bg-black"
               initial={animationConfig.initialLeft}
               whileInView={animationConfig.whileInView}
-              transition={{ duration: 2.1 }}
+              transition={{ duration: 0.6 }}
+              onClick={() => nextPage()}
             >
               Continue
             </motion.button>
           </div>
 
           <div>
-            <img
-              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1720271469/ride1_m0lugv.svg"
-              alt="hero-image"
-              className="lg:w-[750px] p-2 w-[400px] hidden lg:block"
-            />
+            <LazyLoad width={750} threshold={1}>
+              <img
+                src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1720271469/ride1_m0lugv.svg"
+                alt="hero-image"
+                className="lg:w-[750px] p-2 w-[400px] hidden lg:block"
+                loading="lazy"
+              />
+            </LazyLoad>
           </div>
         </div>
       </section>
