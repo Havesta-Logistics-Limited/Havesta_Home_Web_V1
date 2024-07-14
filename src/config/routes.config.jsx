@@ -9,6 +9,7 @@ import Partner from "../pages/Vendor";
 import About from "../pages/About/About";
 import SingleNews from "../pages/SingleNews";
 import FinalMessageRider from "../pages/FinalMessage/FinalMessageRider";
+import PrivacyPolicy from "../pages/privacypolicy";
 const routes = [
   {
     path: "/home",
@@ -62,6 +63,10 @@ const routes = [
     element: <RouteWrapper component={SingleNews} hero="/icons/news.svg" />,
   },
   {
+    path: "/privacy-policy",
+    element: <RouteWrapper component={PrivacyPolicy} />,
+  },
+  {
     path: "/marketplace",
     element: <Marketplace />,
   },
@@ -69,8 +74,8 @@ const routes = [
     path: "*",
     element: <RouteWrapper component={NotFound} hero="/icons/news.svg" />,
   },
-  
- /*  {
+
+  /*  {
     path: "/riders/congratulations/:id",
     element: (
       <RouteWrapper component={CongratulationsRider} hero="/icons/news.svg" />
