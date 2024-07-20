@@ -9,11 +9,11 @@ export const vendorForm = [
         placeholder: "Doe",
         type: "text"
     },
-    {
+  /*   {
         title: "Name of Business",
         placeholder: "Ola Buka",
        
-    },
+    }, */
     {
         title: "Email Address",
         placeholder: "example@mail.com",
@@ -25,7 +25,7 @@ export const vendorForm = [
         option: true,
         phoneNumber: true
     },
-    {
+   /*  {
         title: "Date of birth",
         placeholder: "",
         type: 'date'
@@ -53,7 +53,7 @@ export const vendorForm = [
         placeholder: "Yes/No",
         option: true,
         subItems: ['Yes', "No"]
-    },
+    }, */
 ]
 
 

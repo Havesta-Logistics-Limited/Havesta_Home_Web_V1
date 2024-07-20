@@ -1,10 +1,9 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { setIcon } from "../../redux/features/iconSlice.js";
 import { motion } from "framer-motion";
 import LogoNav from "../../common/LogoNav.jsx";
-import LazyLoad from "react-lazy-load";
 
 const CongratulationsRider = () => {
   const navigate = useNavigate();
@@ -31,7 +30,7 @@ const CongratulationsRider = () => {
       dispatch(setIcon("home"));
     };
   }, []);
-  const params = useParams();
+  /* const params = useParams();
   const stringValue = params.id;
   const actualValue =
     (stringValue === "null") | "undefined" ? null : stringValue;
@@ -40,7 +39,7 @@ const CongratulationsRider = () => {
   if (!actualValue) {
     return <div className="text-[200px]">403 forbidden </div>;
   }
-
+ */
   const nextPage = () => {
     navigate("/rider/upload");
   };
@@ -81,14 +80,14 @@ const CongratulationsRider = () => {
           </div>
 
           <div>
-            <LazyLoad width={750} threshold={1}>
+            <Suspense fallback={<div className="text-6xl text-red-600">Picture is loading</div>}>
               <img
                 src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1720271469/ride1_m0lugv.svg"
                 alt="hero-image"
                 className="lg:w-[750px] p-2 w-[400px] hidden lg:block"
                 loading="lazy"
               />
-            </LazyLoad>
+            </Suspense>
           </div>
         </div>
       </section>

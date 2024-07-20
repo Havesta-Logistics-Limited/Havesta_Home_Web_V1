@@ -8,7 +8,6 @@ import RouteWrapper from "../components/RouteWrapper";
 import Partner from "../pages/Vendor";
 import About from "../pages/About/About";
 import SingleNews from "../pages/SingleNews";
-import FinalMessageRider from "../pages/FinalMessage/FinalMessageRider";
 const routes = [
   {
     path: "/home",
