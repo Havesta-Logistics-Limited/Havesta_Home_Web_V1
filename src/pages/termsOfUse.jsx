@@ -1,7 +1,7 @@
 import { Box, Container, Typography, styled } from "@mui/material";
 import PagesHero from "../components/News/pagesHero";
 import FAQ from "../components/faq.";
-import { privacyPolicy } from "../config/privacyPolicy.config";
+import { TermsOfuse } from "../config/termsOfUse.config";
 
 const StyledText = styled(Typography)({
   fontSize: "1rem",
@@ -14,13 +14,13 @@ const StyledTitle = styled(Typography)({
   marginBottom: "1rem",
 });
 
-const PrivacyPolicy = () => {
+const TermsOfUse = () => {
   return (
     <>
-      <PagesHero title={"PRIVACY POLICY"} height={["45vh", "45vh"]} />
+      <PagesHero title={"TERMS OF USE"} height={["45vh", "45vh"]} />
       <div className="full mb-[250px]">
         <Container>
-          {privacyPolicy.map((policy, i) => (
+          {TermsOfuse.map((policy, i) => (
             <Box fontFamily={"Plus Jakarta Sans"} my={5} key={i}>
               <StyledTitle>
                 {i + 1} {policy.title}
@@ -36,4 +36,4 @@ const PrivacyPolicy = () => {
     </>
   );
 };
-export default PrivacyPolicy;
+export default TermsOfUse;
