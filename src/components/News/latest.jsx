@@ -123,7 +123,7 @@ const Latest = () => {
                         fontFamily: "Plus Jakarta Sans",
                         backgroundColor: colors.primary,
                         "&:hover": {
-                          backgroundColor: colors.BLACK,
+                          backgroundColor: colors.primary,
                         },
                       }}
                     >

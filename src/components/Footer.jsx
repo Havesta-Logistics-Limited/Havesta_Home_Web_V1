@@ -66,7 +66,9 @@ const Footer = () => {
 
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
-            <span className="ml-2">Terms of use</span>
+            <Link to={"/terms-of-use"}>
+              <span className="ml-2">Terms of use</span>
+            </Link>
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />

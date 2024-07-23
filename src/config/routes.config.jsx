@@ -10,6 +10,7 @@ import About from "../pages/About/About";
 import SingleNews from "../pages/SingleNews";
 import FinalMessageRider from "../pages/FinalMessage/FinalMessageRider";
 import PrivacyPolicy from "../pages/privacypolicy";
+import TermsOfUse from "../pages/termsOfUse";
 const routes = [
   {
     path: "/home",
@@ -65,6 +66,10 @@ const routes = [
   {
     path: "/privacy-policy",
     element: <RouteWrapper component={PrivacyPolicy} />,
+  },
+  {
+    path: "/terms-of-use",
+    element: <RouteWrapper component={TermsOfUse} />,
   },
   {
     path: "/marketplace",

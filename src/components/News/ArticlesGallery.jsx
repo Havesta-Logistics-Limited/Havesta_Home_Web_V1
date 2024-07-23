@@ -89,11 +89,15 @@ const ArticlesGallery = ({ data, gridWidth = "300px" }) => {
                         <Button
                           variant="contained"
                           sx={{
+                            boxShadow: "none",
                             marginTop: 3,
                             fontFamily: "Plus Jakarta Sans",
                             backgroundColor: colors.primary,
                             "&:hover": {
-                              backgroundColor: colors.BLACK,
+                              backgroundColor: colors.WHITE,
+                              // border: 1,
+                              // borderColor: colors.harvestaDarkGreen,
+                              color: colors.BLACK,
                             },
                           }}
                         >

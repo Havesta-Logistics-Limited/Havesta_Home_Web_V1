@@ -9,11 +9,11 @@ const StyledBox = styled(Box)({
   fontFamily: "Plus Jakarta Sans",
 });
 
-const PagesHero = ({ image, title, des }) => {
+const PagesHero = ({ image, title, des, height = ["40vh", "75vh"] }) => {
   return (
     <>
       <StyledBox
-        height={["40vh", "75vh"]}
+        height={height}
         sx={{
           background: image ? `url(${image})` : colors.primary,
           backgroundSize: ["cover", "center"],
