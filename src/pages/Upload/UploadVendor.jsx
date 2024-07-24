@@ -68,7 +68,7 @@ const UploadVendor = () => {
     dispatch(setIcon("rider"));
 
     return () => {
-      dispatch(setIcon("home"));
+      dispatch(setIcon("home")); 
     };
   }, []);
 
@@ -85,8 +85,8 @@ const UploadVendor = () => {
       <LogoNav />
       
       <section className="bg-harvestaBlack p-4 font-primary">
-        <div className="h-screen lg:grid grid-flow-col justify-items-center items-center">
-          <div className="p-3 ml-28">
+        <div className="h-[100%] md:h-[100vh] lg:grid grid-flow-col justify-items-center items-center">
+          <div className="p-4  mt-28 lg:ml-28 lg:mt-[-28px]">
             <h1 className="text-4xl text-white font-primary font-semibold leading-11">
               Upload Your Product Menu
             </h1>
@@ -113,7 +113,7 @@ const UploadVendor = () => {
           </div>
 
           <div className="grid grid-flow-row justify-items-center">
-            <div className="bg-white p-4 w-[500px] h-auto rounded-2xl mb-6">
+            <div className="bg-white w-full p-4 md:w-[500px] h-auto rounded-2xl mb-6 ">
               <div className="p-3">
                 <h3 className="text-harvestaSecondBlack font-bold font-primary">
                   Upload and attach files

@@ -7,13 +7,13 @@ import twitterPng from '../assets/icons/twitter (2).png';
 import linkedinPng from '../assets/icons/linkedin (1).png';
 import facebookPng from '../assets/icons/facebook.png'
 import instagramPng from '../assets/icons/instagram.png'
+import Logo from "./Logo";
 const Footer = () => {
   return (
     <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
       <div className=" p-4">
         <div className="flex items-center gap-2 mb-4">
-          <img src={image1} alt="Logo" className="w-6 h-6" />
-          <h3 className="text-xl font-bold text-white">Harvesta</h3>
+         <Logo/>
         </div>
         <p className="text-sm leading-6">
           HARVESTA prioritizes convenience and transparency, enhancing the

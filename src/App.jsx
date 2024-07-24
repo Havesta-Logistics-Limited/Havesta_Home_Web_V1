@@ -10,6 +10,7 @@ import CommissionPage from './pages/CommissionPage';
 import TermsVendor from './pages/TermsVendor/TermsVendor';
 import UploadVendor from './pages/Upload/UploadVendor';
 import VendorModal from './components/vendorModal';
+import SideModal from './common/SideModal';
 function App() {
   return (
     <Routes>
@@ -21,6 +22,7 @@ function App() {
             <Route path={route.path} element={route.element} key={index} />
           )
         )}
+        
       </Route>
       <Route path='/riders/congratulations' element={<CongratulationsRider/>}/> {/* SHOLD HAVE AN ID IN THE ROUTE FOR PROD */}
       <Route path='/vendors/congratulations' element={<CongratulationsVendor/>}/> {/* SHOLD HAVE AN ID IN THE ROUTE FOR PROD */}

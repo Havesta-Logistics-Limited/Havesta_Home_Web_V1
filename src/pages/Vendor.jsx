@@ -40,9 +40,9 @@ const Vendor = ({hero}) => {
         <div className="relative pb-5">
           <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719779125/Vendors_wsktmk.svg')]">
             {/* HERO SECTION */}
-            <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative ml-44">
+            <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
               <div className=" p-2">
-                <h2 className="p-3 font-primary font-bold lg:leading-tight lg:text-[55px] text-white text-6xl ">
+                <h2 className="p-3 text-[45px] font-primary font-bold lg:leading-tight lg:text-[55px] text-white text-6xl ">
                  Make More Sales <br />
                   <span className="text-primary font-[700]">Online </span>with
                   Harvesta
@@ -65,15 +65,15 @@ const Vendor = ({hero}) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 justify-items-center mt-20 font-primary">
+        <div className="grid grid-cols-1 justify-items-center mt-20 font-primary ">
           <h2 className="text-3xl font-bold font-primary mt-10">
             Complete The Form
           </h2>
-          <form className="my-12 w-1/2">
+          <form className="my-12 lg:w-1/2 w-full p-8">
             <div className="lg:grid grid-cols-2 gap-9">
               {vendorForm.map((item, index) =>
                 item.option ? (
-                  <FormControl key={index} className="ml-16 w-full">
+                  <FormControl key={index} className=" w-full">
                     <FormLabel style={formTitleStyle} className="font-primary">
                       {item.title}
                     </FormLabel>
@@ -115,7 +115,7 @@ const Vendor = ({hero}) => {
                     </Select>
                   </FormControl>
                 ) : (
-                  <FormControl key={index} className="ml-16 w-full">
+                  <FormControl key={index} className=" w-full">
                     <FormLabel style={formTitleStyle}>{item.title}</FormLabel>
                     <input
                       type={item.type}
@@ -164,10 +164,12 @@ const Vendor = ({hero}) => {
           </div>
         </div>
 
-        <div className="w-full h-auto bg-harvestaLightGreen px-1 flex justify-center mt-20">
+
+
+        <div className="w-full h-auto bg-harvestaLightGreen px-3 flex justify-center mt-20">
           {" "}
           {/* container */}
-          <div className="w-3/4 bg-white lg:grid grid-flow-col gap-3 border-2 border-white rounded-[20px]">
+          <div className="w-3/4 bg-white lg:grid grid-flow-col gap-3  rounded-[20px]">
             {vendorStats.map((item, index) => (
               <div
                 key={index}
@@ -246,7 +248,7 @@ const Vendor = ({hero}) => {
       </div>
         </div>
 
-        <div className="grid grid-cols-3 justify-items-center p-10 w-1/2 mx-auto space-x-4 mb-40">
+        <div className="space-y-10 lg:grid grid-cols-3 justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40">
         <div className="items-center flex flex-col">
           <h1 className="text-6xl text-harvestaDarkGreen font-semibold">1M+</h1>
           <h3 className="">Monthly Customer Visit</h3>
@@ -255,7 +257,7 @@ const Vendor = ({hero}) => {
           <h1 className="text-6xl text-harvestaDarkGreen font-semibold">92%</h1>
           <h3 className="">Customer Satisfaction Rate</h3>
         </div>
-        <div className="items-center flex flex-col">
+        <div className="flex flex-col items-center ">
           <h1 className="text-6xl text-harvestaDarkGreen font-semibold">4.9</h1>
           <h3 className="">Average Customer Ratings</h3>
         </div>

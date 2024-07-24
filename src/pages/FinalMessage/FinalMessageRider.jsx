@@ -5,13 +5,13 @@ const FinalMessageRider = () => {
     <>
       <LogoNav />
       <section className="p-4 bg-harvestaYellow grid grid-flow-row justify-items-center items-center h-screen">
-        <div className="p-4 bg-white w-[550px] h-[550px] grid grid-flow-row justify-items-center rounded-[27px] shadow-md">
+        <div className="w-auto h-auto mt-10  p-4 bg-white lg:w-[550px] lg:h-[550px] grid grid-flow-row justify-items-center rounded-[27px] shadow-md border-2">
           <img
             src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1720271607/Successfully_Done_3_pg7jni.gif "
             className="w-[250px]"
             alt=""
           />
-          <h1 className="p-2 font-primary font-semibold text-[45px]">
+          <h1 className="text-[30px] p-2 font-primary font-semibold lg:text-[45px]">
             Congratulations
           </h1>
           <p className="text-[14px] font-primary mt-[-13px] text-center text-harvestaSecondBlack p-1">

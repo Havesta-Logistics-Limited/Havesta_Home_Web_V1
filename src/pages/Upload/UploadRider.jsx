@@ -83,10 +83,10 @@ const UploadRider = () => {
   return (
     <>
       <LogoNav />
-      <section className="bg-harvestaYellow p-4">
+      <section className="bg-harvestaYellow p-5">
         <div className="h-screen lg:grid grid-flow-col justify-items-center items-center">
-          <div className="p-4 ml-28">
-            <h1 className="text-[60px] text-white font-primary font-semibold leading-11">
+          <div className="p-4  mt-28 lg:ml-28 lg:mt-[-28px]">
+            <h1 className="lg:text-[60px] text-[40px] mb-4 text-white font-primary font-semibold leading-11">
               Upload Your <br /> Documents
             </h1>
 
@@ -103,8 +103,18 @@ const UploadRider = () => {
             ))}
           </div>
 
+
+
+
+
+
+
+
+
+
+
           <div className="grid grid-flow-row justify-items-center">
-            <div className="bg-white p-4 w-[500px] h-auto rounded-2xl mb-6">
+            <div className="bg-white w-full p-4 md:w-[500px] h-auto rounded-2xl mb-6 ">
               <div className="p-3">
                 <h3 className="text-harvestaSecondBlack font-bold font-primary">
                   Upload and attach files

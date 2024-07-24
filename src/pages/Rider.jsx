@@ -100,16 +100,16 @@ const Rider = ({ hero }) => {
       [event.target.name]: event.target.value,
     }));
   };
-
+ 
   return (
     <>
       <section>
         <div className="relative pb-5">
           <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719779110/riders_v5sbzb.svg')]">
             {/* HERO SECTION */}
-            <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative ml-44">
+            <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
               <div className=" p-2">
-                <h2 className="p-3 font-primary font-bold lg:leading-tight lg:text-[55px] text-[#242424] text-6xl ">
+                <h2 className="p-3 text-[50px] font-primary font-bold lg:leading-tight lg:text-[55px] text-[#242424] text-6xl">
                   Become a Delivery <br />
                   <span className="text-white font-[700]">AGENT </span>with
                   Harvesta
@@ -136,11 +136,11 @@ const Rider = ({ hero }) => {
           <h2 className="text-3xl font-bold font-primary mt-10">
             Complete The Form
           </h2>
-          <form className="my-12">
+          <form className="my-12 lg:w-1/2 w-full p-8">
             <div className="lg:grid grid-cols-2 gap-6">
               {riderForm.map((item, index) =>
                 item.options ? (
-                  <FormControl key={index} className="ml-10">
+                  <FormControl key={index} className="">
                     <FormLabel style={formTitleStyle} className="font-primary">
                       {item.title}
                     </FormLabel>
@@ -172,7 +172,7 @@ const Rider = ({ hero }) => {
                     </Select>
                   </FormControl>
                 ) : (
-                  <FormControl key={index} className="ml-10">
+                  <FormControl key={index} className="">
                     <FormLabel style={formTitleStyle}>{item.title}</FormLabel>
                     <input
                       type={item.type}
@@ -307,7 +307,7 @@ const Rider = ({ hero }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 justify-items-center p-10 w-1/2 mx-auto space-x-4 mb-40">
+        <div className="space-y-12 lg:grid grid-cols-3 justify-items-center p-10 w-1/2 mx-auto space-x-4 mb-40">
           <div className="items-center flex flex-col">
             <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
               1M+
