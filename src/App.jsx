@@ -1,3 +1,4 @@
+
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './pages/MainLayout';
 import routes from './config/routes.config';
@@ -34,6 +35,7 @@ function App() {
       <Route path='/vendors/terms_and_conditions' element={<TermsVendor/>}/>
       <Route path='/vendor/modal' element={<VendorModal/>}/>
     </Routes>
+
   );
 }
 

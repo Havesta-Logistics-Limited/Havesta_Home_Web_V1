@@ -6,7 +6,7 @@ const colors = {
   WHITE: "#fff",
   GREY: "#F4F0EC",
   OFF_GREY: "#4D5053",
-  BLACK: "#222222",
+  BLACK: "#242424",
 };
 
 export { colors };

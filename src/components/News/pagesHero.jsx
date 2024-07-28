@@ -6,16 +6,17 @@ const StyledBox = styled(Box)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  fontFamily: "Plus Jakarta Sans",
 });
 
-const PagesHero = ({ image, title, des }) => {
+const PagesHero = ({ image, title, des, height = ["40vh", "75vh"] }) => {
   return (
     <>
       <StyledBox
-        height={["40vh", "50vh"]}
+        height={height}
         sx={{
           background: image ? `url(${image})` : colors.primary,
-          backgroundSize: ["cover", "100% 100%"],
+          backgroundSize: ["cover", "center"],
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
@@ -27,9 +28,10 @@ const PagesHero = ({ image, title, des }) => {
           p={2}
           width={["90%", "70%"]}
           textAlign={"center"}
+          fontFamily="Plus Jakarta Sans"
         >
           <Typography
-            fontSize={["1rem", "2rem"]}
+            fontSize={["1rem", "3rem"]}
             color={colors.WHITE}
             fontWeight={700}
             letterSpacing={".3rem"}

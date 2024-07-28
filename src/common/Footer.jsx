@@ -1,4 +1,3 @@
-import image1 from "../assets/images/Group-4.png";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
