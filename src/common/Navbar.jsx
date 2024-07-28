@@ -1,29 +1,18 @@
 import { Link } from "react-router-dom";
 import navRoutes from "../routes/navRoutes.jsx";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import arrow icons
-import { useSelector } from "react-redux";
 import Logo from "./Logo";
 import MenuIcon from '@mui/icons-material/Menu';
 import {openModal} from "../redux/features/modalSlice"
 import {useDispatch} from 'react-redux'
-import SideModal from "./SideModal.jsx";
 const Navbar = () => {
 /*   const { icon } = useSelector((state) => state.iconReducer);
  */  const dispatch = useDispatch()
-  const {modalOpen} = useSelector((state)=>state.modalReducer)
 
-  const [showMovingCart, setShowMovingCart] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  function showAnimation() {
-    setShowMovingCart(true);
-  }
-
-  function stopAnimation() {
-    setShowMovingCart(false);
-  }
+  
 
   function toggleDropdown() {
     setDropdownOpen(!dropdownOpen);

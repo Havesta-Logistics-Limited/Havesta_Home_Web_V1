@@ -44,4 +44,46 @@ const navRoutes = [
   },
 ];
 
+export const navRoutesMobile = [
+  {
+    name: "Home",
+    path: "/",
+    hero:'/icons/Hero.png',
+    icon: <HomeIcon/>
+  },
+
+  {
+    name: "About",
+    path: "/about",
+    hero:'/icons/about.png',
+    icon: <Diversity3TwoToneIcon/>
+  },
+
+  {
+    name: "News",
+    path: "/news",
+    hero:'/icons/news.svg',
+    icon: <NewspaperIcon/>
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+    hero:'/icons/contact.png',
+    icon: <PermContactCalendarIcon/>
+  },
+  {
+    name: "Rider",
+    path: "/riders",
+    hero:'/icons/contact.png',
+    icon: <PermContactCalendarIcon/>
+  },
+  {
+    name: "Vendor",
+    path: "/vendors",
+    hero:'/icons/contact.png',
+    icon: <PermContactCalendarIcon/>
+  },
+
+  
+]
 export default navRoutes;
