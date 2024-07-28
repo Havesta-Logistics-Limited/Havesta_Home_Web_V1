@@ -25,12 +25,11 @@ import "swiper/css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import Intercom from '@intercom/messenger-js-sdk';
+import Intercom from "@intercom/messenger-js-sdk";
 
 const About = ({ hero }) => {
-  
   Intercom({
-    app_id: 'd7aozhso',
+    app_id: "d7aozhso",
   });
 
   const { ref, inView } = useInView({
@@ -39,8 +38,18 @@ const About = ({ hero }) => {
   });
   return (
     <>
-      <img src={hero} alt="harvesta_hero_image" />
-      <section className="p-4 lg:p-24">
+      <div className="w-full h-full bg-primary grid grid-flow-row justify-items-center items-center p-4 font-primary relative">
+        <h2 className="font-bold text-white text-4xl text-center my-40">
+          Our dream is to provide effortless direct access <br /> to farmers in
+          your city for all fresh farm produce.
+        </h2>
+        <img
+          src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1722198074/Group_1000002055_rfmxqn.svg"
+          className="hidden lg:block absolute right-0 w-[400px] top-[17%]"
+          alt=""
+        />
+      </div>
+      <div className="p lg:p-24">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">
             <img src={image1} alt="ceo-image" className="w-full lg:w-2/3" />
@@ -112,7 +121,9 @@ const About = ({ hero }) => {
                 <span className="grid justify-items-center">{item.icon}</span>{" "}
                 {/* REFACTOR THIS SECTION */}
                 <p className="text-lg font-bold  text-harvestaLightGreen font-primary lg:text-4xl my-2 ">
-                  {inView && <CountUp end={item.amount} duration={item.duration} />}
+                  {inView && (
+                    <CountUp end={item.amount} duration={item.duration} />
+                  )}
                 </p>
                 <p className="font-primary text-lg font-lighter mt-[-8px]">
                   {item.content}
@@ -122,7 +133,7 @@ const About = ({ hero }) => {
           })}
         </div>
 
-        <div className="my-20">
+        <div className="my-14">
           <h3 className="flex justify-center font-bold text-4xl mb-14">
             Our Core Values
           </h3>
@@ -246,29 +257,39 @@ const About = ({ hero }) => {
             </Swiper>
             <div className=" hidden lg:flex my-4 ">
               <button className="swiper-button-prev text-primary hover:text-primary-dark absolute left-[-30px] top-[48%] ">
-                <ArrowCircleLeftRoundedIcon fontSize="xl" className="text-[46px]"/>
+                <ArrowCircleLeftRoundedIcon
+                  fontSize="xl"
+                  className="text-[46px]"
+                />
               </button>
               <button className="swiper-button-next text-primary hover:text-primary-dark absolute top-[48%] right-[-30px]">
-                <ArrowCircleRightRoundedIcon fontSize="xl" className="text-[46px]"/>
+                <ArrowCircleRightRoundedIcon
+                  fontSize="xl"
+                  className="text-[46px]"
+                />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-col-1 justify-items-center p-10 mt-40 font-primary relative">
-          <img src={aboutMainImage} alt="image" className=" w-[80%]" />
+        <div className="grid grid-col-1 justify-items-center p-20 lg:mt-40 font-primary relative my-20  ">
+          <img
+            src={aboutMainImage}
+            alt="image"
+            className=" w-[80%] hidden lg:block"
+          />
           <div className="absolute lg:top-[20%] grid grid-cols-1 justify-items-center mx-auto">
             <h1 className="uppercase font-bold text-4xl p-2">Join our team</h1>
             <p className="text-sm text-black text-center w-[370px] my-3">
               We love what we do and we do it with passion. We value the
               experimentation of the message and smart incentives.
             </p>
-            <span className="py-3 px-5  mt-4 text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover capitalize">
+            <span className="py-3 px-5  mt-4  text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover capitalize">
               See current openings
             </span>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };

@@ -10,7 +10,7 @@ const NotFound = () => {
           <h1 className="text-gray-500 opacity-15 text-[350px] font-bold p-10 mb-38 tracking-wide font-rider ">
             404
           </h1>
-          <div className="absolute z-50 top-[40%]">
+          <div className="absolute z-30 top-[40%]">
             <p className="text-[48px] font-primary text-white font-semibold">
               Page not found
             </p>

@@ -1,10 +1,10 @@
 import LogoNav from "../../common/LogoNav";
 
-const FinalMessageRider = () => {
+const FinalMessageVendor = () => {
   return (
     <>
       <LogoNav />
-      <section className="p-4 bg-harvestaYellow grid grid-flow-row justify-items-center items-center h-screen">
+      <section className="p-4 bg-harvestaBlack grid grid-flow-row justify-items-center items-center h-[100vh]">
         <div className="w-auto h-auto mt-10  p-4 bg-white lg:w-[550px] lg:h-[550px] grid grid-flow-row justify-items-center rounded-[27px] shadow-md border-2">
           <img
             src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1720271607/Successfully_Done_3_pg7jni.gif "
@@ -29,4 +29,4 @@ const FinalMessageRider = () => {
   );
 };
 
-export default FinalMessageRider;
+export default FinalMessageVendor;

@@ -29,7 +29,7 @@ export const riderForm = [
     name: "phoneNumber",
   },
 
-  {
+  /* {
     title: "Date of Birth",
     placeholder: "",
     type: "date",
@@ -123,7 +123,7 @@ export const riderForm = [
     options: true,
     phoneNumber: true,
     name: "guarantorTwoPhoneNumber",
-  },
+  }, */
 ];
 
 export const riderStats = [

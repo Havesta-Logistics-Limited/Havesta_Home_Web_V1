@@ -1,40 +1,46 @@
-import React from "react";
 import categorys from "../../routes/category.routes";
 import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-primary mt-20 mr-50">
-      <div className="bg-harvestaLightGreen w-66   mb-6  rounded-bl-full rounded-tr-full">
-        <div className="flex flex-row gap-1 justify-center text-black">
+    <section className="mt-44 p-2 lg:grid grid-flow-row justify-items-center items-center border-2 border-red-800">
+
+      <div className="bg-harvestaLightGreen mb-6  rounded-bl-full rounded-tr-full px-3 w-full lg:w-[400px]">
+        <div className="grid grid-flow-col gap-1 justify-items-center text-black">
           {categorys.map((list, index) => (
             <Link
               key={index}
               to={list.path}
-              className="hover:bg-harvestaDarkGreen active:bg-harvestaDarkGreen text-white px-4 p-3 w-40 text-center rounded-tr-full rounded-bl-full"
+              className="text-sm hover:bg-harvestaDarkGreen active:bg-harvestaDarkGreen text-white px-4 p-3 w-auto text-center rounded-tr-full rounded-bl-full"
             >
               {list.name}
             </Link>
           ))}
         </div>
       </div>
-      <div className="flex flex-col md:flex-row bg-transparent mt-[10rem] lg:ml-[100px]">
-          <div className="flex flex-col text-white text-center w-[500px] justify-center px-10 sm:mb-[10rem] mb-[3rem] mr-[-140px]">
-          <img src="/icons/arrow.svg" alt="harvesta" width={"150px"} className="ml-[120px] mb-[-39px]"/>
+
+
+
+
+      <div className="grid grid-flow-row lg:grid-flow-col justify-items-center items-center md:flex-row bg-transparent mt-14 lg:ml-[100px]">
+
+
+          <div className="  grid grid-flow-row justify-items-center items-center space-y-7">
+          <img src="/icons/arrow.svg" alt="harvesta"  className="hidden lg:block lg:ml-[120px] w-[90px] mb-[-39px] lg:w-[150px]"/>
 
             <h1 className="text-4xl font-bold mt-10 capitalize text-black">
               Download Our App
             </h1>
             <p className="my-5 px-12 text-sm text-black  text-center">
-            Get fresh farm produce delivered in minutes from a variety of
-            trusted vendors offering fruits, veggies, tubers, grains, and nuts.
+            Get fresh farm produce delivered in minutes from a <br /> variety of
+            trusted vendors offering fruits, veggies, tubers <br />, grains, and nuts.
             </p>
-            <div className="flex gap-2 justify-center">
-              <div className="w-[150px]">
+            <div className="flex gap-2 justify-center">  {/* 2 bottom images */}
+              <div className="w-[150px] ">
                 {" "}
                 <img
                   src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/App_Store_brjnhq.svg"
-                  className="w-full object-fit  h-auto"
+                  className="w-full  h-auto"
                 />
               </div>
               <div className="w-[150px]">
@@ -47,14 +53,15 @@ const Category = () => {
             </div>
           </div>
 
-          <div className="flex justify-center ">
+          <div className="flex justify-center border-2- border-yellow-900">
             <img
               src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719269738/Group_1000001792_puvkro.png"
               className=" w-[800px] object-cover rounded-lg "
             />
           </div>
+
         </div>
-    </div>
+    </section>
   );
 };
 

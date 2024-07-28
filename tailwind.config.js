@@ -11,7 +11,9 @@ export default {
         primaryHover: "#004827",
         dim: "#00150D",
         harvestaBlack: "#242424",
-        harvestaSecondBlack: "#3F3D4D"
+        harvestaSecondBlack: "#3F3D4D",
+        tertiaryGreen: "rgba(1, 190, 114, 0.3)",
+        tertiaryGreenHover: "rgba(1, 152, 91, 0.3)"
       },
       boxShadow: {
         "3xl": " 0 -10px 25px -10px rgba(0, 0, 0, 0.75)",

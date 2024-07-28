@@ -1,14 +1,14 @@
 import { setIcon } from "../../redux/features/iconSlice.js";
 import { useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
-import uploadList from "../../config/uploadrider.config.jsx";
-import checkIcon from "../../assets/icons/icon.png";
+
 import uploadIcon from "../../assets/icons/upload.png";
 import cancelSend from "../../assets/icons/cancel.png";
 import LogoNav from "../../common/LogoNav.jsx";
 import { useNavigate } from "react-router-dom";
+import vendorUploadList from "../../config/uploadvendor.config.jsx";
 
-const UploadRider = () => {
+const UploadVendor = () => {
   const [progress, setProgress] = useState({});
   const [files, setFiles] = useState([]);
   const navigate = useNavigate();
@@ -68,7 +68,7 @@ const UploadRider = () => {
     dispatch(setIcon("rider"));
 
     return () => {
-      dispatch(setIcon("home"));
+      dispatch(setIcon("home")); 
     };
   }, []);
 
@@ -83,35 +83,34 @@ const UploadRider = () => {
   return (
     <>
       <LogoNav />
-      <section className="bg-harvestaYellow p-5">
-        <div className="h-screen lg:grid grid-flow-col justify-items-center items-center">
+      
+      <section className="bg-harvestaBlack p-4 font-primary">
+        <div className="h-[100%] md:h-[100vh] lg:grid grid-flow-col justify-items-center items-center">
           <div className="p-4  mt-28 lg:ml-28 lg:mt-[-28px]">
-            <h1 className="lg:text-[60px] text-[40px] mb-4 text-white font-primary font-semibold leading-11">
-              Upload Your <br /> Documents
+            <h1 className="text-4xl text-white font-primary font-semibold leading-11">
+              Upload Your Product Menu
             </h1>
+            <p className="text-white text-sm mt-2 leading-8">
+              We need your product menu to build your online store on the
+              Havesta app in <br /> 24 to 48hrs. You'll be able to edit it once
+              we're done and your store is live.
+            </p>
 
-            {uploadList.map((item, index) => (
-              <p
-                key={index}
-                className="grid grid-flow-col list-none text-left justify-start mb-3 items-center gap-2 font-primary font-bold text-md"
-              >
-                <span>
-                  <img src={checkIcon} alt="" className="w-3" />
-                </span>
-                {item}
-              </p>
-            ))}
+            <p className="mt-6 text-2xl font-semibold text-harvestaYellow">
+              In oder to create your online store, please make <br /> sure of
+              the below:
+            </p>
+            <ol className="list-decimal mt-14">
+              {vendorUploadList.map((item, index) => (
+                <li
+                  key={index}
+                  className=" text-left justify-start mb-3 items-center gap-2 font-primary text-sm text-white"
+                >
+                  {item}
+                </li>
+              ))}
+            </ol>
           </div>
-
-
-
-
-
-
-
-
-
-
 
           <div className="grid grid-flow-row justify-items-center">
             <div className="bg-white w-full p-4 md:w-[500px] h-auto rounded-2xl mb-6 ">
@@ -202,10 +201,12 @@ const UploadRider = () => {
               Submit
             </button>
           </div>
+         
         </div>
+       
       </section>
     </>
   );
 };
 
-export default UploadRider;
+export default UploadVendor;

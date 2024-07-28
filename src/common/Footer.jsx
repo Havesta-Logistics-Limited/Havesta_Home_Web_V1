@@ -1,20 +1,18 @@
-import image1 from "../assets/images/Group-4.png";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import twitterPng from "../assets/icons/twitter (2).png";
-import linkedinPng from "../assets/icons/linkedin (1).png";
-import facebookPng from "../assets/icons/facebook.png";
-import instagramPng from "../assets/icons/instagram.png";
-import { Link } from "react-router-dom";
+import twitterPng from '../assets/icons/twitter (2).png';
+import linkedinPng from '../assets/icons/linkedin (1).png';
+import facebookPng from '../assets/icons/facebook.png'
+import instagramPng from '../assets/icons/instagram.png'
+import Logo from "./Logo";
 const Footer = () => {
   return (
     <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 bg-black p-16  md:p-16 lg:p-24 text-gray-400 font-body relative">
       <div className=" p-4">
         <div className="flex items-center gap-2 mb-4">
-          <img src={image1} alt="Logo" className="w-6 h-6" />
-          <h3 className="text-xl font-bold text-white">Harvesta</h3>
+         <Logo/>
         </div>
         <p className="text-sm leading-6">
           HARVESTA prioritizes convenience and transparency, enhancing the
@@ -29,7 +27,7 @@ const Footer = () => {
         <h3 className="text-xl font-semibold text-white mb-4">
           Featured Links
         </h3>
-        <ul className="text-sm leading-6 space-y-2 lg:grid grid-cols-2">
+        <ul className="text-sm leading-6 space-y-2 lg:grid grid-cols-2"  >
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
             <span className="ml-2">Home</span>
@@ -38,7 +36,7 @@ const Footer = () => {
             <ChevronRightIcon color="success" />
             <span className="ml-2">About</span>
           </li>
-
+          
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
             <span className="ml-2">News</span>
@@ -63,18 +61,14 @@ const Footer = () => {
             <ChevronRightIcon color="success" />
             <span className="ml-2">Marketplace</span>
           </li>
-
+         
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
-            <Link to={"/terms-of-use"}>
-              <span className="ml-2">Terms of use</span>
-            </Link>
+            <span className="ml-2">Terms of use</span>
           </li>
           <li className="flex items-center">
             <ChevronRightIcon color="success" />
-            <Link to={"/privacy-policy"}>
-              <span className="ml-2">Privacy Policy</span>
-            </Link>
+            <span className="ml-2">Privacy Policy</span>
           </li>
         </ul>
       </div>
@@ -114,7 +108,7 @@ const Footer = () => {
         </span>
         <div className="flex space-x-4 my-10  h-7">
           <span className="w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
-            <img src={facebookPng} alt="facebook-icon" className="text-white" />
+          <img src={facebookPng} alt ='facebook-icon' className='text-white'/>
           </span>
           <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all">
             <img src={instagramPng} alt="gmail-icon" />
@@ -123,18 +117,14 @@ const Footer = () => {
             <img src={linkedinPng} alt="linkedin-icon" />
           </span>
           <span className=" w-5 h-4 flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all bg-white">
-            <img src={twitterPng} alt="twitter-icon" />
+          <img src={twitterPng} alt ='twitter-icon'/>
           </span>
+         
+          
         </div>
       </div>
       <div className="w-full h-auto bg-dim absolute bottom-0 left-0 text-xs text-center align-middle p-2  border-t-[0.5px] border-gray-600">
-        <span>
-          © Copyright 2024{" "}
-          <span className="text-white cursor-pointer hover:text-gray-700">
-            {" "}
-            Designed By Dregon J&Z Techbase Limited
-          </span>
-        </span>
+       <span >© Copyright 2024 <span className="text-white cursor-pointer hover:text-gray-700"> Designed By Dregon J&Z Techbase Limited</span></span>  
       </div>
     </footer>
   );
