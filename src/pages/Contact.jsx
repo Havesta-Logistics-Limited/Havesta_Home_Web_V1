@@ -13,9 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import { FaPhoneVolume } from 'react-icons/fa6';
 import { IoMail } from 'react-icons/io5';
 import { FaLocationDot } from 'react-icons/fa6';
-import { FaTwitter } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import { FaDiscord } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const StyledAboutBox = styled(Box)({
   borderRadius: '10px',
@@ -29,7 +27,7 @@ const StyledButton = styled(Button)({
   color: colors.WHITE,
   textTransform: 'capitalize',
   backgroundColor: colors.primary,
-  padding: '0.5rem 1.5rem',
+  padding: '1rem 2.5rem',
   fontSize: '0.7rem',
   margin: '0.8rem 0',
   '&:hover': {
@@ -37,16 +35,6 @@ const StyledButton = styled(Button)({
   },
 });
 
-const StyledTextBox = styled(Box)({
-  lineHeight: '1rem',
-  color: colors.SECONDARY,
-  '@media screen and (max-width: 1200px)': {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 const StyledTextInput = styled(TextInput)({
   width: '100%',
 });
@@ -118,8 +106,8 @@ const Contact = () => {
                 </Box>
               </Stack>
               <Box my={5}>
+                <Typography fontWeight={600}>Select Subject</Typography>
                 <FormControl>
-                  <Typography fontWeight={600}>Select Subject</Typography>
                   <RadioGroup
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
@@ -127,22 +115,50 @@ const Contact = () => {
                   >
                     <FormControlLabel
                       value="deliveries"
-                      control={<Radio />}
+                      control={
+                        <Radio
+                          sx={{
+                            color: 'green',
+                            '&.Mui-checked': { color: 'green' },
+                          }}
+                        />
+                      }
                       label="Deliveries"
                     />
                     <FormControlLabel
                       value="product"
-                      control={<Radio />}
+                      control={
+                        <Radio
+                          sx={{
+                            color: 'green',
+                            '&.Mui-checked': { color: 'green' },
+                          }}
+                        />
+                      }
                       label="Product"
                     />
                     <FormControlLabel
                       value="vendors/riders"
-                      control={<Radio />}
+                      control={
+                        <Radio
+                          sx={{
+                            color: 'green',
+                            '&.Mui-checked': { color: 'green' },
+                          }}
+                        />
+                      }
                       label="Vendors/Riders"
                     />
                     <FormControlLabel
                       value="general_inquiry"
-                      control={<Radio />}
+                      control={
+                        <Radio
+                          sx={{
+                            color: 'green',
+                            '&.Mui-checked': { color: 'green' },
+                          }}
+                        />
+                      }
                       label="General"
                     />
                   </RadioGroup>
@@ -255,13 +271,16 @@ const Contact = () => {
             </Box>
             <Stack direction="row" spacing={2}>
               <Avatar sx={{ bgcolor: 'orange' }}>
+                <FaFacebook />
+              </Avatar>
+              <Avatar sx={{ bgcolor: 'orange' }}>
                 <FaTwitter />
               </Avatar>
               <Avatar sx={{ bgcolor: 'orange' }}>
                 <FaInstagram />
               </Avatar>
               <Avatar sx={{ bgcolor: 'orange' }}>
-                <FaDiscord />
+                <FaLinkedin />
               </Avatar>
             </Stack>
           </StyledAboutBox>
