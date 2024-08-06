@@ -1,18 +1,23 @@
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
-const WebReview = () => {
+const WebReview = ({type, image}) => {
+
+    const background = type === "rider" ? "bg-harvestaYellow" : "bg-harvestaDarkGreen"
+    const textColor = type === "rider" ? "text-white" : "text-white"
+    const textTag = type === "rider" ? "text-primary" : "text-harvestaYellow"
+ 
   return (
     <>
       <div className="hidden p-4 w-full lg:grid grid-flow-row justify-items-center font-primary mb-16">
 
         
-        <div className="bg-harvestaYellow grid grid-flow-col place-content-center items-center w-[55%] rounded-lg">
+        <div className={`${background} grid grid-flow-col place-content-center items-center w-[55%] rounded-lg`}>
 
           <div>
             <img
-              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822421/Image_ctwkrn.png"
-              className="w-[60%]  ml-3 my-3"
+              src={image}
+              className="w-[70%]  ml-3 my-3"
               alt=""
             />
           </div>
@@ -23,14 +28,14 @@ const WebReview = () => {
               alt=""
             />{" "}
             {/* Quote icon */}
-            <p className="text-center text-[16px] font-semibold ">
+            <p className={`text-center text-[16px] font-semibold ${textColor}`}>
               Shopping for groceries has never been easier! Hervesta offers an
               incredible selection of fresh produce delivered right to my
               doorstep.
             </p>
             <div>
-              <h6 className="text-[14px] font-semibold">Noel Amobeda</h6>
-              <h6 className="text-[12px] text-primary font-bold">CEO at Harvesta</h6>
+              <h6 className={`text-[14px] font-semibold ${textTag}`}>Noel Amobeda</h6>
+              <h6 className={`text-[12px] font-bold ${textTag}`}>CEO at Harvesta</h6>
             </div>
           </div>
 

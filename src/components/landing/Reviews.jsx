@@ -7,7 +7,7 @@ const Reviews = () => {
 
 
   return (
-    <div className="justify-center p-3 font-primary">
+    <div className="justify-center font-primary mt-20 ">
       <h1 className="hidden lg:block text-center font-bold text-3xl items-center">
         Customer Reviews
       </h1>
@@ -20,7 +20,10 @@ const Reviews = () => {
       <MobileReview 
       type={"customer"}
       />
-      <WebReview/>
+      <WebReview
+      type={"rider"}
+      image={"https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822421/Image_ctwkrn.png"}
+      />
       <Stats/>
       
     </div>

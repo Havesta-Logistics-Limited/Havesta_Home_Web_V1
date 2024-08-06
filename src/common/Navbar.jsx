@@ -5,10 +5,10 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import arrow ico
 import Logo from "./Logo";
 import MenuIcon from '@mui/icons-material/Menu';
 import {openModal} from "../redux/features/modalSlice"
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 const Navbar = () => {
-/*   const { icon } = useSelector((state) => state.iconReducer);
- */  const dispatch = useDispatch()
+  const { icon } = useSelector((state) => state.iconReducer);
+  const dispatch = useDispatch()
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="absolute right-0 text-xl lg:hidden">
         <MenuIcon 
         onClick={()=>dispatch(openModal())}
-        className=" text-harvestaYellow" 
+        className={icon === "home" ? "text-harvestaYellow" : "text-harvestaLightGreen"} 
         sx={{
           fontSize: '40px'
         }} />
