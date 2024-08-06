@@ -2,7 +2,7 @@
 const Stats = () => {
   return (
    <>
-   <div className="flex flex-row justify-evenly gap-[40px]">
+   <div className="flex flex-col lg:flex-row justify-evenly gap-[40px]">
         <div className="items-center flex flex-col">
           <h1 className="text-6xl text-harvestaDarkGreen font-bold">1M+</h1>
           <h3 className="">Monthly Customer Visit</h3>
