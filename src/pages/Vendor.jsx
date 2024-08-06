@@ -9,7 +9,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
-
+import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
+import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
 const Vendor = ({hero}) => {
 
 
@@ -38,7 +39,7 @@ const Vendor = ({hero}) => {
    <>
    <section>
         <div className="relative pb-5">
-          <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719779125/Vendors_wsktmk.svg')]">
+          <div className="w-full bg-cover h-[30%] py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823045/Group_1000002049_bjs7ez.png')]">
             {/* HERO SECTION */}
             <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
               <div className=" p-2">
@@ -182,70 +183,23 @@ const Vendor = ({hero}) => {
           </div>
         </div>
 
-        <div className="font-primary p-3 grid grid-flow-row justify-items-center mt-28">
+        <div className="font-primary p-0 grid grid-flow-row justify-items-center mt-28">
           <h2 className="text-3xl font-semibold">Vendor Reviews</h2>
           <p className="text-gray-600 text-sm mt-4 text-center">
             We are proud of our accomplishments. We will keep <br /> delivering
             excellence and satisfaction
           </p>
-
-          <div className="relative w-auto h-auto flex justify-center items-center mt-10">
-        <div className="w-[700px] overflow-hidden shadow-lg">
-          <div
-            className="flex transition-transform duration-300"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {ReviewsRoutes.map((review, index) => (
-              <div key={index} className="flex-shrink-0 w-full">
-                <div className="flex flex-row items-center bg-primary p-2 rounded-md w-full mr-8">
-                  <div className="">
-                    <img
-                      src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957968/Image_1_efqdrn.png"
-                      alt="harvesta"
-                      width={"590px"}
-                    />
-                  </div>
-                  <div className="grid grid-col-1  justify-items-center py-4">
-                    <img
-                      src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719784049/Shape_lcuvsj.svg"
-                      alt="harvesta"
-                      className="p-2 mt-10 text-white"
-                    />
-                    <p
-                      className="text-center text-sm text-white leading-5 p-5"
-                      style={{
-                        display: "-webkit-box",
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                        WebkitLineClamp: 3,
-                      }}
-                    >
-                      {review.text}
-                    </p>
-                    <br />
-                    <h2 className="text-center font-extrabold text-white">{review.name}</h2>
-                    <h3 className="text-center text-harvestaYellow text-xs font-bold">
-                      {review.title}
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            ))}
+ 
+          <div className="mt-4">
+          <MobileReview
+           type={"vendor"}
+         />
+         <WebReview
+         type={"vendor"}
+         image={"https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823042/Imagev_zvxpgl.png"}
+         />
           </div>
-        </div>
-        <button
-          onClick={handlePrevClick}
-          className="absolute left-0 ml-[-30px] py-4 px-3 bg-harvestaLightGreen rounded-full hover:bg-harvestaDarkGreen"
-        >
-          <img src="/icons/tail-left.png" alt="harvesta" />
-        </button>
-        <button
-          onClick={handleNextClick}
-          className="absolute right-0 mr-[-30px]  py-4 px-3 bg-harvestaLightGreen rounded-full hover:bg-harvestaDarkGreen"
-        >
-          <img src="/icons/tail-right.png" alt="harvesta" />
-        </button>
-      </div>
+      
         </div>
 
         <div className="space-y-10 lg:grid grid-cols-3 justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40">

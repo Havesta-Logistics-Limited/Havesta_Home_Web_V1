@@ -11,9 +11,9 @@ import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import { setIcon } from "../redux/features/iconSlice.js";
 import { useDispatch } from "react-redux";
-import axios from "axios";
-
-const Rider = ({ hero }) => {
+import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
+import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
+const Rider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -54,17 +54,6 @@ const Rider = ({ hero }) => {
     fontFamily: "Plus Jakarta Sans",
   };
 
-  const handlePrevClick = () => {
-    const prevSlide =
-      currentSlide === 0 ? ReviewsRoutes.length - 1 : currentSlide - 1;
-    setCurrentSlide(prevSlide);
-  };
-
-  const handleNextClick = () => {
-    const nextSlide =
-      currentSlide === ReviewsRoutes.length - 1 ? 0 : currentSlide + 1;
-    setCurrentSlide(nextSlide);
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -105,7 +94,7 @@ const Rider = ({ hero }) => {
     <>
       <section>
         <div className="relative pb-5">
-          <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719779110/riders_v5sbzb.svg')]">
+          <div className="w-full bg-cover  py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822845/Group_1000002050_isyw0e.png')]">
             {/* HERO SECTION */}
             <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
               <div className=" p-2">
@@ -114,7 +103,7 @@ const Rider = ({ hero }) => {
                   <span className="text-white font-[700]">AGENT </span>with
                   Harvesta
                 </h2>
-                <p className=" p-3  text-[#242424]">
+                <p className=" p-3  text-[#242424] font-primary">
                   Be your Boss. Build your income daily, weekly, or monthly.
                 </p>
                 {/*  <button className="mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] ml-2">
@@ -132,11 +121,11 @@ const Rider = ({ hero }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 justify-items-center mt-20 font-primary">
-          <h2 className="text-3xl font-bold font-primary mt-10">
+        <div className="grid grid-cols-1 justify-items-center mt-10 font-primary">
+          <h2 className="text-3xl font-bold font-primary">
             Complete The Form
           </h2>
-          <form className="my-12 lg:w-1/2 w-full p-8">
+          <form className="my-4 lg:w-1/2 w-full p-8">
             <div className="lg:grid grid-cols-2 gap-6">
               {riderForm.map((item, index) =>
                 item.options ? (
@@ -239,72 +228,21 @@ const Rider = ({ hero }) => {
           </div>
         </div>
 
-        <div className="font-primary p-3 grid grid-flow-row justify-items-center mt-28">
+        <div className="font-primary grid grid-flow-row justify-items-center mt-28">
           <h2 className="text-3xl font-semibold">Riders Review</h2>
           <p className="text-gray-600 text-sm mt-4 text-center">
             We are proud of our accomplishments. We will keep <br /> delivering
             excellence and satisfaction
           </p>
-
-          <div className="relative w-auto h-auto flex justify-center items-center mt-10">
-            <div className="w-[700px] overflow-hidden shadow-lg">
-              <div
-                className="flex transition-transform duration-300"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {ReviewsRoutes.map((review, index) => (
-                  <div key={index} className="flex-shrink-0 w-full">
-                    <div className="flex flex-row items-center bg-harvestaYellow p-2 rounded-md w-full mr-8">
-                      <div className="">
-                        <img
-                          src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957965/Image_2_csyxcx.png"
-                          alt="harvesta"
-                          width={"590px"}
-                        />
-                      </div>
-                      <div className="grid grid-col-1  justify-items-center py-4">
-                        <img
-                          src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1719784049/Shape_lcuvsj.svg"
-                          alt="harvesta"
-                          className="p-2 mt-10 text-white"
-                        />
-                        <p
-                          className="text-center text-sm text-white leading-5 p-5"
-                          style={{
-                            display: "-webkit-box",
-                            WebkitBoxOrient: "vertical",
-                            overflow: "hidden",
-                            WebkitLineClamp: 3,
-                          }}
-                        >
-                          {review.text}
-                        </p>
-                        <br />
-                        <h2 className="text-center font-extrabold">
-                          {review.name}
-                        </h2>
-                        <h3 className="text-center text-primary text-xs font-bold">
-                          {review.title}
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <button
-              onClick={handlePrevClick}
-              className="absolute left-0 ml-[-30px] py-4 px-3 bg-harvestaDarkGreen rounded-full hover:bg-harvestaDarkGreen"
-            >
-              <img src="/icons/tail-left.png" alt="harvesta" />
-            </button>
-            <button
-              onClick={handleNextClick}
-              className="absolute right-0 mr-[-30px]  py-4 px-3 bg-harvestaDarkGreen rounded-full hover:bg-harvestaDarkGreen"
-            >
-              <img src="/icons/tail-right.png" alt="harvesta" />
-            </button>
-          </div>
+             <div className="mt-4">
+               <MobileReview
+               type={"rider"}
+               />
+               <WebReview
+               type={"rider"}
+               image={"https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822928/Imager_k8hx5b.png"}
+               />
+             </div>
         </div>
 
         <div className="space-y-12 lg:grid grid-cols-3 justify-items-center p-10 w-1/2 mx-auto space-x-4 mb-40">
