@@ -38,7 +38,7 @@ const Vendor = ({hero}) => {
    <>
    <section>
         <div className="relative pb-5">
-          <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719779125/Vendors_wsktmk.svg')]">
+          <div className="w-full bg-cover h-[30%] py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823045/Group_1000002049_bjs7ez.png')]">
             {/* HERO SECTION */}
             <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
               <div className=" p-2">

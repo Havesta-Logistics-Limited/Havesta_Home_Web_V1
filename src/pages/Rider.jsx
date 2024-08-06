@@ -11,9 +11,8 @@ import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import { setIcon } from "../redux/features/iconSlice.js";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 
-const Rider = ({ hero }) => {
+const Rider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -105,7 +104,7 @@ const Rider = ({ hero }) => {
     <>
       <section>
         <div className="relative pb-5">
-          <div className="w-full bg-cover h-[30%] p-4 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1719779110/riders_v5sbzb.svg')]">
+          <div className="w-full bg-cover  py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822845/Group_1000002050_isyw0e.png')]">
             {/* HERO SECTION */}
             <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
               <div className=" p-2">
