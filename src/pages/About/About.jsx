@@ -26,8 +26,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import Intercom from "@intercom/messenger-js-sdk";
+import ReuseableHero from "../../common/ReuseableHero";
 
-const About = ({ hero }) => {
+const About = () => {
   Intercom({
     app_id: "d7aozhso",
   });
@@ -36,19 +37,15 @@ const About = ({ hero }) => {
     triggerOnce: true, // Trigger the animation only once
     threshold: 0.5, // Trigger when 50% of the element is visible
   });
+  const headerText= "Our dream is to provide effortless direct access to farmers in your city for all fresh farm produce."
+  const imageUrl = "https://res.cloudinary.com/dtc89xi2r/image/upload/v1722198074/Group_1000002055_rfmxqn.svg"
   return (
     <>
-      <div className="w-full h-full bg-primary grid grid-flow-row justify-items-center items-center p-4 font-primary relative">
-        <h2 className="font-bold text-white text-4xl text-center my-40">
-          Our dream is to provide effortless direct access <br /> to farmers in
-          your city for all fresh farm produce.
-        </h2>
-        <img
-          src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1722198074/Group_1000002055_rfmxqn.svg"
-          className="hidden lg:block absolute right-0 w-[400px] top-[17%]"
-          alt=""
-        />
-      </div>
+     <ReuseableHero
+     text={headerText}
+     image={imageUrl}
+     
+     />
       <div className="p lg:p-24">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="p-4 flex flex-col items-center text-center">

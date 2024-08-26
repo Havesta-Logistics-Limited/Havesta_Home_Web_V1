@@ -6,12 +6,10 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { vendorForm, vendorStats } from "../config/vendors.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
-const Vendor = ({hero}) => {
+const Vendor = () => {
 
 
   const formTitleStyle = {
@@ -22,19 +20,7 @@ const Vendor = ({hero}) => {
     fontFamily: "Plus Jakarta Sans",
   };
 
-  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const handlePrevClick = () => {
-    const prevSlide =
-      currentSlide === 0 ? ReviewsRoutes.length - 1 : currentSlide - 1;
-    setCurrentSlide(prevSlide);
-  };
-
-  const handleNextClick = () => {
-    const nextSlide =
-      currentSlide === ReviewsRoutes.length - 1 ? 0 : currentSlide + 1;
-    setCurrentSlide(nextSlide);
-  };
   return (
    <>
    <section>
