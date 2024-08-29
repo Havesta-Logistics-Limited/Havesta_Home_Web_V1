@@ -7,7 +7,6 @@ import { riderForm, riderStats } from "../config/rider.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import { setIcon } from "../redux/features/iconSlice.js";
 import { useDispatch } from "react-redux";

@@ -58,7 +58,7 @@ const UploadVendor = () => {
   const nextPage = () => {
     if (files.length > 2) {
       setButtonAvailable(true);
-      navigate("/finalmessage");
+      navigate("/finalmessage_vendor");
     } else {
       return;
     }

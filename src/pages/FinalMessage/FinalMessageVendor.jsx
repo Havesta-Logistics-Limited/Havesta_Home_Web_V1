@@ -1,6 +1,10 @@
 import LogoNav from "../../common/LogoNav";
-
+import { useNavigate } from "react-router-dom";
 const FinalMessageVendor = () => {
+  const navigate = useNavigate();
+  const goHome=()=>{
+    navigate('/')
+  }
   return (
     <>
       <LogoNav />
@@ -20,7 +24,10 @@ const FinalMessageVendor = () => {
             will receive a notification via email once the review process is
             complete.
           </p>
-          <button className=" text-[13px] p-2 bg-harvestaBlack rounded-full text-white font-primary w-[150px] mt-6 hover:bg-black mb-4">
+          <button
+           className=" text-[13px] p-2 bg-harvestaBlack rounded-full text-white font-primary w-[150px] mt-6 hover:bg-black mb-4"
+           onClick={goHome}
+           >
             Back Home
           </button>
         </div>
