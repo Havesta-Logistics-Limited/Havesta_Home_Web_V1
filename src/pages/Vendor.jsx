@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import FAQ from "../components/faq..jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
+import { useNavigate } from "react-router-dom";
 const Vendor = () => {
 
 
@@ -19,6 +20,11 @@ const Vendor = () => {
     lineHeight: "1.5",
     fontFamily: "Plus Jakarta Sans",
   };
+
+  const navigate = useNavigate();
+  const handleClick = ()=>{
+    navigate('/vendors/congratulations/445666533');
+  }
 
 
   return (
@@ -136,7 +142,11 @@ const Vendor = () => {
               label="By clicking this, you accept the  privacy policy "
             />
 
-            <button className="mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover">
+            <button 
+            className="mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover"
+            onClick={handleClick}
+
+            >
               Submit
             </button>
             <p className="text-xs">

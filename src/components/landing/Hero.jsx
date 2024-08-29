@@ -35,7 +35,7 @@ const Hero = () => {
             <img
               src={heroImage}
               alt=""
-              className="hidden lg:block lg:w-[400px] w-[200px]"
+              className="hidden lg:block lg:w-[550px] w-[200px]"
             />
           </div>
         </div>
