@@ -245,26 +245,21 @@ const Rider = () => {
              </div>
         </div>
 
-        <div className="space-y-12 lg:grid grid-cols-3 justify-items-center p-10 w-1/2 mx-auto space-x-4 mb-40">
-          <div className="items-center flex flex-col">
-            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
-              1M+
-            </h1>
-            <h3 className="">Monthly Customer Visit</h3>
-          </div>
-          <div className="flex flex-col items-center">
-            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
-              92%
-            </h1>
-            <h3 className="">Customer Satisfaction Rate</h3>
-          </div>
-          <div className="items-center flex flex-col">
-            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
-              4.9
-            </h1>
-            <h3 className="">Average Customer Ratings</h3>
-          </div>
+        <div className="space-y-10 lg:space-y-0 grid grid-flow-col justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40 ">
+        <div className=" ">
+          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">1M+</h1>
+          <h3 className="">Monthly Customer Visit</h3>
         </div>
+        <div className="">
+          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">92%</h1>
+          <h3 className="">Customer Satisfaction Rate</h3>
+        </div>
+        <div className="">
+          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">4.9</h1>
+          <h3 className="">Average Customer Ratings</h3>
+        </div>
+      </div>
+      
 
         <FAQ />
       </section>

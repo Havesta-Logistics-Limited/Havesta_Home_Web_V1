@@ -6,12 +6,10 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { vendorForm, vendorStats } from "../config/vendors.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
-const Vendor = ({hero}) => {
+const Vendor = () => {
 
 
   const formTitleStyle = {
@@ -22,19 +20,7 @@ const Vendor = ({hero}) => {
     fontFamily: "Plus Jakarta Sans",
   };
 
-  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const handlePrevClick = () => {
-    const prevSlide =
-      currentSlide === 0 ? ReviewsRoutes.length - 1 : currentSlide - 1;
-    setCurrentSlide(prevSlide);
-  };
-
-  const handleNextClick = () => {
-    const nextSlide =
-      currentSlide === ReviewsRoutes.length - 1 ? 0 : currentSlide + 1;
-    setCurrentSlide(nextSlide);
-  };
   return (
    <>
    <section>
@@ -202,16 +188,16 @@ const Vendor = ({hero}) => {
       
         </div>
 
-        <div className="space-y-10 lg:grid grid-cols-3 justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40">
-        <div className="items-center flex flex-col">
+        <div className="space-y-10 lg:space-y-0 grid grid-flow-col justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40 ">
+        <div className=" ">
           <h1 className="text-6xl text-harvestaDarkGreen font-semibold">1M+</h1>
           <h3 className="">Monthly Customer Visit</h3>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="">
           <h1 className="text-6xl text-harvestaDarkGreen font-semibold">92%</h1>
           <h3 className="">Customer Satisfaction Rate</h3>
         </div>
-        <div className="flex flex-col items-center ">
+        <div className="">
           <h1 className="text-6xl text-harvestaDarkGreen font-semibold">4.9</h1>
           <h3 className="">Average Customer Ratings</h3>
         </div>
