@@ -188,7 +188,7 @@ const Vendor = () => {
       
         </div>
 
-        <div className="space-y-10 lg:space-y-0 grid grid-flow-col justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40 border-2">
+        <div className="space-y-10 lg:space-y-0 grid grid-flow-col justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40 ">
         <div className=" ">
           <h1 className="text-6xl text-harvestaDarkGreen font-semibold">1M+</h1>
           <h3 className="">Monthly Customer Visit</h3>
