@@ -20,7 +20,7 @@ const ReuseableHero = ({text, image}) => {
 ReuseableHero.propTypes = {
   text: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
- };
+ }
 
 
 export default ReuseableHero
