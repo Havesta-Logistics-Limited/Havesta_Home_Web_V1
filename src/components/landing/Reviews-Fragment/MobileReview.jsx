@@ -1,8 +1,8 @@
 
 const MobileReview = ({type}) => {
     const backgroundColor = (type === "customer" || type === "rider") ? "bg-harvestaYellow" : "bg-harvestaDarkGreen"
-    const heading = type === "customer" ? "Customer Reviews" : ""
-    const headingText = (type === "customer" || type === "rider") ? "text-black" : "text-white"
+/*     const heading = type === "customer" ? "Customer Reviews" : ""
+ */    const headingText = (type === "customer" || type === "rider") ? "text-black" : "text-white"
 
 
 
