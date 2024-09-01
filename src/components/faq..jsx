@@ -1,47 +1,47 @@
-import React from "react";
-import { IoArrowForwardCircle } from "react-icons/io5";
-import { colors } from "../utils/globals";
+import React from 'react';
+import { IoArrowForwardCircle } from 'react-icons/io5';
+import { colors } from '../utils/globals';
 
 const Faqs = [
   {
-    title: "What does Harvesta do?",
+    title: 'What does Harvesta do?',
     text: `This is the paragraph with some ipsum text. Lorem ipsum
                     dolor sit amet, consectetur adipisicing elit. Officiis
                     distinctio quo.`,
   },
   {
-    title: "Can i get free deliveries?",
+    title: 'Can i get free deliveries?',
     text: `This is the paragraph with some ipsum text. Lorem ipsum
                         dolor sit amet, consectetur adipisicing elit. Officiis
                         distinctio quo.`,
   },
   {
-    title: "Why the service charge?",
+    title: 'Why the service charge?',
     text: `This is the paragraph with some ipsum text. Lorem ipsum
                         dolor sit amet, consectetur adipisicing elit. Officiis
                         distinctio quo.`,
   },
   {
-    title: "Do you provide online support?",
+    title: 'Do you provide online support?',
     text: `This is the paragraph with some ipsum text. Lorem ipsum
                         dolor sit amet, consectetur adipisicing elit. Officiis
                         distinctio quo.`,
   },
   {
-    title: "Do you accept POD?",
+    title: 'Do you accept POD?',
     text: `This is the paragraph with some ipsum text. Lorem ipsum
                         dolor sit amet, consectetur adipisicing elit. Officiis
                         distinctio quo.`,
   },
   {
-    title: "How can i be a partner?",
+    title: 'How can i be a partner?',
     text: `This is the paragraph with some ipsum text. Lorem ipsum
                         dolor sit amet, consectetur adipisicing elit. Officiis
                         distinctio quo.`,
   },
 ];
 
-const FAQ = ({ title = "Get The app now" }) => {
+const FAQ = ({ title = 'Get The app now' }) => {
   return (
     <div className="full mt-20 font-primary">
       <div className="full bg-faq-pattern bg-center bg-contain sm:bg-cover flex flex-col items-center justify-center py-10 mt-7">
@@ -56,7 +56,7 @@ const FAQ = ({ title = "Get The app now" }) => {
                 className="flex flex-row w-[100%] md:w-[50%] p-4"
               >
                 <div className="mr-4 mt-1">
-                  <IoArrowForwardCircle size={"25px"} color={colors.primary} />
+                  <IoArrowForwardCircle size={'25px'} color={colors.primary} />
                 </div>
                 <div className="flex flex-col">
                   <h3 className="text-md font-medium">{faq.title}</h3>
@@ -75,14 +75,14 @@ const FAQ = ({ title = "Get The app now" }) => {
             </p>
             <div className="flex gap-5 justify-center">
               <div className="w-[150px]">
-                {" "}
+                {' '}
                 <img
                   src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/App_Store_brjnhq.svg"
                   className="w-full object-fit  h-auto"
                 />
               </div>
               <div className="w-[150px]">
-                {" "}
+                {' '}
                 <img
                   src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1718623942/Play_Store_wq2cvo.svg"
                   className="w-full object-fit  h-auto"
@@ -92,8 +92,8 @@ const FAQ = ({ title = "Get The app now" }) => {
           </div>
           <div className="flex justify-center ">
             <img
-              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957974/Group_1000001777_vroxqi.svg"
-              className=" w-[400px] sm:w-full h-auto object-cover rounded-lg "
+              src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823766/Group_1002049_qumfck.png"
+              className=" w-[400px]  h-auto object-contain rounded-lg "
             />
           </div>
         </div>

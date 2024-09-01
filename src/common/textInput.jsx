@@ -1,23 +1,26 @@
-import { Stack, Box, styled, Typography, InputBase } from '@mui/material';
+import { Box, styled, Typography, InputBase } from '@mui/material';
 const StyledFormGroup = styled(Box)({
   display: 'flex',
   flex: ' 0 0 auto',
   flexFlow: 'column wrap',
   alignItems: 'start',
   marginBottom: 0,
+  width: '100%',
 });
 
 const StyledInput = styled(InputBase)({
   borderBottom: '1px solid #808080',
   background: 'ffffff',
+  width: '100%',
 
   '&:focus': {
-    color: '#495057', // Adjust as necessary
-    backgroundColor: '#fff', // Adjust as necessary
-    borderColor: 'transparent', // Ensure other borders don't appear
-    borderBottomColor: '#80bdff', // Change the bottom border color on focus
+    width: '100%',
+    color: '#495057',
+    backgroundColor: '#fff',
+    borderColor: 'transparent',
+    borderBottomColor: '#80bdff',
     outline: 0,
-    boxShadow: '0 0 0 0.2rem rgba(0, 123, 255, 0.25)', // Adjust as necessary
+    boxShadow: '0 0 0 0.2rem rgba(0, 123, 255, 0.25)',
   },
 });
 
