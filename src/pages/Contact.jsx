@@ -14,6 +14,7 @@ import { FaPhoneVolume } from 'react-icons/fa6';
 import { IoMail } from 'react-icons/io5';
 import { FaLocationDot } from 'react-icons/fa6';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import ReuseableHero from '../common/ReuseableHero';
 
 const StyledAboutBox = styled(Box)({
   borderRadius: '10px',
@@ -44,11 +45,10 @@ const image =
 const Contact = () => {
   return (
     <>
-      <PagesHero
-        title={'Get In Touch Today'}
-        des={'We are always available to support you '}
-        height={['40vh', '55vh']}
+      <ReuseableHero
+        text={'Get In Touch Today: We are always available to support you '}
       />
+
       <Box mx={[2, 35]}>
         <Stack
           direction={['column', 'row']}
@@ -69,14 +69,22 @@ const Contact = () => {
           >
             <form>
               <Stack direction={['column', 'row']} justifyContent="start">
-                <Box width={'100%'}>
+                <Box
+                  width={'80%'}
+                  mr={2}
+                  sx={{
+                    marginBottom: {
+                      xs: 2,
+                    },
+                  }}
+                >
                   <StyledTextInput
                     name="first_name"
                     label={'First Name'}
                     value={'name'}
                   />
                 </Box>
-                <Box width={'100%'}>
+                <Box width={'80%'}>
                   <StyledTextInput
                     name="last_name"
                     label={'Last Name'}
@@ -87,17 +95,24 @@ const Contact = () => {
               <Stack
                 direction={['column', 'row']}
                 justifyContent="start"
-                mt={5}
-                width={'100%'}
+                mt={2}
               >
-                <Box width={'100%'}>
+                <Box
+                  width={'80%'}
+                  mr={2}
+                  sx={{
+                    marginBottom: {
+                      xs: 2,
+                    },
+                  }}
+                >
                   <StyledTextInput
                     name="first_name"
                     label={'Email'}
                     value={'name'}
                   />
                 </Box>
-                <Box width={'100%'}>
+                <Box width={'80%'}>
                   <StyledTextInput
                     name="last_name"
                     label={'Phone Number'}
@@ -112,6 +127,12 @@ const Contact = () => {
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
                     name="row-radio-buttons-group"
+                    sx={{
+                      flexDirection: {
+                        xs: 'column',
+                        sm: 'row',
+                      },
+                    }}
                   >
                     <FormControlLabel
                       value="deliveries"
