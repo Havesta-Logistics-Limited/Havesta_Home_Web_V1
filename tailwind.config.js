@@ -17,6 +17,8 @@ export default {
       },
       boxShadow: {
         "3xl": " 0 -10px 25px -10px rgba(0, 0, 0, 0.75)",
+        "userSignup": "0px 0px 14px 15px rgba(0, 0, 0, 0.25)"
+
       },
 
       backgroundImage: {
@@ -27,9 +29,9 @@ export default {
 
       fontFamily: {
         primary: ["Plus Jakarta Sans"],
-
         secondary: ['Rubik Wet Paint'],
         rider: ['Helvetica'],
+        opensans: ["Open Sans"]
       },
 
       animation: {

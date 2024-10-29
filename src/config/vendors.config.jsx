@@ -1,59 +1,72 @@
 export const vendorForm = [
     {
         title: "First Name",
-        placeholder: "John",
-        type: "text"
+        placeholder: "Firstname",
+        type: "text",
+        name:"firstname"
+
     },
     {
         title: "Last Name",
-        placeholder: "Doe",
-        type: "text"
+        placeholder: "Lastname",
+        type: "text",
+        name:"lastname"
     },
-  /*   {
+   {
         title: "Name of Business",
-        placeholder: "Ola Buka",
+        // placeholder: "Ola Buka",
+        name:"name_of_business"
        
-    }, */
+    }, 
     {
         title: "Email Address",
-        placeholder: "example@mail.com",
-        option: true
+        // option: true
+        placeholder:"Email Address",
+        name: "email"
     },
     {
         title: "Phone Number",
-        placeholder: "+123456789",
-        option: true,
-        phoneNumber: true
+        placeholder: "Phone Number",
+        // options: true,
+        type: "number",
+        phoneNumber: true,
+        name: "phone_number",
+        pattern: "d{11}",
+        maxLength: 11,
+        id: "phone_number",
+        required: true,
+        img:'icons/naija-flag.svg'
     },
-   /*  {
-        title: "Date of birth",
-        placeholder: "",
-        type: 'date'
-    },
+    // {
+    //     title: "Date of birth",
+    //     placeholder: "",
+    //     type: 'date'
+    // },
+    // {
+    //     title: "Gender",
+    //     placeholder: "Choose gender",
+    //     option: true,
+    //     subItems: ["Male", "Female", "Non-binary"],
+    //     phoneNumber: false
+    //   },
     {
-        title: "Gender",
-        placeholder: "Choose gender",
-        option: true,
-        subItems: ["Male", "Female", "Non-binary"],
-        phoneNumber: false
-      },
-    {
-        title: "Location of Business",
+        title: "Legal Business Address",
         placeholder: "Ikosi-Ketu",
+        name: "legal_business_address"
     },
-    {
-        title: "Category of Business",
-        placeholder: "",
-        option: true,
-        subItems: ["Produce", "Meat", "Dairy", "Grocery", "Beverages", "Bakery", "Cleaning", "Electronics", "Home Goods", "Health & Beauty", "Other"],
+    // {
+    //     title: "Category of Business",
+    //     placeholder: "",
+    //     option: true,
+    //     subItems: ["Produce", "Meat", "Dairy", "Grocery", "Beverages", "Bakery", "Cleaning", "Electronics", "Home Goods", "Health & Beauty", "Other"],
         
-    },
-    {
-        title: "Are you a registerd Business",
-        placeholder: "Yes/No",
-        option: true,
-        subItems: ['Yes', "No"]
-    }, */
+    // },
+    // {
+    //     title: "Are you a registerd Business",
+    //     placeholder: "Yes/No",
+    //     option: true,
+    //     subItems: ['Yes', "No"]
+    // }, 
 ]
 
 

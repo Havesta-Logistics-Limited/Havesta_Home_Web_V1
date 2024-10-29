@@ -41,7 +41,7 @@ const CongratulationsVendor = () => {
   }
  */
   const nextPage = () => {
-    navigate("/vendor/upload");
+    navigate("/");
   };
   return (
     <>
@@ -66,7 +66,7 @@ const CongratulationsVendor = () => {
               whileInView={animationConfig.whileInView}
               transition={{ duration: 0.5 }}
             >
-              Complete your registration process
+              {/* Complete your registration process */}
             </motion.p>
             <motion.button
               className="p-3 bg-white text-black rounded-full text-sm font-primary w-1/4 mt-4 font-semibold hover:bg-harvestaYellow hover:text-white"
@@ -75,7 +75,7 @@ const CongratulationsVendor = () => {
               transition={{ duration: 0.6 }}
               onClick={() => nextPage()}
             >
-              Continue
+              Go Home
             </motion.button>
           </div>
 

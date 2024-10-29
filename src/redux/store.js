@@ -4,7 +4,8 @@ import modalSlice from './features/modalSlice.js'
 const store  = configureStore({
     reducer: {
       iconReducer: iconSlice,
-      modalReducer: modalSlice
+      modalReducer: modalSlice,
+      
     }
 })
 
