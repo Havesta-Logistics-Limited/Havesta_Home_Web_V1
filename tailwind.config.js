@@ -17,7 +17,8 @@ export default {
       },
       boxShadow: {
         "3xl": " 0 -10px 25px -10px rgba(0, 0, 0, 0.75)",
-        "userSignup": "0px 0px 14px 15px rgba(0, 0, 0, 0.25)"
+        "userSignup": "0px 0px 14px 15px rgba(0, 0, 0, 0.25)",
+        "uploadRiderShadow" : " 0px 5.12px 25.37px -10.25px #00000040;"
 
       },
 
