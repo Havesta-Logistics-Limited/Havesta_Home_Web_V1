@@ -12,6 +12,9 @@ import TermsVendor from './pages/TermsVendor/TermsVendor';
 import UploadVendor from './pages/Upload/UploadVendor';
 import VendorModal from './components/vendorModal';
 import ScrollToTop from "./common/scrollToTop";
+import Career from './pages/Career/Career';
+import Landing from './pages/Landing/Landing';
+
 function App() {
   return (
     <>
@@ -35,6 +38,9 @@ function App() {
       <Route path='/vendors/commission' element={<CommissionPage/>}/>
       <Route path='/vendors/terms_and_conditions' element={<TermsVendor/>}/>
       <Route path='/vendor/modal' element={<VendorModal/>}/>
+
+      <Route path='/careers' element={<Career/>}/>
+      <Route path='/landing' element={<Landing/>}/>
     </Routes>
     </>
     
