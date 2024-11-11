@@ -27,6 +27,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import Intercom from "@intercom/messenger-js-sdk";
 import ReuseableHero from "../../common/ReuseableHero";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   Intercom({
@@ -281,9 +282,9 @@ const About = () => {
               We love what we do and we do it with passion. We value the
               experimentation of the message and smart incentives.
             </p>
-            <span className="py-3 px-5  mt-4  text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover capitalize">
+            <NavLink to={'/careers'} className="py-3 px-5  mt-4  text-sm rounded-lg bg-primary text-white cursor-pointer hover:bg-primaryHover capitalize">
               See current openings
-            </span>
+            </NavLink>
           </div>
         </div>
       </div>
