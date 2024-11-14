@@ -12,9 +12,11 @@ import TermsVendor from './pages/TermsVendor/TermsVendor';
 import UploadVendor from './pages/Upload/UploadVendor';
 import VendorModal from './components/vendorModal';
 import ScrollToTop from "./common/scrollToTop";
-import Career from './pages/Career/Career';
-import Landing from './pages/Landing/Landing';
+import Career from "./pages/Career/Career"
+import Landing from "./pages/Landing/Landing"
+// import UserSignup from './pages/UserSignup';
 
+// import SideModal from './common/SideModal';
 function App() {
   return (
     <>

@@ -5,45 +5,111 @@ import Option from "@mui/joy/Option";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { vendorForm, vendorStats } from "../config/vendors.config";
 import Checkbox from "@mui/joy/Checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
-import { useNavigate } from "react-router-dom";
-const Vendor = () => {
-
-
+import axiosInstance from "../config/axios.config.js";
+const Vendor = ({ hero }) => {
   const formTitleStyle = {
-    fontSize: "11px",
-    fontWeight: "700",
+    fontSize: "14px",
+    fontWeight: "400",
     color: "#242424",
     lineHeight: "1.5",
     fontFamily: "Plus Jakarta Sans",
   };
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const handleClick = ()=>{
-    navigate('/vendors/congratulations/445666533');
-  }
 
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    phone_number: "",
+    email: "",
+    name_of_business: "",
+    legal_business_address: "",
+    agreed_to_regular_updates: false,
+    accepted_privacy_policy: false,
+    // password: null,
+    // date_of_birth:null,
+    // gender:null,
+    // category_of_business:null
+  });
 
+  const handleInputChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+    console.log(e.target.value, formData[e.target.name], formData.firstname);
+  };
+
+  const handleCheckboxChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.checked,
+    }));
+
+    console.log(
+      e.target.name,
+      e.target.checked,
+      formData.accepted_privacy_policy,
+      "ertghgdh"
+    );
+    // console.log(event.target.checked)
+  };
+  const handlePrevClick = () => {
+    const prevSlide =
+      currentSlide === 0 ? ReviewsRoutes.length - 1 : currentSlide - 1;
+    setCurrentSlide(prevSlide);
+  };
+
+  const handleNextClick = () => {
+    const nextSlide =
+      currentSlide === ReviewsRoutes.length - 1 ? 0 : currentSlide + 1;
+    setCurrentSlide(nextSlide);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      setLoading(true);
+      const { data } = await axiosInstance.post(
+        `${import.meta.env.VITE_AUTH_ENDPOINT}/vendors/signup`,
+        formData
+      );
+      setLoading(false);
+      if (data) {
+        navigate("/vendors/congratulations");
+      }
+      console.log(data);
+    } catch (error) {
+      setLoading(false);
+      console.log(error.response.data);
+    }
+  };
   return (
-   <>
-   <section>
+    <>
+      <section>
         <div className="relative pb-5">
           <div className="w-full bg-cover h-[30%] py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823045/Group_1000002049_bjs7ez.png')]">
             {/* HERO SECTION */}
             <div className="mt-32 md:grid grid-cols-2 justify-items-center lg:h-[40vh] relative lg:ml-44">
               <div className=" p-2">
                 <h2 className="p-3 text-[45px] font-primary font-bold lg:leading-tight lg:text-[55px] text-white text-6xl ">
-                 Make More Sales <br />
+                  Make More Sales <br />
                   <span className="text-primary font-[700]">Online </span>with
                   Harvesta
                 </h2>
                 <p className=" p-3  text-md text-white">
-                Let us help you take your business to the next level
+                  Let us help you take your business to the next level
                 </p>
-               {/*  <button className="mb-10 font-primary rounded-full bg-white p-3 text-black text-xs font-bold shadow-md w-[100px] ml-2 hover:bg-primary hover:text-white transition-all">
+                {/*  <button className="mb-10 font-primary rounded-full bg-white p-3 text-black text-xs font-bold shadow-md w-[100px] ml-2 hover:bg-primary hover:text-white transition-all">
                   Get Started
                 </button> */}
               </div>
@@ -58,20 +124,21 @@ const Vendor = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 justify-items-center mt-20 font-primary ">
+        <div className="grid grid-cols-1 justify-items-center mt-20 font-primary">
           <h2 className="text-3xl font-bold font-primary mt-10">
             Complete The Form
           </h2>
-          <form className="my-12 lg:w-1/2 w-full p-8">
-            <div className="lg:grid grid-cols-2 gap-9">
+          <form className="my-12 lg:max-w-[1154px] md  w-full p-8">
+            <div className="lg:grid md:grid md:grid-cols-2 grid-cols-2 gap-9 font-normal">
               {vendorForm.map((item, index) =>
                 item.option ? (
-                  <FormControl key={index} className=" w-full">
+                  <FormControl key={index} className="w-full">
                     <FormLabel style={formTitleStyle} className="font-primary">
                       {item.title}
                     </FormLabel>
 
                     <Select
+                      className="h-[56px]"
                       placeholder={item.placeholder}
                       startDecorator={
                         item.phoneNumber ? <KeyboardArrowDown /> : false
@@ -90,17 +157,21 @@ const Vendor = () => {
                       {item.subItems &&
                         item.subItems.map((subItem, subIndex) => (
                           <>
-                            <Option key={subIndex} value={subItem} sx={{
-                              '&:hover': {
-                                backgroundColor: '#80EEC6', // Customize the hover color
-                              },
-                              '&.Mui-selected': {
-                                backgroundColor: "#01BE72", // Keeps the selected item's background unchanged
-                                '&:hover': {
-                                  backgroundColor: '', // Keeps the hover effect for the selected item
-                                }
-                              }
-                            }}>
+                            <Option
+                              key={subIndex}
+                              value={subItem}
+                              sx={{
+                                "&:hover": {
+                                  backgroundColor: "#80EEC6", // Customize the hover color
+                                },
+                                "&.Mui-selected": {
+                                  backgroundColor: "#01BE72", // Keeps the selected item's background unchanged
+                                  "&:hover": {
+                                    backgroundColor: "", // Keeps the hover effect for the selected item
+                                  },
+                                },
+                              }}
+                            >
                               {subItem}
                             </Option>
                           </>
@@ -110,11 +181,22 @@ const Vendor = () => {
                 ) : (
                   <FormControl key={index} className=" w-full">
                     <FormLabel style={formTitleStyle}>{item.title}</FormLabel>
-                    <input
-                      type={item.type}
-                      placeholder={item.placeholder}
-                      className="border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary"
-                    />
+                    <div className="w-full relative">
+                      <input
+                        type={item.type}
+                        placeholder={item.placeholder}
+                        className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary text-sm ${
+                          item.title == "Phone Number" ? "pl-12" : ""
+                        }`}
+                        onChange={handleInputChange}
+                        name={item.name}
+                      />
+                      <img
+                        src={item.img ? item.img : {}}
+                        alt={item.img ? "naija-icon" : ""}
+                        className="absolute top-5 left-3"
+                      />
+                    </div>
                   </FormControl>
                 )
               )}
@@ -125,12 +207,14 @@ const Vendor = () => {
               sx={{
                 fontFamily: "Plus Jakarta Sans",
                 fontSize: "12px",
-                marginLeft: '-5px'
-
+                marginLeft: "-5px",
               }}
               color="success"
               size="sm"
-              label="I agree to get regular updates from Harvesta "
+              label="I agree to get regular updates from Harvesta"
+              name="agreed_to_regular_updates"
+              onChange={handleCheckboxChange}
+              checked={formData.agreed_to_regular_updates}
             />
             <Checkbox
               sx={{
@@ -139,13 +223,22 @@ const Vendor = () => {
               }}
               color="success"
               size="sm"
-              label="By clicking this, you accept the  privacy policy "
+              label="By clicking this, you accept the  privacy policy"
+              name="accepted_privacy_policy"
+              onChange={handleCheckboxChange}
+              checked={formData.accepted_privacy_policy}
             />
 
-            <button 
-            className="mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover"
-            onClick={handleClick}
-
+            <button
+              className={
+                loading == false && formData.accepted_privacy_policy == true
+                  ? "mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover"
+                  : "mt-10 font-primary rounded-full bg-[#005231] opacity-50 p-3 text-white text-xs font-bold shadow-md w-[100px] cursor-not-allowed"
+              }
+              onClick={handleSubmit}
+              disabled={
+                loading == true && !formData.accepted_privacy_policy == false
+              }
             >
               Submit
             </button>
@@ -160,8 +253,6 @@ const Vendor = () => {
             </p>
           </div>
         </div>
-
-
 
         <div className="w-full h-auto bg-harvestaLightGreen px-3 flex justify-center mt-20">
           {" "}
@@ -185,39 +276,43 @@ const Vendor = () => {
             We are proud of our accomplishments. We will keep <br /> delivering
             excellence and satisfaction
           </p>
- 
+
           <div className="mt-4">
-          <MobileReview
-           type={"vendor"}
-         />
-         <WebReview
-         type={"vendor"}
-         image={"https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823042/Imagev_zvxpgl.png"}
-         />
+            <MobileReview type={"vendor"} />
+            <WebReview
+              type={"vendor"}
+              image={
+                "https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823042/Imagev_zvxpgl.png"
+              }
+            />
           </div>
-      
         </div>
 
-        <div className="space-y-10 lg:space-y-0 grid grid-flow-col justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40 ">
-        <div className=" ">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">1M+</h1>
-          <h3 className="">Monthly Customer Visit</h3>
+        <div className="space-y-10 lg:grid grid-cols-3 justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40">
+          <div className="items-center flex flex-col">
+            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
+              1M+
+            </h1>
+            <h3 className="">Monthly Customer Visit</h3>
+          </div>
+          <div className="flex flex-col items-center">
+            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
+              92%
+            </h1>
+            <h3 className="">Customer Satisfaction Rate</h3>
+          </div>
+          <div className="flex flex-col items-center ">
+            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
+              4.9
+            </h1>
+            <h3 className="">Average Customer Ratings</h3>
+          </div>
         </div>
-        <div className="">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">92%</h1>
-          <h3 className="">Customer Satisfaction Rate</h3>
-        </div>
-        <div className="">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">4.9</h1>
-          <h3 className="">Average Customer Ratings</h3>
-        </div>
-      </div>
-      
-      <FAQ/>
 
+        <FAQ />
       </section>
-   </>
-  )
-}
+    </>
+  );
+};
 
-export default Vendor
+export default Vendor;
