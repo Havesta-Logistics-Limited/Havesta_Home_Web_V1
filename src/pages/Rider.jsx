@@ -12,28 +12,33 @@ import { setIcon } from "../redux/features/iconSlice.js";
 import { useDispatch } from "react-redux";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
+import axiosInstance from "../config/axios.config.js";
 const Rider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
+    lastname: "",
     email: "",
-    phoneNumber: "",
-    dateOfBirth: "",
-    gender: "",
-    country: "",
-    state: "",
-    methodOfDelivery: "",
-    location: "",
-    currentlyEmployed: "",
-    NIN: "",
-    bankName: "",
-    accountNumber: "",
-    guarantorOne: "",
-    guarantorOnePhoneNumber: "",
-    guarantorTwo: "",
-    guarantorTwoPhoneNumber: "",
+    phone_number: "",
+    // date_of_birth: "",
+    // gender: null,
+    // country: "Nigeria",
+    // state: "Lagos",
+    // method_of_delivery: null,
+    // location: null,
+    // currently_working_with_another_logistics: null,
+    // NIN: null,
+    // bank_name: null,
+    // account_number: null,
+    // guarantor_1_name: null,
+    // guarantor_1_phone_number: null,
+    // guarantor_2_name: null,
+    // guarantor_2_phone_number: null,
+    agreed_to_regular_updates: false,
+    accepted_privacy_policy: false,
   });
   const dispatch = useDispatch();
 
@@ -45,6 +50,17 @@ const Rider = () => {
     };
   }, []);
 
+  useEffect(() => {
+    let input = document.querySelector(".phoneNum");
+
+    input.addEventListener("input", (e) => {
+      if (input.value.length > 11) {
+        input.value = input.value.substr(0, 11);
+      }
+      input.value = this.value.replace(/[^0-9]/g, "");
+    });
+  }, []);
+
   const formTitleStyle = {
     fontSize: "11px",
     fontWeight: "700",
@@ -53,33 +69,52 @@ const Rider = () => {
     fontFamily: "Plus Jakarta Sans",
   };
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-  /*   await axios.post("backendUrl", formData);
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      dateOfBirth: "",
-      gender: "",
-      country: "",
-      state: "",
-      methodOfDelivery: "",
-      location: "",
-      currentlyEmployed: "",
-      NIN: "",
-      bankName: "",
-      accountNumber: "",
-      guarantorOne: "",
-      guarantorOnePhoneNumber: "",
-      guarantorTwo: "",
-      guarantorTwoPhoneNumber: "",
-    }); */
-    const value = 4935340340229425
 
-    navigate(`/riders/congratulations/${value}`)
+    try {
+      setLoading(true);
+      console.log(formData)
+      const { data } = await axiosInstance.post(
+        `${import.meta.env.VITE_AUTH_ENDPOINT}/riders/signup`,
+        formData
+      );
+      setLoading(false);
+      navigate(`/riders/congratulations/${data.public_unique_Id}`);
+      console.log(data);
+    } catch (error) {
+      setLoading(false);
+      console.log(error, "err");
+    }
+
+    // const value = 4935340340229425;
+  };
+
+  const setErrors = (target) => {
+    switch (target.name) {
+      case "date_of_birth":
+        let inputDateString = target.value;
+        let inputDate = new Date(inputDateString);
+        const currentDate = new Date();
+
+        if (inputDate > currentDate) {
+          setError("Date cannot be a future date");
+          // return "Date cannot be a future date";
+        }
+        setError("");
+        break;
+
+      case "email":
+        if (!validateEmailFormat(target.value)) {
+          setError("Invalid email format");
+          // return "Invalid email format";
+        } else setError("");
+        // console.log(error);
+        break;
+
+      default:
+        return;
+    }
   };
 
   const handleChange = (event) => {
@@ -87,8 +122,93 @@ const Rider = () => {
       ...prev,
       [event.target.name]: event.target.value,
     }));
+
+    setErrors(event.target);
+    console.log(event.target.value);
+    // switch (event.target.name) {
+    //   case "date_of_birth":
+    //     let inputDateString = event.target.value;
+    //     let inputDate = new Date(inputDateString);
+    //     const currentDate = new Date();
+
+    //     if (inputDate > currentDate) {
+    //       setError("Date of birth cannot be a future date");
+    //     }
+    //     console.log(error);
+    //     break;
+
+    //   case "email":
+    //     if (!validateEmailFormat(event.target.value)) {
+    //       setError("Invalid email format");
+    //     } else setError("");
+    //     console.log(error);
+    //     break;
+
+    //   default:
+    //     console.log("fgfd");
+    // }
+    // if (event.target.name === "date_of_birth") {
+    //   let inputDateString = event.target.value;
+    //   let inputDate = new Date(inputDateString)
+    //   const currentDate = new Date();
+
+    //   if (inputDate > currentDate) {
+    //     setError("Date cannot be a future date")
+    //   }
+    //   console.log(error)
   };
- 
+
+  function validateEmailFormat(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  const handleCheckboxChange = (event) => {
+    setFormData((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.checked,
+    }));
+
+    console.log(
+      event.target.name,
+      event.target.checked,
+      formData.accepted_privacy_policy,
+      "ertghgdh"
+    );
+    // console.log(event.target.checked)
+  };
+
+  // const playwithdate = (
+  //   date = startDate,
+  //   dur = duration,
+  //   durt = durationType
+  // ) => {
+  //   setStartDate(date);
+  //   if (dur == null || dur == "" || dur == NaN) {
+  //     console.log("bad");
+  //     return;
+  //   }
+  //   const d = new Date(date);
+  //   console.log(d);
+  //   if (durt == "MONTHS") {
+  //     console.log(durt, 1);
+  //     d.setMonth(d.getMonth() + dur);
+  //   } else {
+  //     console.log(durt, 2);
+  //     d.setDate(d.getDate() + dur);
+  //   }
+  //   console.log(d);
+  //   const dateObj = d;
+  //   const month = dateObj.getUTCMonth() + 1; //months from 1-12
+  //   const day = dateObj.getUTCDate();
+  //   const year = dateObj.getUTCFullYear();
+  //   let newDate = day + "-" + month + "-" + year;
+  //   setFormatedEndDate(newDate);
+  //   newDate = year + "-" + month + "-" + day;
+  //   console.log(newDate);
+  //   setEndDate(newDate);
+  // };
+
   return (
     <>
       <section>
@@ -121,14 +241,15 @@ const Rider = () => {
         </div>
 
         <div className="grid grid-cols-1 justify-items-center mt-10 font-primary">
-          <h2 className="text-3xl font-bold font-primary">
+          <h2 className="text-[54px] font-bold font-primary">
             Complete The Form
           </h2>
-          <form className="my-4 lg:w-1/2 w-full p-8">
+
+          <form className="my-4 lg:w-[70%] w-full p-8">
             <div className="lg:grid grid-cols-2 gap-6">
               {riderForm.map((item, index) =>
                 item.options ? (
-                  <FormControl key={index} className="">
+                  <FormControl key={index} className="max-w-[542px]">
                     <FormLabel style={formTitleStyle} className="font-primary">
                       {item.title}
                     </FormLabel>
@@ -147,6 +268,7 @@ const Rider = () => {
                         backgroundColor: "#f3f4f6",
                         fontFamily: "Helvetica",
                         fontSize: "12px",
+                        height: "56px",
                       }}
                     >
                       {item.subItems &&
@@ -160,21 +282,60 @@ const Rider = () => {
                     </Select>
                   </FormControl>
                 ) : (
-                  <FormControl key={index} className="">
+                  <FormControl key={index} className="relative max-w-[542px]">
                     <FormLabel style={formTitleStyle}>{item.title}</FormLabel>
+                    {/* <div className="w-full bg-red-500 absolute"> */}
+                    {item.name == "phone_number" ? (
+                      <div className="absolute bottom-[18px] left-2.5">
+                        <img src="icons/naija-flag.svg" alt="flag" />
+                      </div>
+                    ) : (
+                      <div></div>
+                    )}
                     <input
                       type={item.type}
                       placeholder={item.placeholder}
-                      className="border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary"
+                      className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary h-[56px] text-sm w-full ${
+                        item.name == "phone_number" ? "pl-10 phoneNum" : ""
+                      }`}
                       value={formData[item.name]}
                       name={item.name}
                       onChange={handleChange}
+                      readOnly={item.constant}
+                      max={item.max}
+                      // onInput={item.oninput}
+                      id={item.id}
+                      required={item.required}
                     />
+                    {/* </div> */}
+                    {error.includes(item.error_identifier) ? (
+                      <div>{error}</div>
+                    ) : (
+                      <div></div>
+                    )}
                   </FormControl>
                 )
               )}
             </div>
           </form>
+
+          <style jsx>{`
+            input[type="date"].empty::before {
+              content: attr(data-placeholder);
+              position: absolute;
+              top: 50%;
+              left: 10px;
+              transform: translateY(-50%);
+              color: #6b7280; /* Tailwind's gray-500 */
+              font-style: italic;
+              pointer-events: none;
+            }
+
+            input[type="date"]:focus::before {
+              display: none;
+            }
+          `}</style>
+
           <div className="grid grid-col-1 gap-5 p-3 justify-items-center">
             <Checkbox
               sx={{
@@ -184,7 +345,10 @@ const Rider = () => {
               }}
               color="success"
               size="sm"
-              label="I agree to get regular updates from Harvesta "
+              label="I agree to get regular updates from Harvesta"
+              name="agreed_to_regular_updates"
+              onChange={handleCheckboxChange}
+              checked={formData.agreed_to_regular_updates}
             />
             <Checkbox
               sx={{
@@ -194,9 +358,22 @@ const Rider = () => {
               color="success"
               size="sm"
               label="By clicking this, you accept the  privacy policy "
+              name="accepted_privacy_policy"
+              onChange={handleCheckboxChange}
+              checked={formData.accepted_privacy_policy}
             />
 
-            <button className="mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover" onClick={handleSubmit}>
+            <button
+              className={
+                loading == false && formData.accepted_privacy_policy == true
+                  ? "mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover"
+                  : "mt-10 font-primary rounded-full bg-[#005231] opacity-50 p-3 text-white text-xs font-bold shadow-md w-[100px] cursor-not-allowed"
+              }
+              onClick={handleSubmit}
+              disabled={
+                loading == true && !formData.accepted_privacy_policy == false
+              }
+            >
               Submit
             </button>
             <p className="text-xs">
@@ -233,15 +410,15 @@ const Rider = () => {
             We are proud of our accomplishments. We will keep <br /> delivering
             excellence and satisfaction
           </p>
-             <div className="mt-4">
-               <MobileReview
-               type={"rider"}
-               />
-               <WebReview
-               type={"rider"}
-               image={"https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822928/Imager_k8hx5b.png"}
-               />
-             </div>
+          <div className="mt-4">
+            <MobileReview type={"rider"} />
+            <WebReview
+              type={"rider"}
+              image={
+                "https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822928/Imager_k8hx5b.png"
+              }
+            />
+          </div>
         </div>
 
         <div className="space-y-10 lg:space-y-0 grid grid-flow-col justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40 ">

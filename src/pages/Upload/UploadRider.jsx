@@ -7,6 +7,8 @@ import uploadIcon from "../../assets/icons/upload.png";
 import cancelSend from "../../assets/icons/cancel.png";
 import LogoNav from "../../common/LogoNav.jsx";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import axiosInstance from "../../config/axios.config.js";
 
 const UploadRider = () => {
   const [progress, setProgress] = useState({});
@@ -42,7 +44,7 @@ const UploadRider = () => {
       if (percentComplete >= 100) {
         clearInterval(interval);
       }
-    }, 100);
+    }, 10);
   };
 
   const cancelUpload = (fileName) => {
@@ -55,14 +57,41 @@ const UploadRider = () => {
     });
   };
 
-  const nextPage = () => {
-    if (files.length > 2) {
-      setButtonAvailable(true);
-      navigate("/finalmessage");
-    } else {
-      return;
+  // const nextPage = () => {
+  //   if (files.length > 1) {
+  //     setButtonAvailable(true);
+  //     navigate("/finalmessage");
+  //   } else {
+  //     return;
+  //   }
+  // };
+
+  const handleSubmit = async (e) => {
+    // let id = 0
+    e.preventDefault();
+    const formData = new FormData();
+    files.forEach((file, index) => {
+        // id +=1
+      formData.append('images', file)
+      // formData.append(`metadata-${id}`, id);
+    })
+    console.log(formData.getAll("images"))
+    try {
+    const data = await axiosInstance.post(`${import.meta.env.VITE_AUTH_ENDPOINT}/riders/upload`,formData, {
+      headers:{
+        "Content-Type" : "multipart/form-data"
+      },
+    })
+
+    console.log(data.data)
+    if (data.data.status == "success") {
+      navigate("/finalmessage")
     }
-  };
+  } 
+  catch(err) {
+    console.error(err)
+  }
+  }
 
   useEffect(() => {
     dispatch(setIcon("rider"));
@@ -73,8 +102,12 @@ const UploadRider = () => {
   }, []);
 
   useEffect(() => {
-    if (files.length > 2) {
+    if (files.length == 2  && files.length != 0 && files.length != 1) {
+      console.log(files, 'files')
       setButtonAvailable(true);
+      console.log(files, "files")
+    } else {
+      setButtonAvailable(false)
     }
   }, [files]);
 
@@ -111,8 +144,6 @@ const UploadRider = () => {
 
 
 
-
-
           <div className="grid grid-flow-row justify-items-center">
             <div className="bg-white w-full p-4 md:w-[500px] h-auto rounded-2xl mb-6 ">
               <div className="p-3">
@@ -123,7 +154,7 @@ const UploadRider = () => {
                   Supported formats: png, jpeg, pdf
                 </p>
               </div>
-              <div className="border-2 border-dashed border-harvestaYellow grid grid-flow-row justify-items-center items-center p-3 mb-4">
+              <form className="border-2 border-dashed border-harvestaYellow grid grid-flow-row justify-items-center items-center p-3 mb-4">
                 <img
                   src="https://res.cloudinary.com/dtc89xi2r/image/upload/v1720271606/Cloud_uploading_3_ka2xmk.gif"
                   className="w-[50px] bg-black rounded-full mt-5 cursor-pointer"
@@ -135,6 +166,9 @@ const UploadRider = () => {
                   ref={fileInputRef}
                   className="hidden"
                   onChange={handleFileChange}
+                  disabled={files.length == 2}
+                  multiple
+                  
                 />
                 <p
                   className="font-primary font-semibold text-harvestaSecondBlack text-sm mt-2 cursor-pointer"
@@ -145,7 +179,7 @@ const UploadRider = () => {
                 <p className="text-xs text-gray-400 font-primary mb-10">
                   Maximum file size 50 MB.
                 </p>
-              </div>
+              </form>
               {files.map((file, index) => (
                 <div
                   key={index}
@@ -197,7 +231,7 @@ const UploadRider = () => {
                   ? "bg-harvestaBlack hover:bg-black"
                   : "bg-gray-300 hover:none opacity-80"
               }`}
-              onClick={nextPage}
+              onClick={(e)=> handleSubmit(e)}
             >
               Submit
             </button>

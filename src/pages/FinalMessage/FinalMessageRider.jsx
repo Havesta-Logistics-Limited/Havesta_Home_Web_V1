@@ -1,4 +1,5 @@
 import LogoNav from "../../common/LogoNav";
+import { useNavigate } from "react-router-dom";
 
 const FinalMessageRider = () => {
 
