@@ -19,7 +19,7 @@ const Rider = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
-    firstName: "",
+    firstname: "",
     lastname: "",
     email: "",
     phone_number: "",
@@ -55,11 +55,23 @@ const Rider = () => {
 
     input.addEventListener("input", (e) => {
       if (input.value.length > 11) {
-        input.value = input.value.substr(0, 11);
+        input.value = input.value.slice(0, 11);
       }
-      input.value = this.value.replace(/[^0-9]/g, "");
+      setFormData((prev) => ({ ...prev, phone_number: input.value }));
+
+      input.value = input.value.replace(/[^0-9]/g, "");
     });
   }, []);
+
+  // const inputChange = (e) => {
+  //   const input = e.target;
+  //   if (input.length > 11) {
+  //     input.value = input.value.slice(0, 11);
+  //   }
+
+  //   setFormData((prev) => ({ ...prev, phone_number: input.value }));
+  //   input.value = input.value.replace(/[^0-9]/g, "");
+  // };
 
   const formTitleStyle = {
     fontSize: "11px",
@@ -74,13 +86,13 @@ const Rider = () => {
 
     try {
       setLoading(true);
-      console.log(formData)
+      console.log(formData);
       const { data } = await axiosInstance.post(
         `${import.meta.env.VITE_AUTH_ENDPOINT}/riders/signup`,
         formData
       );
       setLoading(false);
-      navigate(`/riders/congratulations/${data.public_unique_Id}`);
+      navigate(`/riders/congratulations`);
       console.log(data);
     } catch (error) {
       setLoading(false);
@@ -90,32 +102,32 @@ const Rider = () => {
     // const value = 4935340340229425;
   };
 
-  const setErrors = (target) => {
-    switch (target.name) {
-      case "date_of_birth":
-        let inputDateString = target.value;
-        let inputDate = new Date(inputDateString);
-        const currentDate = new Date();
+  // const setErrors = (target) => {
+  //   switch (target.name) {
+  //     case "date_of_birth":
+  //       let inputDateString = target.value;
+  //       let inputDate = new Date(inputDateString);
+  //       const currentDate = new Date();
 
-        if (inputDate > currentDate) {
-          setError("Date cannot be a future date");
-          // return "Date cannot be a future date";
-        }
-        setError("");
-        break;
+  //       if (inputDate > currentDate) {
+  //         setError("Date cannot be a future date");
+  //         // return "Date cannot be a future date";
+  //       }
+  //       setError("");
+  //       break;
 
-      case "email":
-        if (!validateEmailFormat(target.value)) {
-          setError("Invalid email format");
-          // return "Invalid email format";
-        } else setError("");
-        // console.log(error);
-        break;
+  //     case "email":
+  //       if (!validateEmailFormat(target.value)) {
+  //         setError("Invalid email format");
+  //         // return "Invalid email format";
+  //       } else setError("");
+  //       // console.log(error);
+  //       break;
 
-      default:
-        return;
-    }
-  };
+  //     default:
+  //       return;
+  //   }
+  // };
 
   const handleChange = (event) => {
     setFormData((prev) => ({
@@ -123,8 +135,9 @@ const Rider = () => {
       [event.target.name]: event.target.value,
     }));
 
-    setErrors(event.target);
+    // setErrors(event.target);
     console.log(event.target.value);
+    console.log(formData.phone_number);
     // switch (event.target.name) {
     //   case "date_of_birth":
     //     let inputDateString = event.target.value;
@@ -158,10 +171,10 @@ const Rider = () => {
     //   console.log(error)
   };
 
-  function validateEmailFormat(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
+  // function validateEmailFormat(email) {
+  //   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return re.test(email);
+  // }
 
   const handleCheckboxChange = (event) => {
     setFormData((prev) => ({
@@ -303,38 +316,21 @@ const Rider = () => {
                       onChange={handleChange}
                       readOnly={item.constant}
                       max={item.max}
-                      // onInput={item.oninput}
+                      onInput={item.oninput}
                       id={item.id}
                       required={item.required}
                     />
                     {/* </div> */}
-                    {error.includes(item.error_identifier) ? (
+                    {/* {error.includes(item.error_identifier) ? (
                       <div>{error}</div>
                     ) : (
                       <div></div>
-                    )}
+                    )} */}
                   </FormControl>
                 )
               )}
             </div>
           </form>
-
-          <style jsx>{`
-            input[type="date"].empty::before {
-              content: attr(data-placeholder);
-              position: absolute;
-              top: 50%;
-              left: 10px;
-              transform: translateY(-50%);
-              color: #6b7280; /* Tailwind's gray-500 */
-              font-style: italic;
-              pointer-events: none;
-            }
-
-            input[type="date"]:focus::before {
-              display: none;
-            }
-          `}</style>
 
           <div className="grid grid-col-1 gap-5 p-3 justify-items-center">
             <Checkbox
@@ -422,20 +418,25 @@ const Rider = () => {
         </div>
 
         <div className="space-y-10 lg:space-y-0 grid grid-flow-col justify-items-center p-14 lg:w-1/2 mx-auto lg:space-x-4 mb-40 ">
-        <div className=" ">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">1M+</h1>
-          <h3 className="">Monthly Customer Visit</h3>
+          <div className=" ">
+            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
+              1M+
+            </h1>
+            <h3 className="">Monthly Customer Visit</h3>
+          </div>
+          <div className="">
+            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
+              92%
+            </h1>
+            <h3 className="">Customer Satisfaction Rate</h3>
+          </div>
+          <div className="">
+            <h1 className="text-6xl text-harvestaDarkGreen font-semibold">
+              4.9
+            </h1>
+            <h3 className="">Average Customer Ratings</h3>
+          </div>
         </div>
-        <div className="">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">92%</h1>
-          <h3 className="">Customer Satisfaction Rate</h3>
-        </div>
-        <div className="">
-          <h1 className="text-6xl text-harvestaDarkGreen font-semibold">4.9</h1>
-          <h3 className="">Average Customer Ratings</h3>
-        </div>
-      </div>
-      
 
         <FAQ />
       </section>

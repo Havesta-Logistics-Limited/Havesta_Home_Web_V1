@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Headland+One&display=swap');
 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
 
 .backgroundImage {
   background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1718747610/Group_1000001819_rxpqve.png");
@@ -29,6 +34,7 @@
     transform: translateY(0);
   }
 }
+
 
 .rider_bg_img {
   background-image: url("https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957966/EatFood.com_4_ip6pcn.svg");

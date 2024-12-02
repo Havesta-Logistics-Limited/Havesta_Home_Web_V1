@@ -2,9 +2,10 @@ import LogoNav from "../../common/LogoNav";
 import { useNavigate } from "react-router-dom";
 
 const FinalMessageRider = () => {
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    window.location.href = "/";
+    navigate('/')
   };
   return (
     <>
