@@ -18,10 +18,17 @@ export default {
       boxShadow: {
         "3xl": " 0 -10px 25px -10px rgba(0, 0, 0, 0.75)",
         "userSignup": "0px 0px 14px 15px rgba(0, 0, 0, 0.25)",
+        marketCustom: "0px 4px 16.66px 0px rgba(2, 2, 2, 0.15)",
         "uploadRiderShadow" : " 0px 5.12px 25.37px -10.25px #00000040;"
-
       },
-
+      width  : {
+        'size': "calc(50% + 25px)",
+        'marketcards': 'calc(33.33% - .725rem)',
+      },
+      dropShadow: {
+        'custom':  "0px 4px 8px 0px rgba(0, 64, 216, 0.30)",
+        
+      },
       backgroundImage: {
         "faq-pattern":
           "url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957971/Greencloud_bbihtg.png')",
@@ -30,6 +37,7 @@ export default {
         careerTile: "linear-gradient(180deg, rgba(1, 190, 114, 0.3), rgba(1, 190, 114, 0.12))",
         careerGradient: "url('/images/Vector.png')",
         careerGradient2: "url('/images/Vector (1).png')",
+        marketSec1: "url('/images/Rectangle 1.png')",
       },
       height: {
         "max": "max-content",
@@ -38,7 +46,8 @@ export default {
         primary: ["Plus Jakarta Sans"],
         secondary: ['Rubik Wet Paint'],
         rider: ['Helvetica'],
-        opensans: ["Open Sans"]
+        opensans: ["Open Sans"],
+        career: ['Headland One']
       },
 
       animation: {

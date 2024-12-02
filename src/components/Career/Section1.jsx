@@ -1,3 +1,5 @@
+import { HashLink } from 'react-router-hash-link'
+
 const Section1 = () => {
     return (
         <>
@@ -24,7 +26,7 @@ const Section1 = () => {
                                     positions!
                                 </p>
                                 <div className=" cursor-pointer user-none w-[194px] h-[48px] justify-center items-center bg-[#01BE72] flex gap-2 rounded-[29px]">
-                                    <p className="text-[#fff]">Open position</p>
+                                    <HashLink to="/careers/#position" className="text-[#fff]">Open position</HashLink>
                                     <img
                                         className="w-[24px] rotate-90 h-[24px] object-contain"
                                         src="/images/Group 3888.png"
