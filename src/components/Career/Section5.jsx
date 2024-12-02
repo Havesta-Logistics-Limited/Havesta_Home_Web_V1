@@ -90,7 +90,7 @@ const Section5 = () => {
                                             <div className="lg:w-[73.97%] w-full flex-col justify-start gap-4 lg:gap-0 lg:justify-between h-[430px] lg:flex-row px-[30px] lg:p-0 pt-[30px] pb-[45px] items-start flex lg:h-[334px]">
                                                 <img
                                                     className="w-[33.82px] object-contain"
-                                                    src="./images/quote 1.png"
+                                                    src="/images/quote 1.png"
                                                     alt=""
                                                 />
                                                 <div className="w-full lg:w-[89.41%] h-[350px] lg:h-full justify-between flex flex-col">
@@ -107,7 +107,7 @@ const Section5 = () => {
                                                     </div>
                                                     <p className="flex gap-2">
                                                         <img
-                                                            src="./images/linkedin.png"
+                                                            src="/images/linkedin.png"
                                                             alt=""
                                                         />
                                                         {"LinkedIn profile"}
@@ -154,7 +154,7 @@ const Section5 = () => {
                                 {"Next"}
                                 <img
                                     className="invert w-[34px] h-[34px] object-contain"
-                                    src="./images/Group 3888.png"
+                                    src="/images/Group 3888.png"
                                 />
                             </p>
                         </div>
