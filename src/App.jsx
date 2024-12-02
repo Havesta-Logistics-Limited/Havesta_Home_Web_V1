@@ -14,7 +14,6 @@ import VendorModal from './components/vendorModal';
 import ScrollToTop from "./common/scrollToTop";
 import Career from "./pages/Career/Career"
 import Landing from "./pages/Landing/Landing"
-import MarketPlace from './pages/MarketPlace/MarketPlace';
 // import UserSignup from './pages/UserSignup';
 
 // import SideModal from './common/SideModal';
@@ -44,7 +43,6 @@ function App() {
 
       <Route path='/careers' element={<Career/>}/>
       <Route path='/landing' element={<Landing/>}/>
-      <Route path='/market' element={<MarketPlace/>}/>
     </Routes>
     </>
     
