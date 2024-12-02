@@ -19,8 +19,7 @@ export default {
         "3xl": " 0 -10px 25px -10px rgba(0, 0, 0, 0.75)",
         "userSignup": "0px 0px 14px 15px rgba(0, 0, 0, 0.25)",
         marketCustom: "0px 4px 16.66px 0px rgba(2, 2, 2, 0.15)",
-
-
+        "uploadRiderShadow" : " 0px 5.12px 25.37px -10.25px #00000040;"
       },
       width  : {
         'size': "calc(50% + 25px)",

@@ -32,8 +32,8 @@ function App() {
           )
         )}
       </Route>
-      <Route path='/riders/congratulations/:id' element={<CongratulationsRider/>}/> {/* SHOLD HAVE AN ID IN THE ROUTE FOR PROD */}
-      <Route path='/vendors/congratulations/:id' element={<CongratulationsVendor/>}/> {/* SHOLD HAVE AN ID IN THE ROUTE FOR PROD */}
+      <Route path='/riders/congratulations' element={<CongratulationsRider/>}/> {/* SHOLD HAVE AN ID IN THE ROUTE FOR PROD */}
+      <Route path='/vendors/congratulations' element={<CongratulationsVendor/>}/> {/* SHOLD HAVE AN ID IN THE ROUTE FOR PROD */}
       <Route path='/rider/upload' element={<UploadRider/>}/>
       <Route path='/vendor/upload' element={<UploadVendor/>}/>
       <Route path='/finalmessage' element={<FinalMessageRider/>}/>

@@ -6,7 +6,7 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { vendorForm, vendorStats } from "../config/vendors.config";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReviewsRoutes from "../routes/reviews.routes";
 import FAQ from "../components/faq..jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
@@ -73,6 +73,18 @@ const Vendor = ({ hero }) => {
       currentSlide === ReviewsRoutes.length - 1 ? 0 : currentSlide + 1;
     setCurrentSlide(nextSlide);
   };
+  useEffect(() => {
+    let input = document.querySelector(".phoneNum");
+
+    input.addEventListener("input", (e) => {
+      if (input.value.length > 11) {
+        input.value = input.value.slice(0, 11);
+      }
+      setFormData((prev) => ({ ...prev, phone_number: input.value }));
+
+      input.value = input.value.replace(/[^0-9]/g, "");
+    });
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -128,7 +140,9 @@ const Vendor = ({ hero }) => {
           <h2 className="text-3xl font-bold font-primary mt-10">
             Complete The Form
           </h2>
+           
           <form className="my-12 lg:max-w-[1154px] md  w-full p-8">
+          <p className="text-xs pb-4"><span className="text-red-400">*</span>All fields are required</p>
             <div className="lg:grid md:grid md:grid-cols-2 grid-cols-2 gap-9 font-normal">
               {vendorForm.map((item, index) =>
                 item.option ? (
@@ -186,7 +200,7 @@ const Vendor = ({ hero }) => {
                         type={item.type}
                         placeholder={item.placeholder}
                         className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary text-sm ${
-                          item.title == "Phone Number" ? "pl-12" : ""
+                          item.title == "Phone Number" ? "pl-12 phoneNum" : ""
                         }`}
                         onChange={handleInputChange}
                         name={item.name}
@@ -237,7 +251,7 @@ const Vendor = ({ hero }) => {
               }
               onClick={handleSubmit}
               disabled={
-                loading == true && !formData.accepted_privacy_policy == false
+                loading == true && !formData.accepted_privacy_policy == false 
               }
             >
               Submit
