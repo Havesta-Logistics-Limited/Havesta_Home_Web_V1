@@ -2,6 +2,7 @@ import FormControl from "@mui/joy/FormControl";
 import FormLabel from "@mui/joy/FormLabel";
 import Select from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { vendorForm, vendorStats } from "../config/vendors.config";
 import Checkbox from "@mui/joy/Checkbox";
@@ -12,6 +13,7 @@ import FAQ from "../components/faq..jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
 import axiosInstance from "../config/axios.config.js";
+import { CircularProgress } from "@mui/material/";
 const Vendor = ({ hero }) => {
   const formTitleStyle = {
     fontSize: "14px",
@@ -24,6 +26,7 @@ const Vendor = ({ hero }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const [formData, setFormData] = useState({
     firstname: "",
@@ -40,12 +43,27 @@ const Vendor = ({ hero }) => {
     // category_of_business:null
   });
 
-  const handleInputChange = (e) => {
+  const checkIfEmpty = () => {
+    const arr = Object.values(formData);
+    const subArr = arr.filter((val) => typeof val == "string");
+    return subArr.every((value) => value.trim() !== "");
+  };
+
+  const handleInputChange = (event) => {
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     }));
-    console.log(e.target.value, formData[e.target.name], formData.firstname);
+    // console.log(
+    //   e.target.value,
+    //   formData[event.target.name],
+    //   formData.firstname
+    // );
+    checkIfEmpty();
+
+    if (event.target.name === "email") {
+      handleBlur(event.target.value);
+    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -80,6 +98,30 @@ const Vendor = ({ hero }) => {
       if (input.value.length > 11) {
         input.value = input.value.slice(0, 11);
       }
+
+      if (input.value.length === 11 && document.activeElement === input) {
+        input.classList.add(
+          "focus:outline",
+          "focus:outline-harvestaLightGreen"
+        );
+        input.classList.remove("border-red-300", "focus:outline-none");
+        input.classList.remove("border-red-300");
+      }
+      // if (input.value.length < 11 && document.activeElement !== input) {
+      //   // input.classList.remove("focus:outline","focus:outline-harvestaLightGreen")
+      //   // input.classList.add("outline-red-500", "outline-none")
+      //   console.log("grtrbthny4tbgerwefvcds")
+
+      //   // input.classList.add("focus:outline-none")
+      // }
+      if (input.value.length < 11 && document.activeElement === input) {
+        input.classList.add("border-red-300", "focus:outline-none");
+        input.classList.remove(
+          "focus:outline",
+          "focus:outline-harvestaLightGreen"
+        );
+        // input.classList.add("focus:border-transparent")
+      }
       setFormData((prev) => ({ ...prev, phone_number: input.value }));
 
       input.value = input.value.replace(/[^0-9]/g, "");
@@ -91,22 +133,50 @@ const Vendor = ({ hero }) => {
     console.log(formData);
     try {
       setLoading(true);
-      const { data } = await axiosInstance.post(
-        `${import.meta.env.VITE_AUTH_ENDPOINT}/vendors/signup`,
-        formData
-      );
-      setLoading(false);
-      if (data) {
-        navigate("/vendors/congratulations");
+      if (error === "") {
+        const { data } = await axiosInstance.post(
+          `${import.meta.env.VITE_AUTH_ENDPOINT}/vendors/signup`,
+          formData
+        );
+        setLoading(false);
+        if (data) {
+          navigate("/vendors/congratulations");
+        }
+      } else {
+        setLoading(false)
+        toast.error("Invalid Email Format");
       }
-      console.log(data);
     } catch (error) {
       setLoading(false);
+      const message = error.response.data.MESSAGE
+        ? error.response.data.MESSAGE
+        : "Something went wrong";
       console.log(error.response.data);
+      toast.error(message);
+    }
+  };
+
+  const validateEmailFormat = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.(com|net|org)$/i;
+    return re.test(email);
+  };
+
+  const handleBlur = (email) => {
+    console.log("fregbfgerberwrfeb");
+    if (!validateEmailFormat(email)) {
+      setError("Invalid email address");
+    } else {
+      setError(""); // Clear error if valid
     }
   };
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        hideProgressBar={true}
+        closeOnClick
+        transition={Bounce}
+      />
       <section>
         <div className="relative pb-5">
           <div className="w-full bg-cover h-[30%] py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721823045/Group_1000002049_bjs7ez.png')]">
@@ -137,12 +207,15 @@ const Vendor = ({ hero }) => {
         </div>
 
         <div className="grid grid-cols-1 justify-items-center mt-20 font-primary">
-          <h2 className="text-3xl font-bold font-primary mt-10">
+          <h2 className=" text-3xl lg:text-4xl font-bold font-primary mt-10">
             Complete The Form
           </h2>
-           
+
           <form className="my-12 lg:max-w-[1154px] md  w-full p-8">
-          <p className="text-xs pb-4"><span className="text-red-400">*</span>All fields are required</p>
+            <p className="text-xs pb-4">
+              Fields marked with<span className="text-red-400"> * </span> are
+              required
+            </p>
             <div className="lg:grid md:grid md:grid-cols-2 grid-cols-2 gap-9 font-normal">
               {vendorForm.map((item, index) =>
                 item.option ? (
@@ -193,17 +266,31 @@ const Vendor = ({ hero }) => {
                     </Select>
                   </FormControl>
                 ) : (
-                  <FormControl key={index} className=" w-full">
-                    <FormLabel style={formTitleStyle}>{item.title}</FormLabel>
+                  <FormControl key={index} className=" w-full mt-4">
+                    <FormLabel style={formTitleStyle}>
+                      {item.title} &nbsp;{" "}
+                      <span className="text-[12px] text-red-400"> * </span>
+                    </FormLabel>
                     <div className="w-full relative">
                       <input
                         type={item.type}
                         placeholder={item.placeholder}
-                        className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary text-sm ${
+                        className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-harvestaLightGreen font-primary text-sm ${
                           item.title == "Phone Number" ? "pl-12 phoneNum" : ""
-                        }`}
+                        }
+                          ${
+                            item.name === "email" &&
+                            error === "Invalid email address"
+                              ? "border-[1.2px] border-red-300 focus:outline-transparent focus:outline-none"
+                              : ""
+                          }`}
                         onChange={handleInputChange}
                         name={item.name}
+                        onBlur={
+                          item.name === "email"
+                            ? () => handleBlur(formData.email)
+                            : () => {}
+                        }
                       />
                       <img
                         src={item.img ? item.img : {}}
@@ -245,16 +332,29 @@ const Vendor = ({ hero }) => {
 
             <button
               className={
-                loading == false && formData.accepted_privacy_policy == true
+                loading == false &&
+                formData.accepted_privacy_policy == true &&
+                checkIfEmpty()
                   ? "mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover"
                   : "mt-10 font-primary rounded-full bg-[#005231] opacity-50 p-3 text-white text-xs font-bold shadow-md w-[100px] cursor-not-allowed"
               }
               onClick={handleSubmit}
               disabled={
-                loading == true && !formData.accepted_privacy_policy == false 
+                loading === true ||
+                formData.accepted_privacy_policy === false ||
+                !checkIfEmpty()
               }
             >
-              Submit
+              <p>
+                {loading ? (
+                  <CircularProgress
+                    sx={{ width: "15px", height: "15px", color: "white" }}
+                    size="small"
+                  />
+                ) : (
+                  "Submit"
+                )}
+              </p>
             </button>
             <p className="text-xs">
               Want to become a Rider?{" "}
