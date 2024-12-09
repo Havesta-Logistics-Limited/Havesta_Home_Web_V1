@@ -14,7 +14,7 @@ export const vendorForm = [
     },
    {
         title: "Name of Business",
-        // placeholder: "Ola Buka",
+        placeholder: "Ola Buka",
         name:"name_of_business"
        
     }, 
@@ -35,7 +35,7 @@ export const vendorForm = [
         maxLength: 11,
         id: "phone_number",
         required: true,
-        img:'icons/naija-flag.svg'
+        img:'/icons/naija-flag.svg'
     },
     // {
     //     title: "Date of birth",
