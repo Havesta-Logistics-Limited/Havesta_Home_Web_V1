@@ -120,7 +120,7 @@ const UploadRider = () => {
         formData.append("ID_image", compressedIdImg);
 
         const data = await axiosInstance.post(
-          `${import.meta.env.VITE_AUTH_ENDPOINT}/riders/upload`,
+          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/riders/upload`,
           formData,
           {
             headers: {

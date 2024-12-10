@@ -135,7 +135,7 @@ const Vendor = ({ hero }) => {
       setLoading(true);
       if (error === "") {
         const { data } = await axiosInstance.post(
-          `${import.meta.env.VITE_AUTH_ENDPOINT}/vendors/signup`,
+          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/vendors/signup`,
           formData
         );
         setLoading(false);
