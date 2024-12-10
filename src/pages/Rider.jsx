@@ -120,7 +120,7 @@ const Rider = () => {
       if (error === "") {
         setLoading(true);
         const { data } = await axiosInstance.post(
-          `${import.meta.env.VITE_AUTH_ENDPOINT}/riders/signup`,
+          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/riders/signup`,
           formData
         );
         if (data.status === "success") {
