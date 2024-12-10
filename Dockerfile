@@ -9,6 +9,8 @@ RUN npm install
 
 COPY . .
 
+ARG VITE_AUTH_ENDPOINT
+
 RUN npm run build
 
 EXPOSE 3000
