@@ -6,10 +6,10 @@ export default function ComingSoon() {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
     const socials = [
-        { name: 'Facebook', link: 'https://www.facebook.com', icon: '/icons/facebook.svg' },
-        { name: 'Instagram', link: 'https://www.instagram.com', icon: '/icons/instagram.svg' },
-        { name: 'LinkedIn', link: 'https://www.linkedin.com', icon: '/icons/linkedin.svg' },
-        { name: 'Twitter', link: 'https://www.twitter.com', icon: '/icons/twitter.svg' },
+        { name: 'Facebook', link: 'https://www.linkedin.com/company/havesta/', icon: '/icons/facebook.svg' },
+        { name: 'Instagram', link: 'https://www.linkedin.com/company/havesta/', icon: '/icons/instagram.svg' },
+        { name: 'LinkedIn', link: 'https://www.linkedin.com/company/havesta/', icon: '/icons/linkedin.svg' },
+        { name: 'Twitter', link: 'https://www.linkedin.com/company/havesta/', icon: '/icons/twitter.svg' },
 
     ]
 
