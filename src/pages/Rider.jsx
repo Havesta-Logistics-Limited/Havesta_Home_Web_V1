@@ -4,6 +4,7 @@ import Select from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { riderForm, riderStats } from "../config/rider.config";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 import Checkbox from "@mui/joy/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -13,11 +14,13 @@ import { useDispatch } from "react-redux";
 import WebReview from "../components/landing/Reviews-Fragment/WebReview.jsx";
 import MobileReview from "../components/landing/Reviews-Fragment/MobileReview.jsx";
 import axiosInstance from "../config/axios.config.js";
+import { CircularProgress } from "@mui/material/";
 const Rider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [phoneNumberError, setPhoneNumberError] = useState("");
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -54,8 +57,26 @@ const Rider = () => {
     let input = document.querySelector(".phoneNum");
 
     input.addEventListener("input", (e) => {
+      console.log(
+        !input.value.length >= 11 && document.activeElement !== input
+      );
       if (input.value.length > 11) {
         input.value = input.value.slice(0, 11);
+      }
+      if (input.value.length === 11 && document.activeElement === input) {
+        input.classList.add(
+          "focus:outline",
+          "focus:outline-harvestaLightGreen"
+        );
+        input.classList.remove("border-red-300", "focus:outline-none");
+      }
+
+      if (input.value.length < 11 && document.activeElement === input) {
+        input.classList.add("border-red-300", "focus:outline-none");
+        input.classList.remove(
+          "focus:outline",
+          "focus:outline-harvestaLightGreen"
+        );
       }
       setFormData((prev) => ({ ...prev, phone_number: input.value }));
 
@@ -73,6 +94,16 @@ const Rider = () => {
   //   input.value = input.value.replace(/[^0-9]/g, "");
   // };
 
+  const checkIfEmpty = () => {
+    const arr = Object.values(formData);
+    const subArr = arr.filter((val) => typeof val == "string");
+    console.log(subArr, "sub");
+    // console.log(arr);
+
+    return subArr.every((value) => value.trim() !== "");
+
+    //find a way to not add those boolean to the arr
+  };
   const formTitleStyle = {
     fontSize: "11px",
     fontWeight: "700",
@@ -85,49 +116,28 @@ const Rider = () => {
     event.preventDefault();
 
     try {
-      setLoading(true);
       console.log(formData);
-      const { data } = await axiosInstance.post(
-        `${import.meta.env.VITE_AUTH_ENDPOINT}/riders/signup`,
-        formData
-      );
-      setLoading(false);
-      navigate(`/riders/congratulations`);
-      console.log(data);
+      if (error === "") {
+        setLoading(true);
+        const { data } = await axiosInstance.post(
+          `${import.meta.env.VITE_AUTH_ENDPOINT}/auth_service/api/riders/signup`,
+          formData
+        );
+        if (data.status === "success") {
+        navigate(`/riders/congratulations`);
+        }
+      } else {
+        setLoading(false)
+        toast.error("Invalid Email Format");
+      }
     } catch (error) {
       setLoading(false);
-      console.log(error, "err");
+      const message = error.response.data.MESSAGE
+        ? error.response.data.MESSAGE
+        : "Something went wrong";
+      toast.error(message);
     }
-
-    // const value = 4935340340229425;
   };
-
-  // const setErrors = (target) => {
-  //   switch (target.name) {
-  //     case "date_of_birth":
-  //       let inputDateString = target.value;
-  //       let inputDate = new Date(inputDateString);
-  //       const currentDate = new Date();
-
-  //       if (inputDate > currentDate) {
-  //         setError("Date cannot be a future date");
-  //         // return "Date cannot be a future date";
-  //       }
-  //       setError("");
-  //       break;
-
-  //     case "email":
-  //       if (!validateEmailFormat(target.value)) {
-  //         setError("Invalid email format");
-  //         // return "Invalid email format";
-  //       } else setError("");
-  //       // console.log(error);
-  //       break;
-
-  //     default:
-  //       return;
-  //   }
-  // };
 
   const handleChange = (event) => {
     setFormData((prev) => ({
@@ -135,46 +145,27 @@ const Rider = () => {
       [event.target.name]: event.target.value,
     }));
 
-    // setErrors(event.target);
-    console.log(event.target.value);
-    console.log(formData.phone_number);
-    // switch (event.target.name) {
-    //   case "date_of_birth":
-    //     let inputDateString = event.target.value;
-    //     let inputDate = new Date(inputDateString);
-    //     const currentDate = new Date();
+    checkIfEmpty();
 
-    //     if (inputDate > currentDate) {
-    //       setError("Date of birth cannot be a future date");
-    //     }
-    //     console.log(error);
-    //     break;
-
-    //   case "email":
-    //     if (!validateEmailFormat(event.target.value)) {
-    //       setError("Invalid email format");
-    //     } else setError("");
-    //     console.log(error);
-    //     break;
-
-    //   default:
-    //     console.log("fgfd");
-    // }
-    // if (event.target.name === "date_of_birth") {
-    //   let inputDateString = event.target.value;
-    //   let inputDate = new Date(inputDateString)
-    //   const currentDate = new Date();
-
-    //   if (inputDate > currentDate) {
-    //     setError("Date cannot be a future date")
-    //   }
-    //   console.log(error)
+    if (event.target.name === "email") {
+      handleBlur(event.target.value);
+    }
   };
 
-  // function validateEmailFormat(email) {
-  //   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   return re.test(email);
-  // }
+  const validateEmailFormat = (email) => {
+    // const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const re = /^[^\s@]+@[^\s@]+\.(com|net|org)$/i;
+    return re.test(email);
+  };
+
+  const handleBlur = (email) => {
+    console.log(error);
+    if (!validateEmailFormat(email)) {
+      setError("Invalid email address");
+    } else {
+      setError(""); // Clear error if valid
+    }
+  };
 
   const handleCheckboxChange = (event) => {
     setFormData((prev) => ({
@@ -224,6 +215,12 @@ const Rider = () => {
 
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        hideProgressBar={true}
+        closeOnClick
+        transition={Bounce}
+      />
       <section>
         <div className="relative pb-5">
           <div className="w-full bg-cover  py-20 bg-[url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1721822845/Group_1000002050_isyw0e.png')]">
@@ -259,10 +256,14 @@ const Rider = () => {
           </h2>
 
           <form className="my-4 lg:w-[70%] w-full p-8">
-            <div className="lg:grid grid-cols-2 gap-6">
+            <p className="text-xs pb-4">
+              Fields marked with<span className="text-red-400"> * </span> are
+              required
+            </p>
+            <div className="lg:grid grid-cols-2 gap-6 lg:mt-6">
               {riderForm.map((item, index) =>
                 item.options ? (
-                  <FormControl key={index} className="max-w-[542px]">
+                  <FormControl key={index} className="max-w-[542px] ">
                     <FormLabel style={formTitleStyle} className="font-primary">
                       {item.title}
                     </FormLabel>
@@ -296,11 +297,14 @@ const Rider = () => {
                   </FormControl>
                 ) : (
                   <FormControl key={index} className="relative max-w-[542px]">
-                    <FormLabel style={formTitleStyle}>{item.title}</FormLabel>
+                    <FormLabel style={formTitleStyle}>
+                      {item.title} &nbsp;{" "}
+                      <span className="text-[12px] text-red-400"> * </span>
+                    </FormLabel>
                     {/* <div className="w-full bg-red-500 absolute"> */}
                     {item.name == "phone_number" ? (
                       <div className="absolute bottom-[18px] left-2.5">
-                        <img src="icons/naija-flag.svg" alt="flag" />
+                        <img src="/icons/naija-flag.svg" alt="flag" />
                       </div>
                     ) : (
                       <div></div>
@@ -308,8 +312,18 @@ const Rider = () => {
                     <input
                       type={item.type}
                       placeholder={item.placeholder}
-                      className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-none font-primary h-[56px] text-sm w-full ${
-                        item.name == "phone_number" ? "pl-10 phoneNum" : ""
+                      className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen font-primary h-[56px] text-sm w-full ${
+                        item.name == "phone_number"
+                          ? "pl-10 phoneNum"
+                          : item.name === "phone_number" &&
+                            phoneNumberError === "error"
+                          ? "border-[1.2px] border-red-300 focus:border-transparen"
+                          : ""
+                      } ${
+                        item.name === "email" &&
+                        error === "Invalid email address"
+                          ? "border-[1.2px] border-red-300 focus:outline-transparent focus:outline-none"
+                          : ""
                       }`}
                       value={formData[item.name]}
                       name={item.name}
@@ -319,6 +333,11 @@ const Rider = () => {
                       onInput={item.oninput}
                       id={item.id}
                       required={item.required}
+                      onBlur={
+                        item.name === "email"
+                          ? () => handleBlur(formData.email)
+                          : () => {}
+                      }
                     />
                     {/* </div> */}
                     {/* {error.includes(item.error_identifier) ? (
@@ -361,16 +380,29 @@ const Rider = () => {
 
             <button
               className={
-                loading == false && formData.accepted_privacy_policy == true
+                loading == false &&
+                formData.accepted_privacy_policy == true &&
+                checkIfEmpty()
                   ? "mt-10 font-primary rounded-full bg-primary p-3 text-white text-xs font-bold shadow-md w-[100px] hover:bg-primaryHover"
                   : "mt-10 font-primary rounded-full bg-[#005231] opacity-50 p-3 text-white text-xs font-bold shadow-md w-[100px] cursor-not-allowed"
               }
               onClick={handleSubmit}
               disabled={
-                loading == true && !formData.accepted_privacy_policy == false
+                loading === true ||
+                formData.accepted_privacy_policy === false ||
+                !checkIfEmpty()
               }
             >
-              Submit
+              <p>
+                {loading ? (
+                  <CircularProgress
+                    sx={{ width: "15px", height: "15px", color: "white" }}
+                    size="small"
+                  />
+                ) : (
+                  "Submit"
+                )}
+              </p>
             </button>
             <p className="text-xs">
               Want to become a Vendor?{" "}
