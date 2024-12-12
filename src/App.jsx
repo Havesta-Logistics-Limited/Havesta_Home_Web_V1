@@ -21,7 +21,7 @@ import ComingSoon from './pages/ComingSoon.JSx';
 // import SideModal from './common/SideModal';
 function App() {
 
-const environment = import.meta.env.REACT_APP_ENVIRONMENT
+const environment = import.meta.env.VITE_ENVIRONMENT
 
   return (
     <>
