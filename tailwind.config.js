@@ -52,6 +52,7 @@ export default {
         career: ['Headland One'],
         soon: ["Pacifico"],
         soon2: ["Poppins"],
+        soonNumbers: ["Digital Numbers"],
       },
 
       animation: {
