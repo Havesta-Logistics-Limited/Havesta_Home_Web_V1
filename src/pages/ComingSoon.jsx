@@ -44,17 +44,17 @@ export default function ComingSoon() {
                             <p className="font-soon text-[100px] leading-[175.6px] font-normal text-[#FFFFFF]">Coming Soon</p>
                             <div className='w-full flex gap-4 justify-between'>
                                 <div className='flex flex-col items-center w-full'>
-                                    <div className="flex w-fit gap-4 h-40">{timeLeft.days.toString().split('').map((char, index) => (<p className='!bg-opacity-50 rounded-[5px] border-[0.5px] border-white bg-soonGradient flex text-[96px] leading-[123.94px] font-normal justify-center items-center w-[100px] h-full' key={index}>{char}</p>))}</div>
+                                    <div className="flex w-fit gap-4 h-40">{timeLeft.days.toString().split('').map((char, index) => (<p className='!bg-opacity-50 rounded-[5px] border-[0.5px] font-soonNumbers border-white bg-soonGradient flex text-[96px] leading-[123.94px] font-normal justify-center items-center w-[100px] h-full' key={index}>{char}</p>))}</div>
                                     <p className='text-white text-[48px] leading-[72px] font-medium font-soon2'>DAYS</p>
                                 </div>
 
                                 <div className='flex flex-col items-center w-full'>
-                                    <div className="flex w-fit gap-4 h-40">{timeLeft.hours.toString().split('').map((char, index) => (<p className='!bg-opacity-50 rounded-[5px] border-[0.5px] border-white bg-soonGradient flex text-[96px] leading-[123.94px] font-normal justify-center items-center w-[100px] h-full' key={index}>{char}</p>))}</div>
+                                    <div className="flex w-fit gap-4 h-40">{timeLeft.hours.toString().split('').map((char, index) => (<p className='!bg-opacity-50 rounded-[5px] border-[0.5px] font-soonNumbers border-white bg-soonGradient flex text-[96px] leading-[123.94px] font-normal justify-center items-center w-[100px] h-full' key={index}>{char}</p>))}</div>
                                     <p className='text-white text-[48px] leading-[72px] font-medium font-soon2'>HOURS</p>
                                 </div>
 
                                 <div className='flex flex-col items-center w-full'>
-                                    <div className="flex w-fit gap-4 h-40">{timeLeft.minutes.toString().split('').map((char, index) => (<p className='!bg-opacity-50 rounded-[5px] border-[0.5px] border-white bg-soonGradient flex text-[96px] leading-[123.94px] font-normal justify-center items-center w-[100px] h-full' key={index}>{char}</p>))}</div>
+                                    <div className="flex w-fit gap-4 h-40">{timeLeft.minutes.toString().split('').map((char, index) => (<p className='!bg-opacity-50 rounded-[5px] border-[0.5px] font-soonNumbers border-white bg-soonGradient flex text-[96px] leading-[123.94px] font-normal justify-center items-center w-[100px] h-full' key={index}>{char}</p>))}</div>
                                     <p className='text-white text-[48px] leading-[72px] font-medium font-soon2'>MINUTES</p>
                                 </div>
                             </div>

@@ -1,16 +1,16 @@
 import Footer from "../../common/Footer"
 import SectionL2 from "../../components/landing/new/SectionL2"
-import Navbar from "../../components/MarketPlace/Navbar"
-import Section1 from "../../components/MarketPlace/Section1"
-import Section2 from "../../components/MarketPlace/Section2"
+// import Navbar from "../../components/MarketPlace/Navbar"
+// import Section1 from "../../components/MarketPlace/Section1"
+// import Section2 from "../../components/MarketPlace/Section2"
 
 const MarketPlace = () => {
     return (
         <>
             <div className="font-primary">
-                <Navbar />
-                <Section1 />
-                <Section2 />
+                {/* <Navbar /> */}
+                {/* <Section1 />
+                <Section2 /> */}
                 <SectionL2 />
                 <div className="relative flex justify-center h-fit w-full bg-marketSec1 bg-[#01BE724D]">
                     <div className="flex flex-col md:flex-row bg-transparent mt-[10rem]">
