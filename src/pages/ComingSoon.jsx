@@ -16,17 +16,20 @@ export default function ComingSoon() {
     // const url = import.meta.env.WEB_APP_URL;
 
     const [email, setEmail] = useState('')
+    const [IsSucessful, setIsSucessful] = useState(false)
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('https://script.google.com/macros/s/AKfycbyThztb2wzJhSBneyCgsYbUO1b9GGfW30tBx2lhpooImiIIcp9QcDrdfBleJPmJC9DS/exec', { email })
-            console.log(response.data);
-        }
-        catch (error) {
-            console.error('Error:', error);
-        }
-    };
+
+        axios.post('https://api.sheetbest.com/sheets/9d4cb556-d137-4817-b148-69736f291044', { 'emails': email }).then((response) => {
+            console.log(response.status)
+            if (response.status === 200) {
+                setIsSucessful(true)
+            }
+            setEmail('')
+        })
+    
+    }
 
 
     useEffect(() => {
@@ -52,7 +55,8 @@ export default function ComingSoon() {
     }, []);
 
     return (
-        <div className="w-full h-screen bg-soon bg-cover bg-center lg:bg-top-right flex">
+        <div className="w-full relative h-screen bg-soon bg-cover bg-center lg:bg-top-right flex">
+
             <div className="w-full h-full flex-col bg-[#00000066] lg:pl-[78px] lg:pr-[93px] lg:py-[47px] py-[23.5px] px-8 gap-[50.94px] flex">
                 <img className="lg:w-[198px] lg:h-[44.06px] w-[99px] h-[22.03px] object-contain" src="/icons/logo.svg" alt="" />
                 <div className="flex w-full lg:justify-center justify-between lg:h-fit h-full">
@@ -133,7 +137,7 @@ export default function ComingSoon() {
                                 </div>
                             </div>
                             <p className="w-full lg:w-[783px] font-primary lg:text-[32px] lg:leading-[38.73px] text-[16px] leading-[19.365px] font-normal text-center text-white">We’ll let you know when we are Launching</p>
-                            <form onClick={handleSubmit} className="w-full lg:w-[783px] lg:h-[70px] h-[40.5px] flex flex-col lg:flex-row gap-4 lg:gap-0">
+                            <form onSubmit={handleSubmit} className="w-full lg:w-[783px] lg:h-[70px] h-[40.5px] flex flex-col lg:flex-row gap-4 lg:gap-0">
                                 <input className="lg:rounded-tr-none text-center lg:text-left lg:rounded-br-none rounded-[10px] w-full outline-none font-primary lg:p-[26px] p-[16px] text-3 lg:text-6 lg:leading-[29.05px] leading-[14.525px]" placeholder="Enter your email address" type="email" value={email} onChange={(e) => setEmail(e.target.value)} name='email' />
                                 <button type='submit' className="lg:w-[238px] w-full lg:h-full h-fit bg-harvestaDarkGreen rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none lg:p-0 p-[16px] text-white lg:text-[28px] lg:leading-[33.89px] text-[14px] leading-[16.945px] font-semibold font-primary text-center">Notify Me</button>
                             </form>
@@ -150,6 +154,13 @@ export default function ComingSoon() {
                     </div>
                 </div>
             </div>
+
+            { IsSucessful && <div className="absolute w-full h-full flex justify-center items-center">
+                <div className="absolute w-full h-full" onClick={() => setIsSucessful(false)}></div>
+                <div className="w-[300px] h-[200px] flex justify-center items-center bg-white rounded-[10px]">
+                    <h1>Email saved</h1>
+                </div>
+            </div>}
         </div>
     )
 }
