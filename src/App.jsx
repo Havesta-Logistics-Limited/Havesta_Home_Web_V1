@@ -22,7 +22,7 @@ import ComingSoon from './pages/ComingSoon.jsx';
 function App() {
 
 const environment = import.meta.env.VITE_ENVIRONMENT
-
+console.log(enviroment)
   return (
     <>
       <ScrollToTop />
@@ -57,7 +57,7 @@ const environment = import.meta.env.VITE_ENVIRONMENT
 
     </>
 
-
+   
   );
 }
 
