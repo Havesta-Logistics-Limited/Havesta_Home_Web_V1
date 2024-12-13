@@ -16,7 +16,7 @@ export default function ComingSoon() {
     // const url = import.meta.env.WEB_APP_URL;
 
     const [email, setEmail] = useState('')
-    const [IsSucessful, setIsSucessful] = useState(false)
+    const [isSucessful, setIsSucessful] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,10 +25,13 @@ export default function ComingSoon() {
             console.log(response.status)
             if (response.status === 200) {
                 setIsSucessful(true)
+                setInterval(() => {
+                    setIsSucessful(false)
+                }, 8000)
             }
             setEmail('')
         })
-    
+
     }
 
 
@@ -56,6 +59,19 @@ export default function ComingSoon() {
 
     return (
         <div className="w-full relative h-screen bg-soon bg-cover bg-center lg:bg-top-right flex">
+
+            {isSucessful && <div className="absolute w-full h-full pt-10 items-center overflow-clip">
+                <div className={`${isSucessful ? 'lg:animate-slideIn animate-slideInM' : ''} absolute -right-full translate-x-1/2 lg:translate-x-0 lg:w-[465px] p-3 justify-between w-80 h-[72px] bg-harvestaLightGreen flex items-center border-[#BBF7D0] border-[1px] rounded-[10px]`}>
+                    <div className="flex items-start gap-2">
+                        <img className='object-contain w-5 h-5' src="icons/detail.svg" alt="" />
+                        <div className="flex flex-col h-full justify-between">
+                            <p className="leading-[22px] text-white font-primary text-[16px] font-extrabold">Great Job</p>
+                            <p className="leading-[20px] text-white font-primary text-[14px] font-semibold">We will be in touch soon.</p>
+                        </div>
+                    </div>
+                    {/* <img onClick={() => setIsSucessful(false)} className="object-contain w-5 h-5" src="/icons/close.svg" alt="" /> */}
+                </div>
+            </div>}
 
             <div className="w-full h-full flex-col bg-[#00000066] lg:pl-[78px] lg:pr-[93px] lg:py-[47px] py-[23.5px] px-8 gap-[50.94px] flex">
                 <img className="lg:w-[198px] lg:h-[44.06px] w-[99px] h-[22.03px] object-contain" src="/icons/logo.svg" alt="" />
@@ -146,7 +162,7 @@ export default function ComingSoon() {
                             <div className="w-full h-[30px] lg:h-[192px] flex lg:flex-col justify-between">
                                 {socials.map((social, index) => {
                                     return (
-                                        <a target='_blank' className='w-full h-[30px]' key={index} href={social.link}><img className='w-full h-full object-contain' src={social.icon} alt={social.name} /></a>
+                                        <a target='_blank' className='hover:animate-iconBounce w-full h-[30px]' key={index} href={social.link}><img className='w-full h-full object-contain' src={social.icon} alt={social.name} /></a>
                                     )
                                 })}
                             </div>
@@ -155,12 +171,7 @@ export default function ComingSoon() {
                 </div>
             </div>
 
-            { IsSucessful && <div className="absolute w-full h-full flex justify-center items-center">
-                <div className="absolute w-full h-full" onClick={() => setIsSucessful(false)}></div>
-                <div className="w-[300px] h-[200px] flex justify-center items-center bg-white rounded-[10px]">
-                    <h1>Email saved</h1>
-                </div>
-            </div>}
+
         </div>
     )
 }

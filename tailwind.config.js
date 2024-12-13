@@ -1,3 +1,6 @@
+import { Opacity } from '@mui/icons-material';
+import { transform } from 'esbuild';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -57,12 +60,26 @@ export default {
 
       animation: {
         iconBounce: "iconBounce 1s ease-in-out infinite",
+        slideIn: "slideIn 6s ease-in-out 1",
+        slideInM: "slideInM 6s ease-in-out 1",
       },
       
       keyframes: {
         iconBounce: {
           "0%, 40%, 100%": { transform: "translateY(0)" },
           "20%": { transform: "translateY(-10%)" },
+        },
+        slideIn: {
+          "0%" : { right: "-100%)" },
+          "10%": { opacity: "1",  right: "29px" },
+          "70%": { opacity: "1", right: "29px" },
+          "100%": { opacity: "0", right: "29px" },
+        },
+        slideInM: {
+          "0%" : { right: "-100%)" },
+          "10%": { opacity: "1",  right: "50%" },
+          "70%": { opacity: "1", right: "50%" },
+          "100%": { opacity: "0", right: "50%" },
         },
       },
     },
