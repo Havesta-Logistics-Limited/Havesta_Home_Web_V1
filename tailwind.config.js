@@ -34,7 +34,7 @@ export default {
           "url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957971/Greencloud_bbihtg.png')",
         "footer-texture": "url('/img/footer-texture.png')",
         soon: "url('/images/soon.png')",
-        soonGradient: "linear-gradient(180deg, #FFFFFF 14%, rgba(255, 255, 255, 0) 100%)", 
+        soonGradient: "linear-gradient(180deg, #FFFFFF80 14%, rgba(255, 255, 255, 0) 100%)", 
 
         careerTile: "linear-gradient(180deg, rgba(1, 190, 114, 0.3), rgba(1, 190, 114, 0.12))",
         careerGradient: "url('/images/Vector.png')",
