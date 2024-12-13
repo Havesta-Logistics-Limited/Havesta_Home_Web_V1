@@ -138,7 +138,7 @@ export default function ComingSoon() {
                             </div>
                             <p className="w-full lg:w-[783px] font-primary lg:text-[32px] lg:leading-[38.73px] text-[16px] leading-[19.365px] font-normal text-center text-white">We’ll let you know when we are Launching</p>
                             <form onSubmit={handleSubmit} className="w-full lg:w-[783px] lg:h-[70px] h-[40.5px] flex flex-col lg:flex-row gap-4 lg:gap-0">
-                                <input className="lg:rounded-tr-none text-center lg:text-left lg:rounded-br-none rounded-[10px] w-full outline-none font-primary lg:p-[26px] p-[16px] text-3 lg:text-6 lg:leading-[29.05px] leading-[14.525px]" placeholder="Enter your email address" type="email" value={email} onChange={(e) => setEmail(e.target.value)} name='email' />
+                                <input className="lg:rounded-tr-none text-center lg:text-left lg:rounded-br-none rounded-[10px] w-full outline-none font-primary lg:p-[26px] p-[16px] text-3 lg:text-6 lg:leading-[29.05px] leading-[14.525px]" placeholder="Enter your email address" type="email" value={email} required onChange={(e) => setEmail(e.target.value)} name='email' />
                                 <button type='submit' className="lg:w-[238px] w-full lg:h-full h-fit bg-harvestaDarkGreen rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none lg:p-0 p-[16px] text-white lg:text-[28px] lg:leading-[33.89px] text-[14px] leading-[16.945px] font-semibold font-primary text-center">Notify Me</button>
                             </form>
                         </div>
