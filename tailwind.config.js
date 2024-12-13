@@ -33,7 +33,7 @@ export default {
         "faq-pattern":
           "url('https://res.cloudinary.com/dtc89xi2r/image/upload/v1717957971/Greencloud_bbihtg.png')",
         "footer-texture": "url('/img/footer-texture.png')",
-        soon: "url('/images/soon.png')",
+        soon: "url('https://res.cloudinary.com/dahlcyt3t/image/upload/f_auto,q_auto/gnhb4j66eo9do2zi23o6')",
         soonGradient: "linear-gradient(180deg, #FFFFFF80 14%, rgba(255, 255, 255, 0) 100%)", 
 
         careerTile: "linear-gradient(180deg, rgba(1, 190, 114, 0.3), rgba(1, 190, 114, 0.12))",
