@@ -15,7 +15,7 @@ import ScrollToTop from "./common/scrollToTop";
 import Career from "./pages/Career/Career"
 import Landing from "./pages/Landing/Landing"
 import MarketPlace from './pages/MarketPlace/MarketPlace';
-import ComingSoon from './pages/ComingSoon.JSx';
+import ComingSoon from './pages/ComingSoon.jsx';
 // import UserSignup from './pages/UserSignup';
 
 // import SideModal from './common/SideModal';
