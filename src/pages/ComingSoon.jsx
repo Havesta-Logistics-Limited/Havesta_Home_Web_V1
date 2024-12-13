@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import axios from 'axios';
 
 export default function ComingSoon() {
 
@@ -7,11 +7,27 @@ export default function ComingSoon() {
 
     const socials = [
         { name: 'Facebook', link: 'https://web.facebook.com/havestalogistics', icon: '/icons/facebook.svg' },
-        { name: 'Instagram', link: 'https://www.linkedin.com/company/havesta/', icon: '/icons/instagram.svg' },
+        { name: 'Instagram', link: 'https://www.instagram.com/havestahq/profilecard/?igsh=cTN0bHVyNjUxeDh1', icon: '/icons/instagram.svg' },
         { name: 'LinkedIn', link: 'https://www.linkedin.com/company/havesta/', icon: '/icons/linkedin.svg' },
-        { name: 'Twitter', link: 'https://www.linkedin.com/company/havesta/', icon: '/icons/twitter.svg' },
+        { name: 'X', link: 'https://x.com/havestahq?t=0rogOW8mhMYqNJ08vBCopw&s=09', icon: 'https://res.cloudinary.com/dahlcyt3t/image/upload/f_auto,q_auto/v1/portfolio/vlvcokaa210wngc4ba4h' },
 
     ]
+
+    // const url = import.meta.env.WEB_APP_URL;
+
+    const [email, setEmail] = useState('')
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('https://script.google.com/macros/s/AKfycbyThztb2wzJhSBneyCgsYbUO1b9GGfW30tBx2lhpooImiIIcp9QcDrdfBleJPmJC9DS/exec', { email })
+            console.log(response.data);
+        }
+        catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
 
     useEffect(() => {
         const futureDate = new Date(2025, 2, 14, 0, 0, 0, 0)
@@ -62,7 +78,7 @@ export default function ComingSoon() {
                                     <p className='text-white lg:text-[48px] lg:leading-[72px] text-[24px] leading-[36px] font-medium font-soon2'>DAYS</p>
                                 </div>
 
-                                
+
                                 <div className='flex flex-col items-center w-1/3 lg:w-full'>
                                     <div className="flex w-fit gap-4 h-20 lg:h-40">{timeLeft.hours.toString().split('').map((char, index) => (
                                         <>
@@ -79,7 +95,7 @@ export default function ComingSoon() {
                                     </div>
                                     <p className='text-white lg:text-[48px] lg:leading-[72px] text-[24px] leading-[36px] font-medium font-soon2'>HOURS</p>
                                 </div>
-                               
+
 
 
                                 <div className='flex flex-col items-center w-1/3 lg:w-full'>
@@ -117,10 +133,10 @@ export default function ComingSoon() {
                                 </div>
                             </div>
                             <p className="w-full lg:w-[783px] font-primary lg:text-[32px] lg:leading-[38.73px] text-[16px] leading-[19.365px] font-normal text-center text-white">We’ll let you know when we are Launching</p>
-                            <div className="w-full lg:w-[783px] lg:h-[70px] h-[40.5px] flex flex-col lg:flex-row gap-4 lg:gap-0">
-                                <input className="lg:rounded-tr-none text-center lg:text-left lg:rounded-br-none rounded-[10px] w-full outline-none font-primary lg:p-[26px] p-[16px] text-3 lg:text-6 lg:leading-[29.05px] leading-[14.525px]" placeholder="Enter your email address" type="text" />
-                                <button className="lg:w-[238px] w-full lg:h-full h-fit bg-harvestaDarkGreen rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none lg:p-0 p-[16px] text-white lg:text-[28px] lg:leading-[33.89px] text-[14px] leading-[16.945px] font-semibold font-primary text-center">Notify Me</button>
-                            </div>
+                            <form onClick={handleSubmit} className="w-full lg:w-[783px] lg:h-[70px] h-[40.5px] flex flex-col lg:flex-row gap-4 lg:gap-0">
+                                <input className="lg:rounded-tr-none text-center lg:text-left lg:rounded-br-none rounded-[10px] w-full outline-none font-primary lg:p-[26px] p-[16px] text-3 lg:text-6 lg:leading-[29.05px] leading-[14.525px]" placeholder="Enter your email address" type="email" value={email} onChange={(e) => setEmail(e.target.value)} name='email' />
+                                <button type='submit' className="lg:w-[238px] w-full lg:h-full h-fit bg-harvestaDarkGreen rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none lg:p-0 p-[16px] text-white lg:text-[28px] lg:leading-[33.89px] text-[14px] leading-[16.945px] font-semibold font-primary text-center">Notify Me</button>
+                            </form>
                         </div>
                         <div className="flex lg:flex-col justify-end h-fit lg:h-full w-full lg:w-[30px]">
                             <div className="w-full h-[30px] lg:h-[192px] flex lg:flex-col justify-between">
