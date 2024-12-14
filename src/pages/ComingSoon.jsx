@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { CircularProgress } from "@mui/material/";
 
 export default function ComingSoon() {
 
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const [loading, setLoading] = useState(false);
 
     const socials = [
         { name: 'Facebook', link: 'https://web.facebook.com/havestalogistics', icon: '/icons/facebook.svg' },
@@ -20,7 +22,7 @@ export default function ComingSoon() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        setLoading(true)
         axios.post('https://api.sheetbest.com/sheets/9d4cb556-d137-4817-b148-69736f291044', { 'emails': email }).then((response) => {
             console.log(response.status)
             if (response.status === 200) {
@@ -30,6 +32,7 @@ export default function ComingSoon() {
                 }, 8000)
             }
             setEmail('')
+            setLoading(false)
         })
 
     }
@@ -155,7 +158,16 @@ export default function ComingSoon() {
                             <p className="w-full lg:w-[783px] font-primary lg:text-[32px] lg:leading-[38.73px] text-[16px] leading-[19.365px] font-normal text-center text-white">We’ll let you know when we are Launching</p>
                             <form onSubmit={handleSubmit} className="w-full lg:w-[783px] lg:h-[70px] h-[40.5px] flex flex-col lg:flex-row gap-4 lg:gap-0">
                                 <input className="lg:rounded-tr-none text-center lg:text-left lg:rounded-br-none rounded-[10px] w-full outline-none font-primary lg:p-[26px] p-[16px] text-3 lg:text-6 lg:leading-[29.05px] leading-[14.525px]" placeholder="Enter your email address" type="email" value={email} required onChange={(e) => setEmail(e.target.value)} name='email' />
-                                <button type='submit' className="lg:w-[238px] w-full lg:h-full h-fit bg-harvestaDarkGreen rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none lg:p-0 p-[16px] text-white lg:text-[28px] lg:leading-[33.89px] text-[14px] leading-[16.945px] font-semibold font-primary text-center">Notify Me</button>
+                                <button type='submit' className="lg:w-[238px] w-full lg:h-full h-fit bg-harvestaDarkGreen rounded-[10px] lg:rounded-tl-none lg:rounded-bl-none lg:p-0 p-[16px] text-white lg:text-[20px] lg:leading-[33.89px] text-[14px] leading-[16.945px] font-semibold font-primary text-center">
+                                    {loading ? (
+                                        <CircularProgress
+                                            sx={{ width: "15px", height: "15px", color: "white" }}
+                                            size="small"
+                                        />
+                                    ) : (
+                                        "Notify Me"
+                                    )}
+                                </button>
                             </form>
                         </div>
                         <div className="flex lg:flex-col justify-end h-fit lg:h-full w-full lg:w-[30px]">
