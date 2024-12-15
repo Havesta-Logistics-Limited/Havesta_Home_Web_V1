@@ -275,8 +275,8 @@ const Vendor = ({ hero }) => {
                       <input
                         type={item.type}
                         placeholder={item.placeholder}
-                        className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline-harvestaLightGreen font-primary text-sm ${
-                          item.title == "Phone Number" ? "pl-12 phoneNum" : ""
+                        className={`border-[0.5px] w-full h-[56px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-1 focus:outline-harvestaLightGreen font-primary text-sm ${
+                          item.title == "Phone Number" ? "pl-12 phoneNum border-[1.2px]" : ""
                         }
                           ${
                             item.name === "email" &&
@@ -295,7 +295,7 @@ const Vendor = ({ hero }) => {
                       <img
                         src={item.img ? item.img : {}}
                         alt={item.img ? "naija-icon" : ""}
-                        className="absolute top-5 left-3"
+                        className={ `absolute top-5 left-3 ${item.img ? "":"hidden"}` }
                       />
                     </div>
                   </FormControl>

@@ -312,12 +312,12 @@ const Rider = () => {
                     <input
                       type={item.type}
                       placeholder={item.placeholder}
-                      className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen font-primary h-[56px] text-sm w-full ${
+                      className={`border-[0.5px] border-gray p-2 rounded-md bg-gray-100 rider-field focus:outline focus:outline-harvestaLightGreen  focus:outline-1 font-primary h-[56px] text-sm w-full ${
                         item.name == "phone_number"
-                          ? "pl-10 phoneNum"
+                          ? "pl-10 phoneNum border-[1.2px]"
                           : item.name === "phone_number" &&
                             phoneNumberError === "error"
-                          ? "border-[1.2px] border-red-300 focus:border-transparen"
+                          ? "border-[1.2px] border-red-300 focus:border-transparent"
                           : ""
                       } ${
                         item.name === "email" &&
