@@ -1,6 +1,12 @@
 import "./Waitlist.css";
 import { useState } from "react";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  ArrowDown,
+} from "lucide-react";
 import { Leaf1, Leaf2, Leaf3, Leaf4, Logo } from "./Assets";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -32,7 +38,7 @@ const Waitlist = () => {
         }
       );
 
-      toast.success("Thank you! We'll notify you when we launch 🚀");
+      toast.success("Thank you! We'll notify you when we launch.");
       setEmail("");
       setCategory("");
     } catch (err) {
@@ -52,14 +58,14 @@ const Waitlist = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_center,#005231,#273F2B)] p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_center,#005231,#273F2B)] p-4 sm:p-6 lg:p-8 relative overflow-hidden">
       {/* Toaster (global toast container) */}
       <Toaster
         position="top-right"
         toastOptions={{
           duration: 5000,
           style: {
-            margin: "15px ",
+            margin: "10px",
             borderRadius: "8px",
             padding: "12px 16px",
             fontSize: "0.9rem",
@@ -81,28 +87,28 @@ const Waitlist = () => {
         }}
       />
 
-      {/* Floating Leaves */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Floating Leaves - Hide on small screens, show on larger screens */}
+      <div className="absolute inset-0 pointer-events-none hidden sm:block">
         <div
-          className="absolute top-40 left-32 animate-bounce"
+          className="absolute top-20 sm:top-40 left-4 sm:left-16 lg:left-32 animate-bounce scale-50 sm:scale-75 lg:scale-100"
           style={{ animationDelay: "0s", animationDuration: "3s" }}
         >
           <Leaf1 />
         </div>
         <div
-          className="absolute bottom-10 left-40 animate-bounce"
+          className="absolute bottom-20 sm:bottom-10 left-6 sm:left-20 lg:left-40 animate-bounce scale-50 sm:scale-75 lg:scale-100"
           style={{ animationDelay: "1s", animationDuration: "4s" }}
         >
           <Leaf2 />
         </div>
         <div
-          className="absolute top-24 right-96 animate-bounce"
+          className="absolute top-12 sm:top-24 right-4 sm:right-20 lg:right-96 animate-bounce scale-50 sm:scale-75 lg:scale-100"
           style={{ animationDelay: "0.5s", animationDuration: "3.5s" }}
         >
           <Leaf3 />
         </div>
         <div
-          className="absolute bottom-60 right-20 animate-bounce"
+          className="absolute bottom-40 sm:bottom-60 right-2 sm:right-10 lg:right-20 animate-bounce scale-50 sm:scale-75 lg:scale-100"
           style={{ animationDelay: "2s", animationDuration: "5s" }}
         >
           <Leaf4 />
@@ -110,8 +116,10 @@ const Waitlist = () => {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 px-6 py-1">
-        <Logo />
+      <header className="relative z-10 px-2 sm:px-4 lg:px-6 py-1">
+        <div className="scale-75 sm:scale-90 lg:scale-100 origin-left">
+          <Logo />
+        </div>
       </header>
 
       {/* Main Content */}
@@ -152,7 +160,7 @@ const Waitlist = () => {
             <button
               onClick={handleSubmit}
               disabled={isLoading}
-              className="w-[80%] bg-[#78EB54] m-auto text-green-900 py-3 px-6 rounded-lg font-semibold hover:bg-green-600 transition-all duration-200 transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#78EB54] flex items-center justify-center gap-2"
+              className="w-[80%] m-auto bg-[#78EB54] text-green-900 py-3 px-6 rounded-lg font-semibold hover:bg-green-600 transition-all duration-200 transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#78EB54] flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <>
@@ -181,17 +189,22 @@ const Waitlist = () => {
           © Copyright 2025. All Rights Reserved
         </p>
       </footer>
-
-      {/* Scroll Indicator */}
-      {/* <div className="absolute bottom-6 right-6 z-10">
-        <div className="w-8 h-12 border-2 border-green-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-green-400 rounded-full mt-2 animate-bounce"></div>
-        </div>
-      </div> */}
-
+      {/* Donate Now Link with Arrow */}
       <div className="absolute bottom-6 right-6 z-10">
-        <div className="w-8 h-12 border-2 border-green-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-green-400 rounded-full mt-2 animate-bounce"></div>
+        <div className="flex flex-col items-center gap-2">
+          {/* Arrow pointing to the link */}
+          <div className="animate-bounce">
+            <ArrowDown className="w-5 h-5 text-green-400" />
+          </div>
+
+          {/* Donate Now Link */}
+          <a
+            href="https://havesta.com/donation"
+            className="bg-green-400 hover:bg-green-300 text-green-900 px-4 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 animate-pulse"
+            style={{ animationDuration: "2s" }}
+          >
+            Donate Now
+          </a>
         </div>
       </div>
     </div>
