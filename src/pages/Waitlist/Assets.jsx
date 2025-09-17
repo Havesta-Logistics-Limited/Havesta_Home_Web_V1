@@ -312,3 +312,34 @@ export function Leaf4() {
     </svg>
   );
 }
+
+export const X = ({ className }) => {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <mask
+        id="mask0_6654_6196"
+        style="mask-type:luminance"
+        maskUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="15"
+        height="15"
+      >
+        <path d="M0 0H15V15H0V0Z" fill="white" />
+      </mask>
+      <g mask="url(#mask0_6654_6196)">
+        <path
+          d="M11.8125 0.702637H14.1129L9.08786 6.46049L15 14.2969H10.3714L6.74357 9.54514L2.59714 14.2969H0.294643L5.66893 8.13621L0 0.703708H4.74643L8.02071 5.04621L11.8125 0.702637ZM11.0036 12.9169H12.2786L4.05 2.01085H2.68286L11.0036 12.9169Z"
+          fill="white"
+        />
+      </g>
+    </svg>
+  );
+};
