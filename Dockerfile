@@ -1,21 +1,14 @@
-# Stage 1: Build the Vite app
-FROM node:20-alpine
-
+# Stage 1: Build
+FROM node:20-slim AS build
 WORKDIR /app
-
 COPY package*.json ./
-
 RUN npm install
-
 COPY . .
-
-ARG VITE_AUTH_ENDPOINT
-
-ARG VITE_ENVIRONMENT
-
 RUN npm run build
 
-EXPOSE 3000
+# Stage 2: Serve
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-CMD ["npm", "run", "preview"]
- 
+
