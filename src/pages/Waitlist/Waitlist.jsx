@@ -56,7 +56,7 @@ const SOCIAL_ICONS = [
   {
     Icon: Facebook,
     key: "facebook",
-    href: "https://www.instagram.com/havestahq?igsh=cTN0bHVyNjUxeDh1",
+    href: "https://www.facebook.com/share/1BKct6DEEh/",
   },
   {
     Icon: FaXTwitter,
@@ -150,19 +150,6 @@ const Header = () => (
     </div>
   </header>
 );
-
-// const CategoryTag = ({ category, onRemove, disabled }) => (
-//   <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium border border-green-200">
-//     {category}
-//     <button
-//       onClick={() => onRemove(category)}
-//       className="ml-1 hover:bg-green-200 rounded-full p-0.5 transition-colors"
-//       disabled={disabled}
-//     >
-//       <X size={14} />
-//     </button>
-//   </span>
-// );
 
 const CategorySelector = ({
   selectedCategories,
